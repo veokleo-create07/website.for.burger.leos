@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+@theme inline {
+  --color-cream: #f6f0e4;
+  --color-charcoal: #24221f;
+  --color-burnt-orange: #b7482d;
+  --color-olive-green: #64704a;
+  --font-heading: var(--font-bricolage-grotesque);
+  --font-body: var(--font-inter);
+}
+
+body {
+  @apply bg-cream font-body text-charcoal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-heading;
+}
