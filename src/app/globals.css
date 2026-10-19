@@ -643,17 +643,22 @@ summary:focus-visible {
   }
 
   .hero-actions {
-    width: min(100%, 335px);
-    flex-direction: column;
-    gap: 10px;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8px;
     margin-top: 16px;
     --hero-copy-lift: 10px;
   }
 
   .hero-button {
-    width: 100%;
+    width: auto;
+    min-width: 0;
+    flex: 1 1 0;
     min-height: 48px;
-    font-size: 14px;
+    padding-inline: 8px;
+    font-size: 12px;
+    white-space: nowrap;
   }
 
   .hero-doodle--orange {
