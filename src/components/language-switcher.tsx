@@ -7,10 +7,10 @@ export function LanguageSwitcher({ locale, label }: { locale: Locale; label: str
   return (
     <nav aria-label={label} className="language-switcher">
       <Link href="/" locale="de" lang="de" aria-current={locale === "de" ? "page" : undefined}>
-        de
+        De
       </Link>
       <Link href="/" locale="en" lang="en" aria-current={locale === "en" ? "page" : undefined}>
-        en
+        En
       </Link>
     </nav>
   );
