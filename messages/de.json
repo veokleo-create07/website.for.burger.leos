@@ -1,6 +1,27 @@
 {
   "Metadata": {
-    "title": "Leo's Burger",
-    "description": "Die Website von Leo's Burger."
+    "title": "Leo's Juice & Burger | Lübeck-Kücknitz",
+    "description": "Handgemachte Burger und frische Säfte bei Leo's in Lübeck-Kücknitz."
+  },
+  "HomePage": {
+    "navigation": {
+      "home": "Startseite",
+      "menu": "Speisekarte",
+      "gallery": "Galerie",
+      "contact": "Kontakt",
+      "openMenu": "Menü öffnen",
+      "language": "Sprache wählen",
+      "mainNavigation": "Hauptnavigation",
+      "mobileNavigation": "Menü"
+    },
+    "location": "Lübeck-Kücknitz",
+    "headline": {
+      "first": "Burger,",
+      "second": "die",
+      "third": "begeistern."
+    },
+    "description": "Handgemachte Burger, frische Säfte und entspannte Momente bei Leo’s in Lübeck-Kücknitz.",
+    "reserve": "Tisch reservieren",
+    "viewMenu": "Speisekarte ansehen"
   }
 }

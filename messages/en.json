@@ -1,6 +1,27 @@
 {
   "Metadata": {
-    "title": "Leo's Burger",
-    "description": "The Leo's Burger website."
+    "title": "Leo's Juice & Burger | Lübeck-Kücknitz",
+    "description": "Handcrafted burgers and fresh juices at Leo's in Lübeck-Kücknitz."
+  },
+  "HomePage": {
+    "navigation": {
+      "home": "Home",
+      "menu": "Menu",
+      "gallery": "Gallery",
+      "contact": "Contact",
+      "openMenu": "Open menu",
+      "language": "Choose language",
+      "mainNavigation": "Main navigation",
+      "mobileNavigation": "Navigation menu"
+    },
+    "location": "Lübeck-Kücknitz",
+    "headline": {
+      "first": "Burgers",
+      "second": "that",
+      "third": "delight."
+    },
+    "description": "Handcrafted burgers, fresh juices, and relaxed moments at Leo’s in Lübeck-Kücknitz.",
+    "reserve": "Book a table",
+    "viewMenu": "View the menu"
   }
 }
