@@ -258,17 +258,31 @@ summary:focus-visible {
 }
 
 .hero-title {
+  position: relative;
+  top: 6px;
   margin: 0;
+  font-family: var(--font-coiny);
   font-size: clamp(82px, 9vw, 184px);
-  font-weight: 850;
-  letter-spacing: -0.075em;
-  line-height: 0.79;
+  font-weight: 400;
+  letter-spacing: -0.07em;
+  line-height: 0.82;
 }
 
 .hero-title-line {
   display: block;
   width: max-content;
   max-width: 100%;
+}
+
+.hero-title-line--second {
+  margin-top: -0.035em;
+  transform: translateY(-0.02em);
+}
+
+.hero-title-line--third {
+  margin-top: -0.045em;
+  font-size: 0.96em;
+  transform: translateY(-0.055em);
 }
 
 .hero-title-accent {
@@ -294,22 +308,23 @@ summary:focus-visible {
 }
 
 .hero-description {
-  max-width: 480px;
-  margin: 28px 0 0;
-  font-size: clamp(16px, 1.35vw, 19px);
+  max-width: 445px;
+  margin: 20px 0 0;
+  font-size: clamp(16px, 1.1vw, 22px);
   line-height: 1.42;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 26px;
+  gap: clamp(11px, 0.8vw, 15px);
+  margin-top: 18px;
 }
 
 .hero-button {
-  min-width: 205px;
-  min-height: 55px;
+  min-width: clamp(174px, 12vw, 238px);
+  min-height: clamp(48px, 3.4vw, 64px);
+  padding-inline: 14px;
 }
 
 .hero-button-secondary {
@@ -531,9 +546,10 @@ summary:focus-visible {
   }
 
   .hero-title {
+    top: 4px;
     font-size: clamp(52px, 15.8vw, 66px);
-    letter-spacing: -0.065em;
-    line-height: 0.82;
+    letter-spacing: -0.04em;
+    line-height: 0.84;
   }
 
   .hero-title-last::after {
