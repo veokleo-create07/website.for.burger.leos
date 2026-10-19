@@ -59,7 +59,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
             <p className="hero-description">{t("description")}</p>
             <div className="hero-actions">
               <a className="hero-button hero-button-primary" href="#reservierung">
-                {t("reserve")} <span aria-hidden="true">→</span>
+                {t("reserve")}
               </a>
               <a className="hero-button hero-button-secondary" href="#speisekarte">
                 {t("viewMenu")}

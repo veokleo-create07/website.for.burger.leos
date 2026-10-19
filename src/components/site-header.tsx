@@ -70,7 +70,7 @@ export function SiteHeader({ locale, labels }: Props) {
         <span className="header-divider" aria-hidden="true" />
         <LanguageSwitcher locale={locale} label={labels.language} />
         <a className="header-booking" href="#reservierung">
-          {labels.booking} <span aria-hidden="true">→</span>
+          {labels.booking}
         </a>
         <details className="mobile-menu">
           <summary aria-label={labels.menuButton}>
