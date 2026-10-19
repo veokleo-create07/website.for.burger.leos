@@ -70,7 +70,7 @@ summary:focus-visible {
   grid-template-columns: auto minmax(320px, 1fr) auto;
   align-items: center;
   gap: clamp(22px, 3vw, 48px);
-  padding: 15px clamp(26px, 4vw, 58px);
+  padding: 11px clamp(26px, 4vw, 58px);
 }
 
 .brand-link {
@@ -80,8 +80,8 @@ summary:focus-visible {
 
 .brand-logo {
   display: block;
-  width: 78px;
-  height: 78px;
+  width: 86px;
+  height: 86px;
   object-fit: contain;
 }
 
@@ -217,16 +217,16 @@ summary:focus-visible {
   min-height: 660px;
   flex: 1;
   align-items: center;
-  padding: 20px clamp(36px, 4.2vw, 64px) 42px;
+  padding: 12px clamp(36px, 4.2vw, 64px) 42px;
 }
 
 .hero-burger {
   position: absolute;
   z-index: 1;
-  top: -1%;
-  right: -2%;
-  width: 62%;
-  height: 108%;
+  top: 0;
+  right: 2%;
+  width: 56%;
+  height: 100%;
 }
 
 .hero-burger img {
@@ -239,12 +239,13 @@ summary:focus-visible {
   z-index: 2;
   width: 68%;
   max-width: 880px;
-  padding-bottom: 12px;
+  padding-bottom: 28px;
+  transform: translateY(-32px);
 }
 
 .hero-title {
   position: relative;
-  top: 6px;
+  top: 2px;
   margin: 0;
   font-family: var(--font-coiny);
   font-size: clamp(82px, 9vw, 184px);
@@ -265,9 +266,9 @@ summary:focus-visible {
 }
 
 .hero-title-line--third {
-  margin-top: -0.045em;
+  margin-top: -0.025em;
   font-size: 0.96em;
-  transform: translateY(-0.055em);
+  transform: translateY(-0.025em);
 }
 
 .hero-title-accent {
@@ -294,7 +295,7 @@ summary:focus-visible {
 
 .hero-description {
   max-width: 445px;
-  margin: 20px 0 0;
+  margin: 24px 0 0;
   font-size: clamp(16px, 1.1vw, 22px);
   line-height: 1.42;
 }
@@ -303,7 +304,7 @@ summary:focus-visible {
   display: flex;
   flex-wrap: wrap;
   gap: clamp(11px, 0.8vw, 15px);
-  margin-top: 18px;
+  margin-top: 16px;
 }
 
 .hero-button {
@@ -333,7 +334,7 @@ summary:focus-visible {
 }
 
 .hero-doodle--orange {
-  top: 15%;
+  top: 8%;
   left: 4%;
   color: var(--color-burnt-orange);
 }
@@ -418,12 +419,12 @@ summary:focus-visible {
     min-height: 70px;
     justify-content: space-between;
     gap: 12px;
-    padding: 7px 17px;
+    padding: 4px 17px;
   }
 
   .brand-logo {
-    width: 56px;
-    height: 56px;
+    width: 62px;
+    height: 62px;
   }
 
   .desktop-nav,
@@ -509,28 +510,29 @@ summary:focus-visible {
   .hero-stage {
     min-height: 690px;
     align-items: flex-start;
-    padding: 30px 17px 28px;
+    padding: 22px 17px 28px;
   }
 
   .hero-burger {
     top: auto;
-    right: -7%;
-    bottom: -4%;
-    width: min(84vw, 370px);
-    height: min(78vw, 350px);
+    right: 0;
+    bottom: 5%;
+    width: min(82vw, 360px);
+    height: min(74vw, 325px);
   }
 
   .hero-copy {
     width: 100%;
     max-width: none;
     padding: 0;
+    transform: none;
   }
 
   .hero-title {
-    top: 4px;
+    top: 2px;
     font-size: clamp(52px, 15.8vw, 66px);
     letter-spacing: -0.04em;
-    line-height: 0.84;
+    line-height: 0.82;
   }
 
   .hero-title-last::after {
@@ -539,7 +541,7 @@ summary:focus-visible {
 
   .hero-description {
     width: min(88%, 330px);
-    margin-top: 24px;
+    margin-top: 22px;
     font-size: 15px;
     line-height: 1.42;
   }
@@ -548,7 +550,7 @@ summary:focus-visible {
     width: min(100%, 335px);
     flex-direction: column;
     gap: 10px;
-    margin-top: 19px;
+    margin-top: 16px;
   }
 
   .hero-button {
@@ -559,15 +561,15 @@ summary:focus-visible {
 
   .hero-doodle--orange {
     top: 7%;
-    left: 4%;
-    transform: scale(0.75);
-    transform-origin: left center;
+    left: 72%;
+    transform: scale(0.68) rotate(14deg);
+    transform-origin: center;
   }
 
   .hero-doodle--olive {
     top: auto;
     right: 13%;
-    bottom: 40%;
+    bottom: 45%;
     transform: scale(0.85);
   }
 }
