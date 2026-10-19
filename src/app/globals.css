@@ -611,16 +611,16 @@ summary:focus-visible {
   }
 
   .hero-burger {
-    top: auto;
+    top: 140px;
     right: 0;
-    bottom: 5%;
-    width: min(82vw, 360px);
-    height: min(74vw, 325px);
+    bottom: auto;
+    width: min(64vw, 250px);
+    height: min(50vw, 195px);
     --hero-burger-lift: 12px;
   }
 
   .hero-burger-shadow {
-    bottom: 1%;
+    bottom: 8%;
     height: 7%;
     filter: blur(6px);
   }
@@ -634,9 +634,10 @@ summary:focus-visible {
 
   .hero-title {
     top: 2px;
-    font-size: clamp(52px, 15.8vw, 66px);
+    font-size: clamp(46px, 13vw, 52px);
     letter-spacing: -0.04em;
     line-height: 0.82;
+    z-index: 2;
     --hero-word-lift: 0.2em;
   }
 
@@ -645,25 +646,27 @@ summary:focus-visible {
   }
 
   .hero-description {
-    width: min(88%, 330px);
-    margin-top: 22px;
+    width: min(100%, 230px);
+    margin-top: 205px;
     font-size: 15px;
     line-height: 1.42;
     --hero-copy-lift: 10px;
   }
 
   .hero-actions {
-    width: min(100%, 335px);
-    flex-direction: column;
-    gap: 10px;
+    width: min(100%, 380px);
+    flex-direction: row;
+    gap: 8px;
     margin-top: 16px;
     --hero-copy-lift: 10px;
   }
 
   .hero-button {
-    width: 100%;
+    min-width: 0;
+    width: calc(50% - 4px);
     min-height: 50px;
-    font-size: 14px;
+    padding-inline: 8px;
+    font-size: 12px;
   }
 
   .hero-doodle--orange {
@@ -674,10 +677,9 @@ summary:focus-visible {
   }
 
   .hero-doodle--olive {
-    top: auto;
-    right: 13%;
-    bottom: 45%;
-    transform: scale(0.85);
+    top: 13%;
+    right: 6%;
+    transform: scale(0.7);
   }
 }
 
