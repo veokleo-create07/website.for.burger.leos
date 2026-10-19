@@ -32,6 +32,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
 
         <section className="hero-stage" aria-labelledby="hero-title">
           <div className="hero-burger" aria-hidden="true">
+            <span className="hero-burger-shadow" />
             <Image
               src="/images/burger-cutout.png"
               alt=""
@@ -45,10 +46,14 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
 
           <div className="hero-copy">
             <h1 className="hero-title" id="hero-title">
-              <span className="hero-title-line hero-title-line--first">{t("headline.first")}</span>
-              <span className="hero-title-line hero-title-line--second hero-title-accent">{t("headline.second")}</span>
+              <span className="hero-title-line hero-title-line--first">
+                <span className="hero-word hero-word--first">{t("headline.first")}</span>
+              </span>
+              <span className="hero-title-line hero-title-line--second hero-title-accent">
+                <span className="hero-word hero-word--second">{t("headline.second")}</span>
+              </span>
               <span className="hero-title-line hero-title-line--third hero-title-accent hero-title-last">
-                {t("headline.third")}
+                <span className="hero-word hero-word--third">{t("headline.third")}</span>
               </span>
             </h1>
             <p className="hero-description">{t("description")}</p>
