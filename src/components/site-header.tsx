@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { routing } from "@/i18n/routing";
 
@@ -29,9 +30,15 @@ export function SiteHeader({ locale, labels }: Props) {
 
   return (
     <header className="site-header">
-      <a className="wordmark" href={`/${locale}`} aria-label="Leo’s Juice & Burger">
-        <span className="wordmark-name">Leo’s</span>
-        <span className="wordmark-description">Juice &amp; Burger</span>
+      <a className="brand-link" href={`/${locale}`} aria-label="Leo’s Juice & Burger">
+        <Image
+          className="brand-logo"
+          src="/images/leo-logo.png"
+          alt=""
+          width={800}
+          height={800}
+          priority
+        />
       </a>
 
       <nav className="desktop-nav" aria-label={labels.mainNavigation}>

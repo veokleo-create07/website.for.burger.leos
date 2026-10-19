@@ -70,34 +70,19 @@ summary:focus-visible {
   grid-template-columns: auto minmax(320px, 1fr) auto;
   align-items: center;
   gap: clamp(22px, 3vw, 48px);
-  padding: 25px clamp(26px, 4vw, 58px);
+  padding: 15px clamp(26px, 4vw, 58px);
 }
 
-.wordmark {
-  display: inline-flex;
+.brand-link {
+  display: inline-block;
   width: max-content;
-  flex-direction: column;
-  align-items: center;
-  color: var(--color-burnt-orange);
-  line-height: 0.82;
-  transform: rotate(-3deg);
 }
 
-.wordmark-name {
-  font-family: var(--font-heading);
-  font-size: 45px;
-  font-weight: 900;
-  letter-spacing: -0.09em;
-}
-
-.wordmark-description {
-  margin-top: 5px;
-  border-bottom: 2px solid var(--color-charcoal);
-  padding: 0 2px 4px;
-  color: var(--color-charcoal);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: -0.04em;
+.brand-logo {
+  display: block;
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
 }
 
 .desktop-nav,
@@ -433,16 +418,12 @@ summary:focus-visible {
     min-height: 70px;
     justify-content: space-between;
     gap: 12px;
-    padding: 15px 17px 10px;
+    padding: 7px 17px;
   }
 
-  .wordmark-name {
-    font-size: 36px;
-  }
-
-  .wordmark-description {
-    margin-top: 4px;
-    font-size: 9px;
+  .brand-logo {
+    width: 56px;
+    height: 56px;
   }
 
   .desktop-nav,
