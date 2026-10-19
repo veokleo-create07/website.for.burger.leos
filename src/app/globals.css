@@ -601,11 +601,13 @@ summary:focus-visible {
   }
 
   .hero-burger {
-    top: auto;
-    right: 0;
-    bottom: 5%;
-    width: min(82vw, 360px);
-    height: min(74vw, 325px);
+    top: 158px;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    translate: -50% 0;
+    width: min(72vw, 280px);
+    height: min(70vw, 270px);
     --hero-burger-lift: 12px;
   }
 
@@ -627,7 +629,12 @@ summary:focus-visible {
     font-size: clamp(52px, 15.8vw, 66px);
     letter-spacing: -0.04em;
     line-height: 0.82;
+    text-align: center;
     --hero-word-lift: 0.2em;
+  }
+
+  .hero-title-line {
+    margin-inline: auto;
   }
 
   .hero-title-last::after {
@@ -636,9 +643,10 @@ summary:focus-visible {
 
   .hero-description {
     width: min(88%, 330px);
-    margin-top: 22px;
+    margin: clamp(265px, 70vw, 280px) auto 0;
     font-size: 15px;
     line-height: 1.42;
+    text-align: center;
     --hero-copy-lift: 10px;
   }
 
@@ -646,6 +654,7 @@ summary:focus-visible {
     width: 100%;
     flex-direction: row;
     flex-wrap: nowrap;
+    justify-content: center;
     gap: 8px;
     margin-top: 16px;
     --hero-copy-lift: 10px;
@@ -662,16 +671,16 @@ summary:focus-visible {
   }
 
   .hero-doodle--orange {
-    top: 7%;
-    left: 72%;
+    top: 4%;
+    left: 78%;
     transform: scale(0.68) rotate(14deg);
     transform-origin: center;
   }
 
   .hero-doodle--olive {
-    top: auto;
-    right: 13%;
-    bottom: 45%;
+    top: 178px;
+    right: 8%;
+    bottom: auto;
     transform: scale(0.85);
   }
 }

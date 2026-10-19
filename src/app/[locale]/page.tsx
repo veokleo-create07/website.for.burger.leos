@@ -38,7 +38,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
               alt=""
               fill
               priority
-              sizes="(max-width: 767px) 82vw, 62vw"
+              sizes="(max-width: 767px) 72vw, 62vw"
             />
           </div>
           <span className="hero-doodle hero-doodle--orange" aria-hidden="true" />
