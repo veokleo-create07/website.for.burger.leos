@@ -238,7 +238,7 @@ summary:focus-visible {
 .hero-burger {
   position: absolute;
   z-index: 1;
-  top: -3%;
+  top: -1%;
   right: -2%;
   width: 62%;
   height: 108%;
@@ -259,7 +259,7 @@ summary:focus-visible {
 
 .hero-title {
   margin: 0;
-  font-size: clamp(84px, 10vw, 154px);
+  font-size: clamp(82px, 9vw, 184px);
   font-weight: 850;
   letter-spacing: -0.075em;
   line-height: 0.79;
@@ -399,7 +399,7 @@ summary:focus-visible {
   }
 
   .hero-title {
-    font-size: clamp(82px, 10vw, 132px);
+    font-size: clamp(82px, 9vw, 132px);
   }
 }
 
