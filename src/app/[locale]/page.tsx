@@ -31,41 +31,44 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
         />
 
         <section className="hero-stage" aria-labelledby="hero-title">
-          <div className="hero-copy">
-            <h1 className="hero-title" id="hero-title">
-              <span className="hero-title-line hero-title-line--first">
-                <span className="hero-word hero-word--first">{t("headline.first")}</span>{" "}
-                <span className="hero-word hero-word--second">{t("headline.second")}</span>
-              </span>
-              <span className="hero-title-line hero-title-line--second hero-title-accent">
-                <span className="hero-word hero-word--third hero-title-last">{t("headline.third")}</span>
-              </span>
-            </h1>
-          </div>
+          <h1 className="hero-background-title" id="hero-title">
+            {t("headline.first")} {t("headline.second")} {t("headline.third")}
+          </h1>
 
           <div className="hero-burger" aria-hidden="true">
-            <span className="hero-burger-shadow" />
             <Image
               src="/images/burger-cutout.png"
               alt=""
               fill
               priority
-              sizes="(max-width: 767px) 82vw, 74vw"
+              sizes="(max-width: 767px) 95vw, 37vw"
             />
           </div>
-          <span className="hero-doodle hero-doodle--orange" aria-hidden="true" />
-          <span className="hero-doodle hero-doodle--olive" aria-hidden="true" />
+
+          <div className="hero-sticker hero-sticker--fresh" aria-hidden="true">
+            Fresh<br />Daily
+          </div>
+          <div className="hero-sticker hero-sticker--love" aria-hidden="true">
+            Made With<br />Love
+          </div>
+
+          <div className="hero-wordmark" aria-hidden="true">
+            Leo's
+          </div>
 
           <div className="hero-bottom">
-            <p className="hero-description">{t("description")}</p>
-            <div className="hero-actions">
-              <a className="hero-button hero-button-primary" href="#reservierung">
-                {t("reserve")}
-              </a>
-              <a className="hero-button hero-button-secondary" href="#speisekarte">
-                {t("viewMenu")}
-              </a>
+            <div className="hero-bottom-left">
+              <p className="hero-description">{t("description")}</p>
+              <div className="hero-actions">
+                <a className="hero-button hero-button-primary" href="#reservierung">
+                  {t("reserve")}
+                </a>
+                <a className="hero-button hero-button-secondary" href="#speisekarte">
+                  {t("viewMenu")}
+                </a>
+              </div>
             </div>
+            <p className="hero-description hero-bottom-right">{t("supportingRight")}</p>
           </div>
         </section>
       </div>
