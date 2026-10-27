@@ -16,6 +16,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
       <div className="hero-card">
         <SiteHeader
           locale={locale}
+          bookingHref={"/" + locale + "/reservierung"}
           labels={{
             home: t("navigation.home"),
             menu: t("navigation.menu"),
@@ -74,7 +75,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
             <div className="hero-bottom-left">
               <p className="hero-description">{t("description")}</p>
               <div className="hero-actions">
-                <a className="hero-button hero-button-primary" href="#reservierung">
+                <a className="hero-button hero-button-primary" href={"/" + locale + "/reservierung"}>
                   {t("reserve")}
                 </a>
                 <a className="hero-button hero-button-secondary" href="#speisekarte">
