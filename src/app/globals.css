@@ -302,10 +302,10 @@ summary:focus-visible {
 .hero-burger {
   position: absolute;
   z-index: 1;
-  top: 17%;
+  top: 10%;
   left: 50%;
-  width: min(68vw, 900px);
-  height: 69%;
+  width: min(74vw, 920px);
+  height: 74%;
   translate: -50% 0;
   animation: hero-burger-entry 920ms cubic-bezier(0.2, 0.78, 0.24, 1) 220ms both;
 }
