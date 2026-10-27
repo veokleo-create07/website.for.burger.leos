@@ -621,7 +621,6 @@ summary:focus-visible {
     white-space: nowrap;
   }
 }
-}
 
 @media (max-width: 370px) {
   .location-link {
