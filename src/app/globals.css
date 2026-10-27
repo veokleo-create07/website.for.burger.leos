@@ -723,7 +723,7 @@ summary:focus-visible {
   .hero-background-title {
     top: 7%;
     gap: clamp(5px, 0.8vw, 9px);
-    font-size: clamp(50px, 15vw, 64px);
+    font-size: clamp(44px, 13vw, 56px);
     letter-spacing: -0.05em;
     -webkit-text-stroke: 3px var(--color-cream);
     transform: translateX(-50%) scaleX(0.56);
@@ -734,7 +734,7 @@ summary:focus-visible {
   }
 
   .hero-burger {
-    top: 49%;
+    top: 52%;
     width: min(84vw, 360px);
     height: auto;
     aspect-ratio: 1 / 1;
@@ -762,8 +762,8 @@ summary:focus-visible {
 
   .hero-wordmark {
     --hero-wordmark-rise: 24px;
-    top: 64%;
-    font-size: clamp(90px, 25vw, 122px);
+    top: 68%;
+    font-size: clamp(72px, 20vw, 96px);
     -webkit-text-stroke: 5px var(--color-cream);
   }
 
