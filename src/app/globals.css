@@ -769,11 +769,11 @@ summary:focus-visible {
 
   .hero-bottom {
     right: 17px;
-    bottom: clamp(76px, 10vh, 96px);
+    bottom: clamp(100px, 13vh, 124px);
     left: 17px;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 4px;
     text-align: center;
   }
 
@@ -793,7 +793,7 @@ summary:focus-visible {
     width: 100%;
     justify-content: center;
     gap: 8px;
-    margin-top: 10px;
+    margin-top: 6px;
   }
 
   .hero-button {
