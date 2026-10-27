@@ -80,6 +80,8 @@
     "largePartySuccess": "Danke! Deine Anfrage ist als Designvorschau erfasst. Unser Team meldet sich persönlich bei dir.",
     "closeInquiry": "Anfrage schließen",
     "changeDate": "Datum ändern",
-    "timePlaceholder": "Uhrzeit auswählen"
+    "timePlaceholder": "Uhrzeit auswählen",
+    "submitting": "Wird gesendet …",
+    "submitError": "Die Reservierung konnte nicht gespeichert werden. Bitte versuche es erneut."
   }
 }
