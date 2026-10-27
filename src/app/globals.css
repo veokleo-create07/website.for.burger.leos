@@ -615,13 +615,28 @@ summary:focus-visible {
   }
 
   .hero-title {
-    font-size: clamp(52px, 14vw, 64px);
+    font-size: clamp(64px, 17vw, 78px);
     letter-spacing: -0.055em;
-    line-height: 0.86;
+    line-height: 0.85;
+  }
+
+  .hero-title-line--first {
+    top: 5%;
+    left: 5%;
   }
 
   .hero-title-line--second {
-    font-size: 0.84em;
+    top: 17%;
+    left: 5%;
+    font-size: inherit;
+  }
+
+  .hero-title-line--third {
+    top: 29%;
+    bottom: auto;
+    left: 4%;
+    font-size: clamp(45px, 12vw, 56px);
+    letter-spacing: -0.06em;
   }
 
   .hero-title-last::after {
@@ -629,9 +644,12 @@ summary:focus-visible {
   }
 
   .hero-burger {
-    top: 17%;
-    width: min(72vw, 300px);
-    height: 50%;
+    top: 53%;
+    left: 50%;
+    width: min(95vw, 410px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    transform: translate(-50%, -50%);
     --hero-burger-lift: 12px;
   }
 
