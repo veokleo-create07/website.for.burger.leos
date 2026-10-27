@@ -239,7 +239,8 @@ summary:focus-visible {
   z-index: 0;
   top: 10%;
   left: 50%;
-  width: 100%;
+  width: max-content;
+  max-width: none;
   margin: 0;
   overflow: visible;
   color: var(--color-burnt-orange);
@@ -253,7 +254,7 @@ summary:focus-visible {
   white-space: nowrap;
   -webkit-text-stroke: clamp(4px, 0.55vw, 12px) var(--color-cream);
   paint-order: stroke fill;
-  transform: translateX(-50%) scaleX(0.64);
+  transform: translateX(-50%) scaleX(0.62);
   transform-origin: center;
   pointer-events: none;
 }
@@ -396,7 +397,7 @@ summary:focus-visible {
 
   .hero-background-title {
     font-size: clamp(120px, 19vw, 300px);
-    transform: translateX(-50%) scaleX(0.56);
+    transform: translateX(-50%) scaleX(0.58);
   }
 
   .hero-wordmark {
@@ -552,7 +553,7 @@ summary:focus-visible {
     font-size: clamp(58px, 20vw, 82px);
     letter-spacing: -0.05em;
     -webkit-text-stroke: 4px var(--color-cream);
-    transform: translateX(-50%) scaleX(0.56);
+    transform: translateX(-50%) scaleX(0.64);
   }
 
   .hero-burger {
