@@ -310,7 +310,7 @@ summary:focus-visible {
   z-index: 3;
   top: 68%;
   left: 50%;
-  color: #f7a900;
+  color: var(--color-charcoal);
   font-family: var(--font-coiny);
   font-size: clamp(128px, 11.5vw, 240px);
   font-weight: 900;
