@@ -495,6 +495,42 @@ summary:focus-visible {
 
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-title {
+    font-size: clamp(104px, 13vw, 150px);
+  }
+
+  .hero-title-line--first {
+    top: 8%;
+    left: 4%;
+  }
+
+  .hero-title-line--second {
+    top: 28%;
+    left: 8%;
+  }
+
+  .hero-title-line--third {
+    bottom: 16%;
+    left: 9%;
+    font-size: clamp(96px, 11vw, 132px);
+  }
+
+  .hero-burger {
+    top: 50%;
+    width: min(58vw, 580px);
+  }
+
+  .hero-bottom {
+    right: 4%;
+    left: 4%;
+  }
+
+  .hero-button {
+    font-size: 13px;
+  }
+}
+
 @media (max-width: 767px) {
   .site-shell {
     padding: 0;
