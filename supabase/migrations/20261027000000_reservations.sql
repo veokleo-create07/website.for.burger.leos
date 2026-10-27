@@ -30,10 +30,10 @@ create table if not exists public.reservations (
   status text not null default 'confirmed' check (status in ('pending', 'confirmed', 'cancelled')),
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
-  active_slot tstzrange generated always as (
-    tstzrange(
-      (reservation_date + start_time) at time zone 'Europe/Berlin',
-      (reservation_date + end_time) at time zone 'Europe/Berlin',
+  active_slot tsrange generated always as (
+    tsrange(
+      reservation_date + start_time,
+      reservation_date + end_time,
       '[)'
     )
   ) stored,
