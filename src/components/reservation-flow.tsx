@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { FormEvent } from "react";
 
 type ReservationLabels = Record<string, string>;
@@ -68,6 +68,9 @@ export function ReservationFlow({ labels, locale }: Props) {
   const [inquiryEmail, setInquiryEmail] = useState("");
   const [inquiryPhone, setInquiryPhone] = useState("");
   const [inquiryMessage, setInquiryMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [serverTimes, setServerTimes] = useState<string[] | null>(null);
 
   const duration = guests <= 3 ? 60 : 90;
   const monthCells = useMemo(() => calendarCells(visibleMonth), [visibleMonth]);
@@ -85,7 +88,23 @@ export function ReservationFlow({ labels, locale }: Props) {
   }, [openingStart, latestStart]);
 
   const selectedDateLabel = formatDateForLocale(selectedDate, locale);
+
+  useEffect(() => {
+    if (step !== 2) return;
+    const controller = new AbortController();
+    setServerTimes(null);
+    fetch("/api/reservations/availability?date=" + encodeURIComponent(selectedDate) + "&guests=" + guests, { signal: controller.signal })
+      .then(async (response) => {
+        if (!response.ok) return null;
+        const payload = (await response.json()) as { times?: string[] };
+        return Array.isArray(payload.times) ? payload.times : null;
+      })
+      .then((times) => { if (times) setServerTimes(times); })
+      .catch(() => undefined);
+    return () => controller.abort();
+  }, [guests, selectedDate, step]);
   const durationLabel = duration === 60 ? labels.hour : labels.hours;
+  const displayedTimeSlots = serverTimes ?? timeSlots;
 
   const moveMonth = (offset: number) => {
     setVisibleMonth((current) => new Date(current.getFullYear(), current.getMonth() + offset, 1));
@@ -281,7 +300,7 @@ export function ReservationFlow({ labels, locale }: Props) {
                 <span>{labels.timePlaceholder}</span>
                 <select value={selectedTime ?? ""} onChange={(event) => setSelectedTime(event.target.value)}>
                   <option value="" disabled>{labels.timePlaceholder}</option>
-                  {timeSlots.map((time) => <option key={time} value={time}>{time}</option>)}
+                  {displayedTimeSlots.map((time) => <option key={time} value={time}>{time}</option>)}
                 </select>
               </label>
               <p className="reservation-duration-note">◷ {labels.duration}: {durationLabel}</p>
