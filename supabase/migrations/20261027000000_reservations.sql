@@ -91,6 +91,8 @@ declare
   v_slot time;
   v_end time;
   v_reserved integer;
+  v_today date := (now() at time zone p_timezone)::date;
+  v_now time := (now() at time zone p_timezone)::time;
 begin
   if p_date is null then raise exception using errcode = '22023', message = 'invalid_date'; end if;
   v_duration := public.reservation_duration(p_guests);
@@ -100,7 +102,7 @@ begin
   v_slot := v_open;
   while v_slot <= time '19:45' loop
     v_end := v_slot + make_interval(mins => v_duration);
-    if v_end <= v_close then
+    if v_end <= v_close and (p_date <> v_today or v_slot > v_now) then
       select coalesce(sum(r.guests), 0) into v_reserved
       from public.reservations r
       where r.reservation_date = p_date
@@ -147,6 +149,8 @@ declare
   v_capacity integer;
   v_reserved integer;
   v_status text := 'confirmed';
+  v_today date := (now() at time zone p_timezone)::date;
+  v_now time := (now() at time zone p_timezone)::time;
 begin
   if p_date is null or p_time is null then
     raise exception using errcode = '22023', message = 'invalid_date_or_time';
@@ -167,7 +171,8 @@ begin
   select opens_at, closes_at into v_open, v_close from public.reservation_window(p_date);
   v_end := p_time + make_interval(mins => v_duration);
 
-  if p_time < v_open or p_time > time '19:45' or v_end > v_close then
+  if p_time < v_open or p_time > time '19:45' or v_end > v_close
+     or (p_date = v_today and p_time <= v_now) then
     raise exception using errcode = '22023', message = 'outside_hours';
   end if;
 
