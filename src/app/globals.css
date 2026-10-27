@@ -235,7 +235,7 @@ summary:focus-visible {
 
 .hero-copy {
   position: relative;
-  z-index: 1;
+  z-index: auto;
   width: 94vw;
   margin: 0 auto;
   padding-top: 6%;
