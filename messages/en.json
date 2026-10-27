@@ -41,7 +41,7 @@
     "back": "Back",
     "selectTime": "Select your time",
     "openingHours": "Opening hours",
-    "openingHoursNote": "Tuesday–Sunday · 09:00–18:00. Reservation times are shown from 12:00 to 21:00 in this preview.",
+    "openingHoursNote": "Monday–Friday · 12:00–21:00. Saturday–Sunday · 17:00–21:00.",
     "timeUnavailable": "Unavailable for this date.",
     "detailsTitle": "Your details",
     "fullName": "Full name",
