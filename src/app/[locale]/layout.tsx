@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque } from "next/font/google";
+import { Bricolage_Grotesque, Coiny, Inter } from "next/font/google";
 import { hasLocale } from "next-intl";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -14,6 +14,18 @@ const bricolage = Bricolage_Grotesque({
   display: "swap",
 });
 
+const inter = Inter({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const coiny = Coiny({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-coiny",
+  display: "swap",
+});
 
 type Props = {
   children: ReactNode;
@@ -56,7 +68,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} className={bricolage.variable}>
+    <html lang={locale} className={`${bricolage.variable} ${inter.variable} ${coiny.variable}`}>
       <body>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
