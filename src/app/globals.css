@@ -237,11 +237,13 @@ summary:focus-visible {
 @keyframes hero-headline-word-in {
   from {
     opacity: 0;
+    clip-path: inset(0 0 100% 0);
     transform: translateY(var(--hero-headline-rise, 70px)) scale(0.98);
   }
 
   to {
     opacity: 1;
+    clip-path: inset(0);
     transform: translateY(0) scale(1);
   }
 }
@@ -370,7 +372,7 @@ summary:focus-visible {
   display: inline-block;
   flex: 0 0 auto;
   height: 1em;
-  overflow: hidden;
+  overflow: visible;
   vertical-align: bottom;
 }
 
@@ -378,6 +380,7 @@ summary:focus-visible {
   --hero-headline-rise: 70px;
   display: inline-block;
   opacity: 0;
+  clip-path: inset(0 0 100% 0);
   white-space: nowrap;
   transform: translateY(var(--hero-headline-rise)) scale(0.98);
   animation: hero-headline-word-in 900ms cubic-bezier(0.22, 1, 0.36, 1) var(--hero-headline-delay, 0ms) both;
@@ -822,6 +825,7 @@ summary:focus-visible {
   }
 
   .hero-title-word {
+    clip-path: none !important;
     transform: none !important;
   }
 
