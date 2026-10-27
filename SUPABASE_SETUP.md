@@ -43,6 +43,7 @@ After adding variables, restart the local dev server or redeploy Vercel. The res
 - request live availability for the selected date and guest count;
 - reject unavailable slots server-side;
 - store confirmed reservations securely in Supabase;
+- store large-party inquiries for follow-up instead of requiring a phone call;
 - keep the current UI and localized routes unchanged.
 
 The API intentionally returns a generic error for missing configuration or unexpected database failures. It does not expose service-role credentials or raw database errors.
