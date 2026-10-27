@@ -716,17 +716,17 @@ summary:focus-visible {
   }
 
   .hero-stage {
-    min-height: 760px;
+    min-height: 820px;
     flex: 1;
   }
 
   .hero-background-title {
-    top: 6%;
+    top: 7%;
     gap: clamp(5px, 0.8vw, 9px);
-    font-size: clamp(82px, 24vw, 100px);
-    letter-spacing: -0.055em;
+    font-size: clamp(50px, 15vw, 64px);
+    letter-spacing: -0.05em;
     -webkit-text-stroke: 3px var(--color-cream);
-    transform: translateX(-50%) scaleX(0.58);
+    transform: translateX(-50%) scaleX(0.56);
   }
 
   .hero-title-word {
@@ -734,8 +734,8 @@ summary:focus-visible {
   }
 
   .hero-burger {
-    top: 34%;
-    width: min(86vw, 370px);
+    top: 49%;
+    width: min(84vw, 360px);
     height: auto;
     aspect-ratio: 1 / 1;
     transform: translate(-50%, -50%);
@@ -751,30 +751,29 @@ summary:focus-visible {
   }
 
   .hero-sticker--fresh {
-    top: 8%;
+    top: 10%;
     left: 4%;
   }
 
   .hero-sticker--love {
-    top: 25%;
+    top: 28%;
     right: 3%;
   }
 
   .hero-wordmark {
     --hero-wordmark-rise: 24px;
-    top: 49%;
+    top: 64%;
     font-size: clamp(90px, 25vw, 122px);
     -webkit-text-stroke: 5px var(--color-cream);
   }
 
   .hero-bottom {
-    top: 64%;
     right: 17px;
-    bottom: auto;
+    bottom: 20px;
     left: 17px;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     text-align: center;
   }
 
@@ -785,8 +784,8 @@ summary:focus-visible {
   .hero-description,
   .hero-bottom-right {
     max-width: 350px;
-    font-size: 13px;
-    line-height: 1.08;
+    font-size: 14px;
+    line-height: 1.12;
     text-align: center;
   }
 
