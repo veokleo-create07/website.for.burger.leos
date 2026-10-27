@@ -78,7 +78,7 @@ create or replace function public.get_reservation_availability(
   p_guests integer,
   p_timezone text default 'Europe/Berlin'
 )
-returns table (time text, available boolean)
+returns table ("time" text, available boolean)
 language plpgsql
 security definer
 set search_path = public
@@ -109,7 +109,7 @@ begin
         and r.status in ('pending', 'confirmed')
         and r.start_time < v_end
         and r.end_time > v_slot;
-      time := to_char(v_slot, 'HH24:MI');
+      "time" := to_char(v_slot, 'HH24:MI');
       available := (v_reserved + p_guests <= v_capacity);
       return next;
     end if;
