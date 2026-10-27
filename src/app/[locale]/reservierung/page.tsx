@@ -89,6 +89,8 @@ export default async function ReservationPage({ params }: Props) {
           chooseDate: reservation("chooseDate"),
           chooseGuests: reservation("chooseGuests"),
           optional: reservation("optional"),
+          submitting: reservation("submitting"),
+          submitError: reservation("submitError"),
         }}
       />
     </main>
