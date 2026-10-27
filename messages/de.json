@@ -67,6 +67,9 @@
     "chooseGuests": "Personen",
     "optional": "optional",
     "reservationFor": "Reservierung für",
-    "status": "Verfügbar"
+    "status": "Verfügbar",
+    "selectedTime": "Uhrzeit",
+    "selectedGuests": "Gäste",
+    "selectedDuration": "Dauer"
   }
 }
