@@ -61,6 +61,12 @@ export function ReservationFlow({ labels, locale }: Props) {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [specialRequests, setSpecialRequests] = useState<string[]>([]);
+  const [largePartyOpen, setLargePartyOpen] = useState(false);
+  const [largePartySubmitted, setLargePartySubmitted] = useState(false);
+  const [inquiryName, setInquiryName] = useState("");
+  const [inquiryEmail, setInquiryEmail] = useState("");
+  const [inquiryPhone, setInquiryPhone] = useState("");
+  const [inquiryMessage, setInquiryMessage] = useState("");
 
   const duration = guests <= 3 ? 60 : 90;
   const monthCells = useMemo(() => calendarCells(visibleMonth), [visibleMonth]);
@@ -188,10 +194,59 @@ export function ReservationFlow({ labels, locale }: Props) {
                   ))}
                 </div>
                 <p className="reservation-helper">{guests} {labels.chooseGuests} · {durationLabel}</p>
-                <div className="reservation-large-party">
-                  <p>{labels.moreThanTen}</p>
-                  <a className="reservation-inline-link" href="tel:+494514857170">{labels.callRestaurant}</a>
-                </div>
+                <button
+                  type="button"
+                  className="reservation-inquiry-toggle"
+                  onClick={() => {
+                    setLargePartyOpen((current) => !current);
+                    setLargePartySubmitted(false);
+                  }}
+                  aria-expanded={largePartyOpen}
+                >
+                  {labels.largePartyPrompt}
+                  <span aria-hidden="true">{largePartyOpen ? "−" : "+"}</span>
+                </button>
+                {largePartyOpen ? (
+                  <div className="reservation-inquiry">
+                    {largePartySubmitted ? (
+                      <div className="reservation-inquiry-success" role="status">
+                        <strong>{labels.largePartySuccess}</strong>
+                        <button type="button" className="reservation-inline-link" onClick={() => setLargePartyOpen(false)}>
+                          {labels.closeInquiry}
+                        </button>
+                      </div>
+                    ) : (
+                      <form
+                        className="reservation-inquiry-form"
+                        onSubmit={(event) => {
+                          event.preventDefault();
+                          setLargePartySubmitted(true);
+                        }}
+                      >
+                        <p>{labels.moreThanTen}</p>
+                        <div className="reservation-inquiry-fields">
+                          <label>
+                            <span>{labels.largePartyName}</span>
+                            <input required value={inquiryName} onChange={(event) => setInquiryName(event.target.value)} autoComplete="name" />
+                          </label>
+                          <label>
+                            <span>{labels.largePartyEmail}</span>
+                            <input required type="email" value={inquiryEmail} onChange={(event) => setInquiryEmail(event.target.value)} autoComplete="email" />
+                          </label>
+                          <label>
+                            <span>{labels.largePartyPhone}</span>
+                            <input required type="tel" value={inquiryPhone} onChange={(event) => setInquiryPhone(event.target.value)} autoComplete="tel" />
+                          </label>
+                          <label className="reservation-inquiry-message">
+                            <span>{labels.largePartyMessage}</span>
+                            <textarea required value={inquiryMessage} onChange={(event) => setInquiryMessage(event.target.value)} rows={3} />
+                          </label>
+                        </div>
+                        <button type="submit" className="reservation-primary">{labels.largePartySubmit}</button>
+                      </form>
+                    )}
+                  </div>
+                ) : null}
               </fieldset>
 
               <div className="reservation-step-actions reservation-step-actions-end">
