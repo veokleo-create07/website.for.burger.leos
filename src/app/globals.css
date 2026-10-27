@@ -234,6 +234,108 @@ summary:focus-visible {
   background: var(--color-cream);
 }
 
+@keyframes hero-headline-word-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--hero-headline-rise, 70px)) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hero-burger-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--hero-burger-enter-y, 110px)) rotate(-3deg) scale(0.92);
+  }
+
+  72% {
+    opacity: 1;
+    transform: translateY(-4px) rotate(0.35deg) scale(1.012);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0) scale(1);
+  }
+}
+
+@keyframes hero-burger-float {
+  from {
+    transform: translateY(-7px);
+  }
+
+  to {
+    transform: translateY(7px);
+  }
+}
+
+@keyframes hero-wordmark-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(var(--hero-wordmark-rise, 35px)) scale(0.78);
+  }
+
+  78% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-3px) scale(1.015);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@keyframes hero-sticker-fresh-in {
+  from {
+    opacity: 0;
+    transform: rotate(5deg) scale(0.65);
+  }
+
+  78% {
+    opacity: 1;
+    transform: rotate(14deg) scale(1.02);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(13deg) scale(1);
+  }
+}
+
+@keyframes hero-sticker-love-in {
+  from {
+    opacity: 0;
+    transform: rotate(-21deg) scale(0.65);
+  }
+
+  78% {
+    opacity: 1;
+    transform: rotate(-12deg) scale(1.02);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(-13deg) scale(1);
+  }
+}
+
+@keyframes hero-support-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero-background-title {
   position: absolute;
   z-index: 0;
@@ -259,6 +361,29 @@ summary:focus-visible {
   pointer-events: none;
 }
 
+.hero-title-mask {
+  display: inline-block;
+  height: 0.9em;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.hero-title-word {
+  --hero-headline-rise: 70px;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(var(--hero-headline-rise)) scale(0.98);
+  animation: hero-headline-word-in 900ms cubic-bezier(0.22, 1, 0.36, 1) var(--hero-headline-delay, 0ms) both;
+}
+
+.hero-title-word--second {
+  --hero-headline-delay: 100ms;
+}
+
+.hero-title-word--third {
+  --hero-headline-delay: 200ms;
+}
+
 .hero-burger {
   position: absolute;
   z-index: 2;
@@ -271,6 +396,22 @@ summary:focus-visible {
   pointer-events: none;
 }
 
+.hero-burger-motion,
+.hero-burger-float {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-burger-motion {
+  --hero-burger-enter-y: 110px;
+  opacity: 0;
+  animation: hero-burger-in 1050ms cubic-bezier(0.22, 1, 0.36, 1) 350ms both;
+}
+
+.hero-burger-float {
+  animation: hero-burger-float 4.5s ease-in-out 1.75s infinite alternate;
+}
+
 .hero-burger img {
   z-index: 1;
   object-fit: contain;
@@ -280,6 +421,7 @@ summary:focus-visible {
 .hero-sticker {
   position: absolute;
   z-index: 4;
+  opacity: 0;
   color: #f7a900;
   font-family: var(--font-coiny);
   font-size: clamp(22px, 2.2vw, 46px);
@@ -297,17 +439,21 @@ summary:focus-visible {
   top: 12%;
   left: 12%;
   transform: rotate(13deg);
+  animation: hero-sticker-fresh-in 500ms cubic-bezier(0.22, 1, 0.36, 1) 1200ms both;
 }
 
 .hero-sticker--love {
   top: 35%;
   right: 9%;
   transform: rotate(-13deg);
+  animation: hero-sticker-love-in 500ms cubic-bezier(0.22, 1, 0.36, 1) 1350ms both;
 }
 
 .hero-wordmark {
   position: absolute;
   z-index: 3;
+  --hero-wordmark-rise: 35px;
+  opacity: 0;
   top: 67.5%;
   left: 50%;
   color: #f2a31a;
@@ -322,6 +468,7 @@ summary:focus-visible {
   -webkit-text-stroke: clamp(5px, 0.55vw, 12px) var(--color-cream);
   paint-order: stroke fill;
   transform: translateX(-50%);
+  animation: hero-wordmark-in 680ms cubic-bezier(0.22, 1, 0.36, 1) 900ms both;
   pointer-events: none;
 }
 
@@ -357,11 +504,23 @@ summary:focus-visible {
   text-align: right;
 }
 
+.hero-bottom-left > .hero-description {
+  opacity: 0;
+  animation: hero-support-in 550ms cubic-bezier(0.22, 1, 0.36, 1) 1500ms both;
+}
+
+.hero-bottom-right {
+  opacity: 0;
+  animation: hero-support-in 550ms cubic-bezier(0.22, 1, 0.36, 1) 1700ms both;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: nowrap;
   gap: 12px;
   margin-top: 14px;
+  opacity: 0;
+  animation: hero-support-in 550ms cubic-bezier(0.22, 1, 0.36, 1) 1600ms both;
 }
 
 .hero-button {
@@ -369,6 +528,11 @@ summary:focus-visible {
   padding-inline: 16px;
   font-size: 13px;
   letter-spacing: -0.01em;
+  transition-duration: 200ms;
+}
+
+.hero-button:active {
+  transform: translateY(0) scale(0.97);
 }
 
 .hero-button-secondary {
@@ -565,6 +729,10 @@ summary:focus-visible {
     transform: translate(-50%, -50%);
   }
 
+  .hero-burger-motion {
+    --hero-burger-enter-y: 72px;
+  }
+
   .hero-sticker {
     font-size: clamp(17px, 5.4vw, 24px);
     -webkit-text-stroke: 3px var(--color-cream);
@@ -581,6 +749,7 @@ summary:focus-visible {
   }
 
   .hero-wordmark {
+    --hero-wordmark-rise: 24px;
     top: 67%;
     font-size: clamp(90px, 25vw, 122px);
     -webkit-text-stroke: 5px var(--color-cream);
@@ -632,6 +801,45 @@ summary:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-title-word,
+  .hero-burger-motion,
+  .hero-burger-float,
+  .hero-wordmark,
+  .hero-sticker,
+  .hero-bottom-left > .hero-description,
+  .hero-bottom-right,
+  .hero-actions {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  .hero-title-word {
+    transform: none !important;
+  }
+
+  .hero-burger-motion,
+  .hero-burger-float {
+    transform: none !important;
+  }
+
+  .hero-wordmark {
+    transform: translateX(-50%) !important;
+  }
+
+  .hero-sticker--fresh {
+    transform: rotate(13deg) !important;
+  }
+
+  .hero-sticker--love {
+    transform: rotate(-13deg) !important;
+  }
+
+  .hero-bottom-left > .hero-description,
+  .hero-bottom-right,
+  .hero-actions {
+    transform: none !important;
+  }
+
   html {
     scroll-behavior: auto;
   }
