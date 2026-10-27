@@ -1630,3 +1630,132 @@ summary:focus-visible {
     gap: 6px;
   }
 }
+
+
+.reservation-inquiry-toggle {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  border: 0;
+  border-top: 1px solid rgb(36 34 31 / 12%);
+  padding: 13px 0 0;
+  background: transparent;
+  color: var(--color-burnt-orange);
+  cursor: pointer;
+  font-family: var(--font-bricolage-grotesque);
+  font-size: 13px;
+  font-weight: 650;
+  text-align: left;
+}
+
+.reservation-inquiry-toggle span {
+  display: inline-grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.reservation-inquiry {
+  margin-top: 14px;
+  border-left: 2px solid var(--color-burnt-orange);
+  padding-left: 14px;
+}
+
+.reservation-inquiry-form {
+  display: grid;
+  gap: 14px;
+}
+
+.reservation-inquiry-form > p {
+  margin: 0;
+  color: rgb(36 34 31 / 64%);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.reservation-inquiry-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.reservation-inquiry-fields label {
+  display: grid;
+  gap: 6px;
+  color: var(--color-charcoal);
+  font-family: var(--font-bricolage-grotesque);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.reservation-inquiry-fields label input,
+.reservation-inquiry-fields label textarea {
+  width: 100%;
+  border: 1px solid rgb(36 34 31 / 22%);
+  border-radius: 7px;
+  padding: 9px 10px;
+  outline: 0;
+  resize: vertical;
+  background: rgb(246 240 228 / 72%);
+  color: var(--color-charcoal);
+  font: inherit;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.reservation-inquiry-fields label input {
+  min-height: 40px;
+}
+
+.reservation-inquiry-fields label textarea:focus,
+.reservation-inquiry-fields label input:focus {
+  border-color: var(--color-olive-green);
+  box-shadow: 0 0 0 3px rgb(100 112 74 / 15%);
+}
+
+.reservation-inquiry-message {
+  grid-column: 1 / -1;
+}
+
+.reservation-inquiry-form .reservation-primary {
+  justify-self: start;
+  min-height: 42px;
+}
+
+.reservation-inquiry-success {
+  display: grid;
+  gap: 10px;
+  color: var(--color-charcoal);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.reservation-inquiry-success .reservation-inline-link {
+  justify-self: start;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .reservation-inquiry-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .reservation-inquiry-message {
+    grid-column: auto;
+  }
+
+  .reservation-inquiry-form .reservation-primary {
+    width: 100%;
+  }
+}
