@@ -78,7 +78,7 @@ export function ReservationFlow({ labels, locale }: Props) {
   const latestStart = 21 * 60 - duration;
   const timeSlots = useMemo(() => {
     const slots: string[] = [];
-    for (let minutes = openingStart; minutes <= latestStart; minutes += 15) {
+    for (let minutes = openingStart; minutes <= latestStart; minutes += 30) {
       slots.push(timeLabel(minutes));
     }
     return slots;
