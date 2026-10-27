@@ -70,6 +70,14 @@
     "status": "Available",
     "selectedTime": "Time",
     "selectedGuests": "Guests",
-    "selectedDuration": "Duration"
+    "selectedDuration": "Duration",
+    "largePartyPrompt": "More than 10 guests?",
+    "largePartyName": "Your name",
+    "largePartyEmail": "Email address",
+    "largePartyPhone": "Phone number",
+    "largePartyMessage": "Your message",
+    "largePartySubmit": "Send inquiry",
+    "largePartySuccess": "Thank you! Your inquiry is captured as a design preview. Our team will follow up with you personally.",
+    "closeInquiry": "Close inquiry"
   }
 }
