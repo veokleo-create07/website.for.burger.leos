@@ -34,10 +34,10 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
           <div className="hero-copy">
             <h1 className="hero-title" id="hero-title">
               <span className="hero-title-line hero-title-line--first">
-                <span className="hero-word hero-word--first">{t("headline.first")}</span>
+                <span className="hero-word hero-word--first">{t("headline.first")}</span>{" "}
+                <span className="hero-word hero-word--second">{t("headline.second")}</span>
               </span>
               <span className="hero-title-line hero-title-line--second hero-title-accent">
-                <span className="hero-word hero-word--second">{t("headline.second")}</span>{" "}
                 <span className="hero-word hero-word--third hero-title-last">{t("headline.third")}</span>
               </span>
             </h1>
