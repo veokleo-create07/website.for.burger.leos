@@ -227,41 +227,55 @@ summary:focus-visible {
 
 .hero-stage {
   position: relative;
-  min-height: max(700px, calc(100svh - 80px));
+  min-height: max(650px, calc(100svh - 80px));
   flex: 1;
   overflow: hidden;
   isolation: isolate;
 }
 
 .hero-copy {
-  position: absolute;
-  z-index: 0;
-  top: 5%;
-  left: 50%;
-  width: 100%;
-  padding: 0 clamp(18px, 3vw, 44px);
-  text-align: center;
-  transform: translateX(-50%);
+  position: static;
 }
 
 .hero-title {
+  position: static;
   margin: 0;
   font-family: var(--font-coiny);
-  font-size: clamp(112px, 12vw, 184px);
-  font-weight: 400;
-  letter-spacing: -0.07em;
-  line-height: 0.82;
+  font-size: clamp(110px, 15vw, 220px);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 0.85;
 }
 
 .hero-title-line {
+  position: absolute;
   display: block;
-  width: 100%;
+  width: max-content;
+  max-width: 94vw;
   white-space: nowrap;
 }
 
+.hero-title-line--first {
+  z-index: 1;
+  top: 7%;
+  left: 3%;
+  color: var(--color-charcoal);
+}
+
 .hero-title-line--second {
-  margin-top: -0.015em;
-  font-size: 0.84em;
+  z-index: 1;
+  top: 29%;
+  left: 8%;
+  color: var(--color-burnt-orange);
+}
+
+.hero-title-line--third {
+  z-index: 3;
+  bottom: 18%;
+  left: 11%;
+  font-size: clamp(110px, 13vw, 190px);
+  letter-spacing: -0.06em;
+  color: var(--color-burnt-orange);
 }
 
 .hero-word {
@@ -275,10 +289,6 @@ summary:focus-visible {
 
 .hero-word--third {
   animation-delay: 280ms;
-}
-
-.hero-title-accent {
-  color: var(--color-burnt-orange);
 }
 
 .hero-title-last {
@@ -301,31 +311,18 @@ summary:focus-visible {
 
 .hero-burger {
   position: absolute;
-  z-index: 1;
-  top: 16%;
+  z-index: 2;
+  top: 48%;
   left: 50%;
-  width: min(58vw, 760px);
-  height: 60%;
-  translate: -50% 0;
+  width: clamp(400px, 46vw, 680px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%);
   animation: hero-burger-entry 920ms cubic-bezier(0.2, 0.78, 0.24, 1) 220ms both;
 }
 
 .hero-burger-shadow {
-  position: absolute;
-  z-index: 0;
-  right: 15%;
-  bottom: 7%;
-  left: 15%;
-  height: 4%;
-  border-radius: 50%;
-  background: radial-gradient(
-    ellipse at center,
-    rgb(36 34 31 / 14%) 0%,
-    rgb(36 34 31 / 7%) 44%,
-    transparent 76%
-  );
-  filter: blur(9px);
-  pointer-events: none;
+  display: none;
 }
 
 .hero-burger img {
@@ -336,20 +333,19 @@ summary:focus-visible {
 
 .hero-bottom {
   position: absolute;
-  z-index: 2;
-  right: max(28px, 5vw);
+  z-index: 4;
+  right: 3%;
   bottom: 4%;
-  left: max(28px, 5vw);
-  display: grid;
-  grid-template-columns: minmax(220px, 1fr) auto;
-  align-items: end;
-  gap: 24px;
+  left: 3%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 .hero-description {
-  max-width: 390px;
+  max-width: 320px;
   margin: 0;
-  text-align: left;
+  color: var(--color-charcoal);
   font-size: 16px;
   line-height: 1.42;
   animation: hero-copy-entry 500ms cubic-bezier(0.2, 0.78, 0.24, 1) 980ms both;
@@ -358,24 +354,25 @@ summary:focus-visible {
 .hero-actions {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-end;
-  gap: clamp(11px, 0.8vw, 15px);
-  margin-top: 0;
+  gap: 12px;
+  margin: 0;
   animation: hero-copy-entry 500ms cubic-bezier(0.2, 0.78, 0.24, 1) 1100ms both;
 }
 
 .hero-button {
-  min-height: 46px;
+  width: fit-content;
+  min-height: 44px;
+  padding-inline: 18px;
 }
 
 .hero-button-secondary {
-  background: var(--color-cream);
+  background: transparent;
   color: var(--color-charcoal);
 }
 
 .hero-doodle {
   position: absolute;
-  z-index: 2;
+  z-index: 4;
   display: block;
   color: var(--color-olive-green);
   pointer-events: none;
@@ -383,8 +380,8 @@ summary:focus-visible {
 }
 
 .hero-doodle--orange {
-  top: 17%;
-  left: 5%;
+  top: 16%;
+  left: 4%;
   color: var(--color-burnt-orange);
 }
 
@@ -400,8 +397,8 @@ summary:focus-visible {
 }
 
 .hero-doodle--olive {
-  top: 18%;
-  right: 7%;
+  top: 16%;
+  right: 5%;
 }
 
 .hero-doodle--olive::before,
@@ -439,12 +436,12 @@ summary:focus-visible {
 @keyframes hero-burger-entry {
   from {
     opacity: 0;
-    transform: translate3d(0, var(--hero-burger-lift, 16px), 0) scale(0.92);
+    transform: translate(-50%, calc(-50% + var(--hero-burger-lift, 16px))) scale(0.94);
   }
 
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
