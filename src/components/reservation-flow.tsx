@@ -74,7 +74,7 @@ export function ReservationFlow({ labels, locale }: Props) {
   const [submitError, setSubmitError] = useState("");
   const [serverTimes, setServerTimes] = useState<string[] | null>(null);
 
-  const duration = guests <= 3 ? 60 : 90;
+  const duration = guests <= 2 ? 60 : 90;
   const monthCells = useMemo(() => calendarCells(visibleMonth), [visibleMonth]);
   const selectedDateObject = new Date(selectedDate + "T12:00:00");
   const dayOfWeek = selectedDateObject.getDay();
