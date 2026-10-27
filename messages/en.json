@@ -78,6 +78,8 @@
     "largePartyMessage": "Your message",
     "largePartySubmit": "Send inquiry",
     "largePartySuccess": "Thank you! Your inquiry is captured as a design preview. Our team will follow up with you personally.",
-    "closeInquiry": "Close inquiry"
+    "closeInquiry": "Close inquiry",
+    "changeDate": "Change date",
+    "timePlaceholder": "Choose a time"
   }
 }
