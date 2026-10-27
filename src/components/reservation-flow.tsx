@@ -84,7 +84,6 @@ export function ReservationFlow({ labels, locale }: Props) {
     return slots;
   }, [openingStart, latestStart]);
 
-  const stepLabel = labels.step.replace("{number}", String(step));
   const selectedDateLabel = formatDateForLocale(selectedDate, locale);
   const durationLabel = duration === 60 ? labels.hour : labels.hours;
 
