@@ -328,7 +328,7 @@ export function ReservationFlow({ labels, locale }: Props) {
               <fieldset className="reservation-request-fieldset">
                 <legend>{labels.specialRequests} <span>({labels.optional})</span></legend>
                 <div className="reservation-request-grid">
-                  {[["birthday", labels.birthday], ["children", labels.children], ["highChair", labels.highChair], ["dog", labels.dog]].map(([value, text]) => (
+                  {[["birthday", labels.birthday], ["children", labels.children], ["dog", labels.dog]].map(([value, text]) => (
                     <button
                       type="button"
                       key={value}
