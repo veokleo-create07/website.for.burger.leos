@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import type { FormEvent } from "react";
 
 type ReservationLabels = Record<string, string>;
 
@@ -99,7 +100,7 @@ export function ReservationFlow({ labels, locale }: Props) {
     if (selectedTime) setStep(3);
   };
 
-  const confirmPreview = (event: React.FormEvent<HTMLFormElement>) => {
+  const confirmPreview = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStep(4);
   };
@@ -187,6 +188,10 @@ export function ReservationFlow({ labels, locale }: Props) {
                   ))}
                 </div>
                 <p className="reservation-helper">{guests} {labels.chooseGuests} · {durationLabel}</p>
+                <div className="reservation-large-party">
+                  <p>{labels.moreThanTen}</p>
+                  <a className="reservation-inline-link" href="tel:+494514857170">{labels.callRestaurant}</a>
+                </div>
               </fieldset>
 
               <div className="reservation-step-actions reservation-step-actions-end">
