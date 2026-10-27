@@ -68,6 +68,8 @@ export function ReservationFlow({ labels, locale }: Props) {
   const [inquiryEmail, setInquiryEmail] = useState("");
   const [inquiryPhone, setInquiryPhone] = useState("");
   const [inquiryMessage, setInquiryMessage] = useState("");
+  const [inquirySubmitting, setInquirySubmitting] = useState(false);
+  const [inquiryError, setInquiryError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [serverTimes, setServerTimes] = useState<string[] | null>(null);
@@ -268,9 +270,33 @@ export function ReservationFlow({ labels, locale }: Props) {
                         ) : (
                           <form
                             className="reservation-inquiry-form"
-                            onSubmit={(event) => {
+                            onSubmit={async (event) => {
                               event.preventDefault();
-                              setLargePartySubmitted(true);
+                              if (inquirySubmitting) return;
+                              setInquirySubmitting(true);
+                              setInquiryError("");
+                              try {
+                                const response = await fetch("/api/reservation-inquiries", {
+                                  method: "POST",
+                                  headers: { "Content-Type": "application/json" },
+                                  body: JSON.stringify({
+                                    name: inquiryName,
+                                    email: inquiryEmail,
+                                    phone: inquiryPhone,
+                                    message: inquiryMessage,
+                                  }),
+                                });
+                                const payload = (await response.json()) as { error?: string };
+                                if (!response.ok) {
+                                  setInquiryError(payload.error ?? labels.submitError);
+                                  return;
+                                }
+                                setLargePartySubmitted(true);
+                              } catch {
+                                setInquiryError(labels.submitError);
+                              } finally {
+                                setInquirySubmitting(false);
+                              }
                             }}
                           >
                             <p>{labels.moreThanTen}</p>
@@ -292,7 +318,8 @@ export function ReservationFlow({ labels, locale }: Props) {
                                 <textarea required value={inquiryMessage} onChange={(event) => setInquiryMessage(event.target.value)} rows={3} />
                               </label>
                             </div>
-                            <button type="submit" className="reservation-primary">{labels.largePartySubmit}</button>
+                            {inquiryError ? <p className="reservation-submit-error" role="alert">{inquiryError}</p> : null}
+                            <button type="submit" className="reservation-primary" disabled={inquirySubmitting}>{inquirySubmitting ? labels.submitting : labels.largePartySubmit}</button>
                           </form>
                         )}
                       </div>
