@@ -209,3 +209,50 @@ revoke all on function public.get_reservation_availability(date, integer, text) 
 revoke all on function public.create_reservation(date, time, integer, text, text, text, jsonb, text) from public, anon, authenticated;
 grant execute on function public.get_reservation_availability(date, integer, text) to service_role;
 grant execute on function public.create_reservation(date, time, integer, text, text, text, jsonb, text) to service_role;
+
+
+create table if not exists public.reservation_inquiries (
+  id uuid primary key default gen_random_uuid(),
+  guest_name text not null check (char_length(trim(guest_name)) between 2 and 120),
+  guest_email text not null check (char_length(trim(guest_email)) between 3 and 254),
+  guest_phone text not null check (char_length(trim(guest_phone)) between 5 and 40),
+  message text not null check (char_length(trim(message)) between 2 and 2000),
+  status text not null default 'new' check (status in ('new', 'contacted', 'closed')),
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+alter table public.reservation_inquiries enable row level security;
+revoke all on public.reservation_inquiries from anon, authenticated;
+
+create or replace function public.create_reservation_inquiry(
+  p_name text,
+  p_email text,
+  p_phone text,
+  p_message text
+)
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  inquiry_id uuid;
+begin
+  if p_name is null or char_length(trim(p_name)) < 2
+     or p_email is null or position('@' in p_email) < 2
+     or p_phone is null or char_length(trim(p_phone)) < 5
+     or p_message is null or char_length(trim(p_message)) < 2 then
+    raise exception using errcode = '22023', message = 'invalid_inquiry';
+  end if;
+
+  insert into public.reservation_inquiries (guest_name, guest_email, guest_phone, message)
+  values (trim(p_name), lower(trim(p_email)), trim(p_phone), trim(p_message))
+  returning id into inquiry_id;
+
+  return inquiry_id;
+end;
+$$;
+
+revoke all on function public.create_reservation_inquiry(text, text, text, text) from public, anon, authenticated;
+grant execute on function public.create_reservation_inquiry(text, text, text, text) to service_role;
