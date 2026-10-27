@@ -78,6 +78,8 @@
     "largePartyMessage": "Deine Nachricht",
     "largePartySubmit": "Anfrage senden",
     "largePartySuccess": "Danke! Deine Anfrage ist als Designvorschau erfasst. Unser Team meldet sich persönlich bei dir.",
-    "closeInquiry": "Anfrage schließen"
+    "closeInquiry": "Anfrage schließen",
+    "changeDate": "Datum ändern",
+    "timePlaceholder": "Uhrzeit auswählen"
   }
 }
