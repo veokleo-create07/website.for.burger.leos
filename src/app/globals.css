@@ -1590,3 +1590,44 @@ summary:focus-visible {
     transition: none !important;
   }
 }
+
+
+.reservation-large-party {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 14px;
+  border-top: 1px solid rgb(36 34 31 / 12%);
+  padding-top: 12px;
+}
+
+.reservation-large-party p {
+  max-width: 390px;
+  margin: 0;
+  color: rgb(36 34 31 / 58%);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.reservation-inline-link {
+  flex: 0 0 auto;
+  color: var(--color-burnt-orange);
+  font-family: var(--font-bricolage-grotesque);
+  font-size: 12px;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.reservation-inline-link:hover {
+  color: var(--color-charcoal);
+}
+
+@media (max-width: 767px) {
+  .reservation-large-party {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+}
