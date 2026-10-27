@@ -80,6 +80,8 @@
     "largePartySuccess": "Thank you! Your inquiry is captured as a design preview. Our team will follow up with you personally.",
     "closeInquiry": "Close inquiry",
     "changeDate": "Change date",
-    "timePlaceholder": "Choose a time"
+    "timePlaceholder": "Choose a time",
+    "submitting": "Sending …",
+    "submitError": "The reservation could not be saved. Please try again."
   }
 }
