@@ -55,6 +55,7 @@ export function ReservationFlow({ labels, locale }: Props) {
   const [step, setStep] = useState(1);
   const [visibleMonth, setVisibleMonth] = useState(initialMonth);
   const [selectedDate, setSelectedDate] = useState(initialDate);
+  const [selectionPhase, setSelectionPhase] = useState<"date" | "guests">("date");
   const [guests, setGuests] = useState(2);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [fullName, setFullName] = useState("");
@@ -96,6 +97,9 @@ export function ReservationFlow({ labels, locale }: Props) {
     setSelectedTime(null);
   };
 
+  const continueToGuests = () => setSelectionPhase("guests");
+  const backToDate = () => setSelectionPhase("date");
+
   const toggleRequest = (request: string) => {
     setSpecialRequests((current) =>
       current.includes(request) ? current.filter((item) => item !== request) : [...current, request],
@@ -115,145 +119,150 @@ export function ReservationFlow({ labels, locale }: Props) {
     <section className="reservation-main" aria-labelledby="reservation-title">
       <div className="reservation-layout">
         <aside className="reservation-intro">
-          <p className="reservation-eyebrow">{labels.eyebrow}</p>
           <h1 id="reservation-title" className="reservation-title">
             {step === 1 ? labels.title : step === 2 ? labels.selectTime : step === 3 ? labels.detailsTitle : labels.confirmedTitle}
           </h1>
-          {step < 4 ? <p className="reservation-intro-copy">{labels.intro}</p> : null}
-          <div className="reservation-preview-note">{labels.previewNotice}</div>
-          {step < 4 ? (
-            <div className="reservation-progress" aria-label={stepLabel}>
-              <span className="reservation-progress-number">{stepLabel}</span>
-              <span className="reservation-progress-track" aria-hidden="true">
-                <span style={{ width: (step / 4) * 100 + "%" }} />
-              </span>
-            </div>
-          ) : null}
         </aside>
 
         <div className="reservation-panel">
           {step === 1 ? (
             <div className="reservation-step reservation-step-enter">
-              <div className="reservation-section-heading">
-                <div>
-                  <span className="reservation-label">{labels.date}</span>
-                  <strong>{selectedDateLabel}</strong>
-                </div>
-                <span className="reservation-duration-chip">
-                  {labels.duration}: {durationLabel}
-                </span>
-              </div>
-
-              <div className="reservation-calendar">
-                <div className="reservation-calendar-header">
-                  <button type="button" className="reservation-icon-button" onClick={() => moveMonth(-1)} aria-label={labels.monthPrev}>
-                    ←
-                  </button>
-                  <strong>
-                    {new Intl.DateTimeFormat(locale, { month: "long", year: "numeric" }).format(visibleMonth)}
-                  </strong>
-                  <button type="button" className="reservation-icon-button" onClick={() => moveMonth(1)} aria-label={labels.monthNext}>
-                    →
-                  </button>
-                </div>
-                <div className="reservation-weekdays" aria-hidden="true">
-                  {weekdays.map((day) => <span key={day}>{locale === "en" ? ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"][weekdays.indexOf(day)] : day}</span>)}
-                </div>
-                <div className="reservation-calendar-grid" role="grid" aria-label={labels.chooseDate}>
-                  {monthCells.map((cell) =>
-                    cell.inMonth ? (
-                      <button
-                        type="button"
-                        key={cell.key}
-                        className={selectedDate === cell.key ? "reservation-date reservation-date-selected" : "reservation-date"}
-                        onClick={() => chooseDate(cell.key)}
-                        aria-pressed={selectedDate === cell.key}
-                      >
-                        {cell.day}
+              {selectionPhase === "date" ? (
+                <>
+                  <div className="reservation-section-heading reservation-section-heading-stacked">
+                    <span className="reservation-label">{labels.date}</span>
+                    <strong>{selectedDateLabel}</strong>
+                  </div>
+                  <div className="reservation-calendar">
+                    <div className="reservation-calendar-header">
+                      <button type="button" className="reservation-icon-button" onClick={() => moveMonth(-1)} aria-label={labels.monthPrev}>
+                        ←
                       </button>
-                    ) : (
-                      <span key={cell.key} className="reservation-date reservation-date-empty" aria-hidden="true" />
-                    ),
-                  )}
-                </div>
-              </div>
-
-              <fieldset className="reservation-guest-fieldset">
-                <legend>{labels.guests}</legend>
-                <div className="reservation-guest-grid">
-                  {Array.from({ length: 10 }, (_, index) => index + 1).map((value) => (
+                      <strong>
+                        {new Intl.DateTimeFormat(locale, { month: "long", year: "numeric" }).format(visibleMonth)}
+                      </strong>
+                      <button type="button" className="reservation-icon-button" onClick={() => moveMonth(1)} aria-label={labels.monthNext}>
+                        →
+                      </button>
+                    </div>
+                    <div className="reservation-weekdays" aria-hidden="true">
+                      {weekdays.map((day) => <span key={day}>{locale === "en" ? ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"][weekdays.indexOf(day)] : day}</span>)}
+                    </div>
+                    <div className="reservation-calendar-grid" role="grid" aria-label={labels.chooseDate}>
+                      {monthCells.map((cell) =>
+                        cell.inMonth ? (
+                          <button
+                            type="button"
+                            key={cell.key}
+                            className={selectedDate === cell.key ? "reservation-date reservation-date-selected" : "reservation-date"}
+                            onClick={() => chooseDate(cell.key)}
+                            aria-pressed={selectedDate === cell.key}
+                          >
+                            {cell.day}
+                          </button>
+                        ) : (
+                          <span key={cell.key} className="reservation-date reservation-date-empty" aria-hidden="true" />
+                        ),
+                      )}
+                    </div>
+                  </div>
+                  <div className="reservation-step-actions reservation-step-actions-end">
+                    <button type="button" className="reservation-primary" onClick={continueToGuests}>
+                      {labels.continue}
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="reservation-section-heading">
+                    <div>
+                      <span className="reservation-label">{labels.date}</span>
+                      <strong>{selectedDateLabel}</strong>
+                    </div>
+                    <button type="button" className="reservation-inline-link reservation-change-date" onClick={backToDate}>
+                      {labels.changeDate}
+                    </button>
+                  </div>
+                  <fieldset className="reservation-guest-fieldset">
+                    <legend>{labels.guests}</legend>
+                    <div className="reservation-guest-grid">
+                      {Array.from({ length: 10 }, (_, index) => index + 1).map((value) => (
+                        <button
+                          type="button"
+                          key={value}
+                          className={guests === value ? "reservation-guest reservation-guest-selected" : "reservation-guest"}
+                          onClick={() => setGuests(value)}
+                          aria-pressed={guests === value}
+                        >
+                          {value}
+                        </button>
+                      ))}
+                    </div>
+                    <p className="reservation-helper">{guests} {labels.chooseGuests} · {durationLabel}</p>
                     <button
                       type="button"
-                      key={value}
-                      className={guests === value ? "reservation-guest reservation-guest-selected" : "reservation-guest"}
-                      onClick={() => setGuests(value)}
-                      aria-pressed={guests === value}
+                      className="reservation-inquiry-toggle"
+                      onClick={() => {
+                        setLargePartyOpen((current) => !current);
+                        setLargePartySubmitted(false);
+                      }}
+                      aria-expanded={largePartyOpen}
                     >
-                      {value}
+                      {labels.largePartyPrompt}
+                      <span aria-hidden="true">{largePartyOpen ? "−" : "+"}</span>
                     </button>
-                  ))}
-                </div>
-                <p className="reservation-helper">{guests} {labels.chooseGuests} · {durationLabel}</p>
-                <button
-                  type="button"
-                  className="reservation-inquiry-toggle"
-                  onClick={() => {
-                    setLargePartyOpen((current) => !current);
-                    setLargePartySubmitted(false);
-                  }}
-                  aria-expanded={largePartyOpen}
-                >
-                  {labels.largePartyPrompt}
-                  <span aria-hidden="true">{largePartyOpen ? "−" : "+"}</span>
-                </button>
-                {largePartyOpen ? (
-                  <div className="reservation-inquiry">
-                    {largePartySubmitted ? (
-                      <div className="reservation-inquiry-success" role="status">
-                        <strong>{labels.largePartySuccess}</strong>
-                        <button type="button" className="reservation-inline-link" onClick={() => setLargePartyOpen(false)}>
-                          {labels.closeInquiry}
-                        </button>
+                    {largePartyOpen ? (
+                      <div className="reservation-inquiry">
+                        {largePartySubmitted ? (
+                          <div className="reservation-inquiry-success" role="status">
+                            <strong>{labels.largePartySuccess}</strong>
+                            <button type="button" className="reservation-inline-link" onClick={() => setLargePartyOpen(false)}>
+                              {labels.closeInquiry}
+                            </button>
+                          </div>
+                        ) : (
+                          <form
+                            className="reservation-inquiry-form"
+                            onSubmit={(event) => {
+                              event.preventDefault();
+                              setLargePartySubmitted(true);
+                            }}
+                          >
+                            <p>{labels.moreThanTen}</p>
+                            <div className="reservation-inquiry-fields">
+                              <label>
+                                <span>{labels.largePartyName}</span>
+                                <input required value={inquiryName} onChange={(event) => setInquiryName(event.target.value)} autoComplete="name" />
+                              </label>
+                              <label>
+                                <span>{labels.largePartyEmail}</span>
+                                <input required type="email" value={inquiryEmail} onChange={(event) => setInquiryEmail(event.target.value)} autoComplete="email" />
+                              </label>
+                              <label>
+                                <span>{labels.largePartyPhone}</span>
+                                <input required type="tel" value={inquiryPhone} onChange={(event) => setInquiryPhone(event.target.value)} autoComplete="tel" />
+                              </label>
+                              <label className="reservation-inquiry-message">
+                                <span>{labels.largePartyMessage}</span>
+                                <textarea required value={inquiryMessage} onChange={(event) => setInquiryMessage(event.target.value)} rows={3} />
+                              </label>
+                            </div>
+                            <button type="submit" className="reservation-primary">{labels.largePartySubmit}</button>
+                          </form>
+                        )}
                       </div>
-                    ) : (
-                      <form
-                        className="reservation-inquiry-form"
-                        onSubmit={(event) => {
-                          event.preventDefault();
-                          setLargePartySubmitted(true);
-                        }}
-                      >
-                        <p>{labels.moreThanTen}</p>
-                        <div className="reservation-inquiry-fields">
-                          <label>
-                            <span>{labels.largePartyName}</span>
-                            <input required value={inquiryName} onChange={(event) => setInquiryName(event.target.value)} autoComplete="name" />
-                          </label>
-                          <label>
-                            <span>{labels.largePartyEmail}</span>
-                            <input required type="email" value={inquiryEmail} onChange={(event) => setInquiryEmail(event.target.value)} autoComplete="email" />
-                          </label>
-                          <label>
-                            <span>{labels.largePartyPhone}</span>
-                            <input required type="tel" value={inquiryPhone} onChange={(event) => setInquiryPhone(event.target.value)} autoComplete="tel" />
-                          </label>
-                          <label className="reservation-inquiry-message">
-                            <span>{labels.largePartyMessage}</span>
-                            <textarea required value={inquiryMessage} onChange={(event) => setInquiryMessage(event.target.value)} rows={3} />
-                          </label>
-                        </div>
-                        <button type="submit" className="reservation-primary">{labels.largePartySubmit}</button>
-                      </form>
-                    )}
+                    ) : null}
+                  </fieldset>
+                  <div className="reservation-step-actions reservation-step-actions-end">
+                    <button type="button" className="reservation-secondary" onClick={backToDate}>
+                      {labels.back}
+                    </button>
+                    <button type="button" className="reservation-primary" onClick={() => setStep(2)}>
+                      {labels.continue}
+                    </button>
                   </div>
-                ) : null}
-              </fieldset>
-
-              <div className="reservation-step-actions reservation-step-actions-end">
-                <button type="button" className="reservation-primary" onClick={() => setStep(2)}>
-                  {labels.continue}
-                </button>
-              </div>
+                </>
+              )}
             </div>
           ) : null}
 
@@ -269,20 +278,13 @@ export function ReservationFlow({ labels, locale }: Props) {
                 <strong>{labels.openingHours}</strong>
               </div>
               <p className="reservation-opening-note">{labels.openingHoursNote}</p>
-              <div className="reservation-time-grid" role="listbox" aria-label={labels.selectTime}>
-                {timeSlots.map((time) => (
-                  <button
-                    type="button"
-                    key={time}
-                    className={selectedTime === time ? "reservation-time reservation-time-selected" : "reservation-time"}
-                    onClick={() => setSelectedTime(time)}
-                    aria-selected={selectedTime === time}
-                    role="option"
-                  >
-                    {time}
-                  </button>
-                ))}
-              </div>
+              <label className="reservation-time-picker">
+                <span>{labels.timePlaceholder}</span>
+                <select value={selectedTime ?? ""} onChange={(event) => setSelectedTime(event.target.value)}>
+                  <option value="" disabled>{labels.timePlaceholder}</option>
+                  {timeSlots.map((time) => <option key={time} value={time}>{time}</option>)}
+                </select>
+              </label>
               <p className="reservation-duration-note">◷ {labels.duration}: {durationLabel}</p>
               <div className="reservation-step-actions">
                 <button type="button" className="reservation-secondary" onClick={() => setStep(1)}>
