@@ -594,24 +594,26 @@ summary:focus-visible {
   }
 
   .hero-stage {
-    min-height: 680px;
+    min-height: 720px;
     flex: 1;
   }
 
   .hero-copy {
-    top: 5%;
-    padding-inline: 8px;
+    position: relative;
+    width: 94vw;
+    margin: 0 auto;
+    padding-top: 5%;
     --hero-word-lift: 0.2em;
   }
 
   .hero-title {
-    font-size: clamp(52px, 14vw, 64px);
+    font-size: clamp(54px, 15.5vw, 68px);
     letter-spacing: -0.055em;
-    line-height: 0.86;
+    line-height: 0.85;
   }
 
   .hero-title-line--second {
-    font-size: 0.84em;
+    margin-top: -0.02em;
   }
 
   .hero-title-last::after {
@@ -619,57 +621,46 @@ summary:focus-visible {
   }
 
   .hero-burger {
-    top: 17%;
-    width: min(72vw, 300px);
-    height: 50%;
+    top: 53%;
+    left: 50%;
+    width: min(95vw, 410px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    transform: translate(-50%, -50%);
     --hero-burger-lift: 12px;
-  }
-
-  .hero-burger-shadow {
-    bottom: 3%;
-    height: 7%;
-    filter: blur(6px);
   }
 
   .hero-bottom {
     right: 17px;
     bottom: 24px;
     left: 17px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 0;
     text-align: center;
   }
 
   .hero-description {
     width: min(100%, 350px);
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.42;
-    --hero-copy-lift: 10px;
     text-align: center;
+    --hero-copy-lift: 10px;
   }
 
   .hero-actions {
     width: min(100%, 390px);
-    flex-wrap: nowrap;
     gap: 8px;
     margin-top: 14px;
     --hero-copy-lift: 10px;
   }
 
   .hero-button {
-    width: auto;
-    min-width: 0;
-    flex: 1 1 0;
-    min-height: 46px;
+    min-height: 44px;
     padding-inline: 8px;
     font-size: 12px;
-    white-space: nowrap;
   }
 
   .hero-doodle--orange {
-    top: 15%;
+    top: 14%;
     left: 8%;
     scale: 0.68;
     rotate: 14deg;
@@ -677,7 +668,7 @@ summary:focus-visible {
   }
 
   .hero-doodle--olive {
-    top: 22%;
+    top: 21%;
     right: 8%;
     scale: 0.78;
   }
