@@ -719,22 +719,26 @@ summary:focus-visible {
   }
 
   .hero-stage {
-    min-height: 900px;
+    min-height: 820px;
     flex: 1;
   }
 
   .hero-background-title {
-    top: 9%;
-    gap: clamp(6px, 1vw, 12px);
-    font-size: clamp(56px, 18vw, 76px);
+    top: 7%;
+    gap: clamp(5px, 0.8vw, 9px);
+    font-size: clamp(50px, 15vw, 64px);
     letter-spacing: -0.05em;
-    -webkit-text-stroke: 4px var(--color-cream);
-    transform: translateX(-50%) scaleX(0.58);
+    -webkit-text-stroke: 3px var(--color-cream);
+    transform: translateX(-50%) scaleX(0.56);
+  }
+
+  .hero-title-word {
+    --hero-headline-rise: 48px;
   }
 
   .hero-burger {
     top: 49%;
-    width: min(88vw, 380px);
+    width: min(84vw, 360px);
     height: auto;
     aspect-ratio: 1 / 1;
     transform: translate(-50%, -50%);
@@ -750,29 +754,29 @@ summary:focus-visible {
   }
 
   .hero-sticker--fresh {
-    top: 12%;
-    left: 5%;
+    top: 10%;
+    left: 4%;
   }
 
   .hero-sticker--love {
-    top: 31%;
-    right: 4%;
+    top: 28%;
+    right: 3%;
   }
 
   .hero-wordmark {
     --hero-wordmark-rise: 24px;
-    top: 67%;
+    top: 64%;
     font-size: clamp(90px, 25vw, 122px);
     -webkit-text-stroke: 5px var(--color-cream);
   }
 
   .hero-bottom {
     right: 17px;
-    bottom: 22px;
+    bottom: 20px;
     left: 17px;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 10px;
     text-align: center;
   }
 
@@ -789,9 +793,10 @@ summary:focus-visible {
   }
 
   .hero-actions {
+    width: 100%;
     justify-content: center;
     gap: 8px;
-    margin-top: 12px;
+    margin-top: 10px;
   }
 
   .hero-button {
