@@ -308,11 +308,11 @@ summary:focus-visible {
 .hero-wordmark {
   position: absolute;
   z-index: 3;
-  top: 68%;
+  top: 70%;
   left: 50%;
   color: var(--color-charcoal);
   font-family: var(--font-coiny);
-  font-size: clamp(128px, 11.5vw, 240px);
+  font-size: clamp(140px, 12.5vw, 260px);
   font-weight: 900;
   letter-spacing: -0.09em;
   line-height: 0.78;
@@ -580,8 +580,8 @@ summary:focus-visible {
   }
 
   .hero-wordmark {
-    top: 68%;
-    font-size: clamp(84px, 23vw, 112px);
+    top: 70%;
+    font-size: clamp(90px, 25vw, 122px);
     -webkit-text-stroke: 5px var(--color-cream);
   }
 
