@@ -128,9 +128,36 @@ export function ReservationFlow({ labels, locale }: Props) {
     if (selectedTime) setStep(3);
   };
 
-  const confirmPreview = (event: FormEvent<HTMLFormElement>) => {
+  const confirmPreview = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setStep(4);
+    if (!selectedTime || isSubmitting) return;
+    setIsSubmitting(true);
+    setSubmitError("");
+    try {
+      const response = await fetch("/api/reservations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          date: selectedDate,
+          time: selectedTime,
+          guests,
+          name: fullName,
+          email,
+          phone,
+          specialRequests,
+        }),
+      });
+      const payload = (await response.json()) as { error?: string };
+      if (!response.ok) {
+        setSubmitError(payload.error ?? labels.submitError);
+        return;
+      }
+      setStep(4);
+    } catch {
+      setSubmitError(labels.submitError);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -363,12 +390,14 @@ export function ReservationFlow({ labels, locale }: Props) {
 
               <p className="reservation-allergy-note">{labels.allergyNotice}</p>
 
+              {submitError ? <p className="reservation-submit-error" role="alert">{submitError}</p> : null}
+
               <div className="reservation-step-actions">
-                <button type="button" className="reservation-secondary" onClick={() => setStep(2)}>
+                <button type="button" className="reservation-secondary" onClick={() => setStep(2)} disabled={isSubmitting}>
                   {labels.back}
                 </button>
-                <button type="submit" className="reservation-primary">
-                  {labels.confirm}
+                <button type="submit" className="reservation-primary" disabled={isSubmitting}>
+                  {isSubmitting ? labels.submitting : labels.confirm}
                 </button>
               </div>
             </form>
