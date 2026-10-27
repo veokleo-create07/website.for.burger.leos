@@ -18,9 +18,10 @@ type Props = {
     mainNavigation: string;
     mobileNavigation: string;
   };
+  bookingHref?: string;
 };
 
-export function SiteHeader({ locale, labels }: Props) {
+export function SiteHeader({ locale, labels, bookingHref }: Props) {
   const links = [
     { label: labels.home, href: `/${locale}`, current: true },
     { label: labels.menu, href: `/${locale}#speisekarte` },
@@ -69,7 +70,7 @@ export function SiteHeader({ locale, labels }: Props) {
         </a>
         <span className="header-divider" aria-hidden="true" />
         <LanguageSwitcher locale={locale} label={labels.language} />
-        <a className="header-booking" href="#reservierung">
+        <a className="header-booking" href={bookingHref ?? "#reservierung"}>
           {labels.booking}
         </a>
         <details className="mobile-menu">
