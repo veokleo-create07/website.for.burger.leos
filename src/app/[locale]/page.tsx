@@ -31,6 +31,18 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
         />
 
         <section className="hero-stage" aria-labelledby="hero-title">
+          <div className="hero-copy">
+            <h1 className="hero-title" id="hero-title">
+              <span className="hero-title-line hero-title-line--first">
+                <span className="hero-word hero-word--first">{t("headline.first")}</span>
+              </span>
+              <span className="hero-title-line hero-title-line--second hero-title-accent">
+                <span className="hero-word hero-word--second">{t("headline.second")}</span>{" "}
+                <span className="hero-word hero-word--third hero-title-last">{t("headline.third")}</span>
+              </span>
+            </h1>
+          </div>
+
           <div className="hero-burger" aria-hidden="true">
             <span className="hero-burger-shadow" />
             <Image
@@ -38,24 +50,13 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
               alt=""
               fill
               priority
-              sizes="(max-width: 767px) 72vw, 62vw"
+              sizes="(max-width: 767px) 82vw, 68vw"
             />
           </div>
           <span className="hero-doodle hero-doodle--orange" aria-hidden="true" />
           <span className="hero-doodle hero-doodle--olive" aria-hidden="true" />
 
-          <div className="hero-copy">
-            <h1 className="hero-title" id="hero-title">
-              <span className="hero-title-line hero-title-line--first">
-                <span className="hero-word hero-word--first">{t("headline.first")}</span>
-              </span>
-              <span className="hero-title-line hero-title-line--second hero-title-accent">
-                <span className="hero-word hero-word--second">{t("headline.second")}</span>
-              </span>
-              <span className="hero-title-line hero-title-line--third hero-title-accent hero-title-last">
-                <span className="hero-word hero-word--third">{t("headline.third")}</span>
-              </span>
-            </h1>
+          <div className="hero-bottom">
             <p className="hero-description">{t("description")}</p>
             <div className="hero-actions">
               <a className="hero-button hero-button-primary" href="#reservierung">
