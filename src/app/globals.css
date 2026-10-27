@@ -341,6 +341,11 @@ summary:focus-visible {
   z-index: 0;
   top: 10%;
   left: 50%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: clamp(8px, 1.2vw, 28px);
+  word-break: keep-all;
   width: max-content;
   max-width: none;
   margin: 0;
@@ -363,7 +368,8 @@ summary:focus-visible {
 
 .hero-title-mask {
   display: inline-block;
-  height: 0.9em;
+  flex: 0 0 auto;
+  height: 1em;
   overflow: hidden;
   vertical-align: bottom;
 }
@@ -372,6 +378,7 @@ summary:focus-visible {
   --hero-headline-rise: 70px;
   display: inline-block;
   opacity: 0;
+  white-space: nowrap;
   transform: translateY(var(--hero-headline-rise)) scale(0.98);
   animation: hero-headline-word-in 900ms cubic-bezier(0.22, 1, 0.36, 1) var(--hero-headline-delay, 0ms) both;
 }
@@ -715,10 +722,11 @@ summary:focus-visible {
 
   .hero-background-title {
     top: 9%;
-    font-size: clamp(58px, 20vw, 82px);
+    gap: clamp(6px, 1vw, 12px);
+    font-size: clamp(56px, 18vw, 76px);
     letter-spacing: -0.05em;
     -webkit-text-stroke: 4px var(--color-cream);
-    transform: translateX(-50%) scaleX(0.64);
+    transform: translateX(-50%) scaleX(0.58);
   }
 
   .hero-burger {
