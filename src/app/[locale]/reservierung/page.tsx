@@ -82,6 +82,8 @@ export default async function ReservationPage({ params }: Props) {
           largePartySubmit: reservation("largePartySubmit"),
           largePartySuccess: reservation("largePartySuccess"),
           closeInquiry: reservation("closeInquiry"),
+          changeDate: reservation("changeDate"),
+          timePlaceholder: reservation("timePlaceholder"),
           monthPrev: reservation("monthPrev"),
           monthNext: reservation("monthNext"),
           chooseDate: reservation("chooseDate"),
