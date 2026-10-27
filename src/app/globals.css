@@ -262,9 +262,9 @@ summary:focus-visible {
 .hero-burger {
   position: absolute;
   z-index: 2;
-  top: 55%;
+  top: 52%;
   left: 50%;
-  width: clamp(400px, 37vw, 760px);
+  width: clamp(380px, 34.5vw, 700px);
   height: auto;
   aspect-ratio: 1 / 1;
   transform: translate(-50%, -50%);
@@ -308,9 +308,9 @@ summary:focus-visible {
 .hero-wordmark {
   position: absolute;
   z-index: 3;
-  top: 70%;
+  top: 67.5%;
   left: 50%;
-  color: var(--color-olive-green);
+  color: #f2a31a;
   font-family: var(--font-coiny);
   font-size: clamp(140px, 12.5vw, 260px);
   font-weight: 900;
@@ -349,7 +349,7 @@ summary:focus-visible {
   font-size: clamp(20px, 1.32vw, 28px);
   font-weight: 700;
   letter-spacing: -0.035em;
-  line-height: 1.08;
+  line-height: 1.04;
 }
 
 .hero-bottom-right {
@@ -366,8 +366,9 @@ summary:focus-visible {
 
 .hero-button {
   min-height: 44px;
-  padding-inline: 18px;
-  font-size: 14px;
+  padding-inline: 16px;
+  font-size: 13px;
+  letter-spacing: -0.01em;
 }
 
 .hero-button-secondary {
@@ -557,8 +558,8 @@ summary:focus-visible {
   }
 
   .hero-burger {
-    top: 52%;
-    width: min(95vw, 410px);
+    top: 49%;
+    width: min(88vw, 380px);
     height: auto;
     aspect-ratio: 1 / 1;
     transform: translate(-50%, -50%);
@@ -580,7 +581,7 @@ summary:focus-visible {
   }
 
   .hero-wordmark {
-    top: 70%;
+    top: 67%;
     font-size: clamp(90px, 25vw, 122px);
     -webkit-text-stroke: 5px var(--color-cream);
   }
