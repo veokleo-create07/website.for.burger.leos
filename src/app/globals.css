@@ -246,7 +246,7 @@ summary:focus-visible {
   font-family: var(--font-coiny);
   font-size: clamp(150px, 20.5vw, 420px);
   font-weight: 900;
-  letter-spacing: -0.1em;
+  letter-spacing: -0.06em;
   line-height: 0.78;
   text-align: center;
   text-transform: uppercase;
@@ -346,8 +346,8 @@ summary:focus-visible {
   color: var(--color-charcoal);
   font-family: var(--font-bricolage-grotesque);
   font-size: clamp(20px, 1.32vw, 28px);
-  font-weight: 650;
-  letter-spacing: -0.025em;
+  font-weight: 700;
+  letter-spacing: -0.035em;
   line-height: 1.08;
 }
 
@@ -550,7 +550,7 @@ summary:focus-visible {
   .hero-background-title {
     top: 9%;
     font-size: clamp(58px, 20vw, 82px);
-    letter-spacing: -0.08em;
+    letter-spacing: -0.05em;
     -webkit-text-stroke: 4px var(--color-cream);
     transform: translateX(-50%) scaleX(0.56);
   }
