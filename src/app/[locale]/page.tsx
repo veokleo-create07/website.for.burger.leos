@@ -32,17 +32,34 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
 
         <section className="hero-stage" aria-labelledby="hero-title">
           <h1 className="hero-background-title" id="hero-title">
-            {t("headline.first")} {t("headline.second")} {t("headline.third")}
+            <span className="hero-title-mask">
+              <span className="hero-title-word hero-title-word--first">{t("headline.first")}</span>
+            </span>{" "}
+            <span className="hero-title-mask">
+              <span className="hero-title-word hero-title-word--second">{t("headline.second")}</span>
+            </span>
+            {t("headline.third") ? (
+              <>
+                {" "}
+                <span className="hero-title-mask">
+                  <span className="hero-title-word hero-title-word--third">{t("headline.third")}</span>
+                </span>
+              </>
+            ) : null}
           </h1>
 
           <div className="hero-burger" aria-hidden="true">
-            <Image
-              src="/images/burger-cutout.png"
-              alt=""
-              fill
-              priority
-              sizes="(max-width: 767px) 95vw, 37vw"
-            />
+            <div className="hero-burger-motion">
+              <div className="hero-burger-float">
+                <Image
+                  src="/images/burger-cutout.png"
+                  alt=""
+                  fill
+                  priority
+                  sizes="(max-width: 767px) 88vw, 35vw"
+                />
+              </div>
+            </div>
           </div>
 
           <div className="hero-sticker hero-sticker--fresh" aria-hidden="true">
