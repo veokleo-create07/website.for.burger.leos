@@ -70,6 +70,14 @@
     "status": "Verfügbar",
     "selectedTime": "Uhrzeit",
     "selectedGuests": "Gäste",
-    "selectedDuration": "Dauer"
+    "selectedDuration": "Dauer",
+    "largePartyPrompt": "Mehr als 10 Personen?",
+    "largePartyName": "Dein Name",
+    "largePartyEmail": "E-Mail-Adresse",
+    "largePartyPhone": "Telefonnummer",
+    "largePartyMessage": "Deine Nachricht",
+    "largePartySubmit": "Anfrage senden",
+    "largePartySuccess": "Danke! Deine Anfrage ist als Designvorschau erfasst. Unser Team meldet sich persönlich bei dir.",
+    "closeInquiry": "Anfrage schließen"
   }
 }
