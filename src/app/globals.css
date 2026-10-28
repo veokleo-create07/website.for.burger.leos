@@ -1940,6 +1940,11 @@ summary:focus-visible {
 /* Keep German diacritics, especially Ü, inside the headline line box. */
 .hero-background-title[data-locale="de"] {
   line-height: 0.86;
+  gap: clamp(12px, 1.5vw, 32px);
+}
+
+.hero-background-title[data-locale="en"] {
+  gap: clamp(12px, 1.5vw, 32px);
 }
 
 .hero-background-title[data-locale="de"] .hero-title-mask {
@@ -1949,6 +1954,11 @@ summary:focus-visible {
 @media (max-width: 767px) {
   .hero-background-title[data-locale="de"] {
     line-height: 0.88;
+    gap: 10px;
+  }
+
+  .hero-background-title[data-locale="en"] {
+    gap: 10px;
   }
 
   .hero-background-title[data-locale="de"] .hero-title-mask {
