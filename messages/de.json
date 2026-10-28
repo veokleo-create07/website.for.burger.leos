@@ -137,5 +137,23 @@
     "timePlaceholder": "Uhrzeit auswählen",
     "submitting": "Wird gesendet …",
     "submitError": "Die Reservierung konnte nicht gespeichert werden. Bitte versuche es erneut."
+  },
+  "LegalNotice": {
+    "title": "Impressum",
+    "intro": "Angaben gemäß § 5 DDG",
+    "company": "Organic Juice Bar GmbH",
+    "address": "Mühlenstraße 49",
+    "city": "23552 Lübeck",
+    "country": "Deutschland",
+    "representedBy": "Vertreten durch:",
+    "managingDirector": "Geschäftsführer: Maraj Indrit und Leonard Stebisch",
+    "contact": "Kontakt",
+    "telephone": "Telefon: 0451 39774590",
+    "email": "E-Mail: eva@juiceandburger.de",
+    "register": "Handelsregister",
+    "registerCourt": "Registergericht: Amtsgericht Lübeck",
+    "registerNumber": "Handelsregisternummer: HRB 19118",
+    "dispute": "Verbraucherstreitbeilegung",
+    "disputeText": "Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
   }
 }
