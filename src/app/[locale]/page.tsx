@@ -87,6 +87,37 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
           </div>
         </section>
       </div>
+
+      <section className="favorites-section" id="favoriten" aria-labelledby="favorites-title">
+        <div className="favorites-heading">
+          <p className="favorites-kicker">{t("favorites.kicker")}</p>
+          <h2 id="favorites-title">{t("favorites.title")}</h2>
+        </div>
+
+        <div className="favorites-list">
+          {[
+            { key: "triple", className: "favorites-item--triple" },
+            { key: "chili", className: "favorites-item--chili" },
+            { key: "crunchy", className: "favorites-item--crunchy" },
+          ].map((item) => (
+            <article className={"favorites-item " + item.className} key={item.key}>
+              <div className="favorites-image-wrap">
+                <Image
+                  src="/images/burger-cutout.png"
+                  alt={t("favorites.items." + item.key + ".imageAlt")}
+                  fill
+                  sizes="(max-width: 767px) 76vw, 30vw"
+                />
+              </div>
+              <h3>{t("favorites.items." + item.key + ".name")}</h3>
+            </article>
+          ))}
+        </div>
+
+        <a className="hero-button hero-button-primary favorites-cta" href="#speisekarte">
+          {t("favorites.cta")}
+        </a>
+      </section>
     </main>
   );
 }
