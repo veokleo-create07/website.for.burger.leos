@@ -157,7 +157,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
             </a>
             <a
               className="hero-button hero-button-secondary"
-              href="https://maps.google.com/?q=Leo%27s+Juice+%26+Burger+L%C3%BCbeck-K%C3%BCcknitz"
+              href="https://maps.app.goo.gl/o1ea7zNGKqw8NxTN7?g_st=ic"
               target="_blank"
               rel="noreferrer"
             >
@@ -194,7 +194,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
 
           <div className="site-footer-contact">
             <p>{t("footer.contact")}</p>
-            <a href="https://maps.google.com/?q=Leo%27s+Juice+%26+Burger+L%C3%BCbeck-K%C3%BCcknitz" target="_blank" rel="noreferrer">
+            <a href="https://maps.app.goo.gl/o1ea7zNGKqw8NxTN7?g_st=ic" target="_blank" rel="noreferrer">
               {t("footer.address")}<br />{t("footer.city")}
             </a>
           </div>
