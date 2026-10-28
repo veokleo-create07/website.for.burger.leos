@@ -97,7 +97,7 @@ begin
   if p_date is null then raise exception using errcode = '22023', message = 'invalid_date'; end if;
   v_duration := public.reservation_duration(p_guests);
   select opens_at, closes_at into v_open, v_close from public.reservation_window(p_date);
-  select capacity into v_capacity from public.reservation_settings where id = true;
+  select capacity into v_capacity from public.reservation_settings where reservation_settings.id = true;
 
   v_slot := v_open;
   while v_slot <= time '19:45' loop
@@ -180,7 +180,7 @@ begin
 
   select capacity into v_capacity
   from public.reservation_settings
-  where id = true
+  where reservation_settings.id = true
   for update;
 
   select coalesce(sum(r.guests), 0) into v_reserved
