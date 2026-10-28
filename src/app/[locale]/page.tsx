@@ -29,6 +29,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
             language: t("navigation.language"),
             mainNavigation: t("navigation.mainNavigation"),
             mobileNavigation: t("navigation.mobileNavigation"),
+            voucher: t("footer.voucher"),
           }}
         />
 
