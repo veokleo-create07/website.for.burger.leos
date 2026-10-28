@@ -33,6 +33,16 @@
         "chili": { "name": "Chili Bacon Burger", "imageAlt": "Chili Bacon Burger" },
         "crunchy": { "name": "Crunchy Burger", "imageAlt": "Crunchy Burger" }
       }
+    },
+    "voucher": {
+      "kicker": "Zum Verschenken",
+      "title": "Leo’s verschenken.",
+      "description": "Gute Burger. Gute Zeit. Das perfekte Geschenk.",
+      "cta": "Gutschein kaufen",
+      "alt": "Leo’s Geschenkgutschein",
+      "cardTitle": "Gutschein",
+      "cardSubtitle": "für gute Zeiten",
+      "cardNote": "Einlösbar bei Leo’s"
     }
   },
   "Reservation": {
