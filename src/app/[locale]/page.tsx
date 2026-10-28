@@ -144,6 +144,34 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
           />
         </a>
       </section>
+
+      <section className="visit-section" id="kontakt" aria-labelledby="visit-title">
+        <span className="visit-accent visit-accent--left" aria-hidden="true">///</span>
+        <span className="visit-accent visit-accent--right" aria-hidden="true">///</span>
+        <div className="visit-content">
+          <h2 id="visit-title">{t("visit.title")}</h2>
+          <p className="visit-description">{t("visit.description")}</p>
+          <div className="visit-actions">
+            <a className="hero-button hero-button-primary" href={"/" + locale + "/reservierung"}>
+              {t("visit.reserve")}
+            </a>
+            <a
+              className="hero-button hero-button-secondary"
+              href="https://maps.google.com/?q=Leo%27s+Juice+%26+Burger+L%C3%BCbeck-K%C3%BCcknitz"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {t("visit.directions")}
+            </a>
+          </div>
+          <div className="visit-details">
+            <p><strong>{t("visit.location")}</strong></p>
+            <p>{t("visit.address")}<br />{t("visit.city")}</p>
+            <p>{t("visit.hours")}<br />{t("visit.closed")}</p>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }
