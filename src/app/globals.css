@@ -2619,3 +2619,157 @@ summary:focus-visible {
     animation: none;
   }
 }
+
+
+/* Site footer */
+.site-footer {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(62px, 7vw, 104px) clamp(24px, 7vw, 110px) 26px;
+  background: var(--color-charcoal);
+  color: var(--color-cream);
+}
+
+.site-footer-main {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.8fr) minmax(260px, 1fr) minmax(200px, 0.8fr);
+  align-items: start;
+  gap: clamp(28px, 7vw, 120px);
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.site-footer-brand {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  color: var(--color-cream);
+  font-family: var(--font-bricolage-grotesque);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.site-footer-brand img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.site-footer-nav {
+  display: grid;
+  gap: 12px;
+  padding-top: 12px;
+}
+
+.site-footer-nav a,
+.site-footer-contact a,
+.site-footer-legal a {
+  color: rgb(246 240 228 / 86%);
+  font-family: var(--font-bricolage-grotesque);
+  font-size: 15px;
+  font-weight: 550;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.site-footer-nav a:hover,
+.site-footer-contact a:hover,
+.site-footer-legal a:hover {
+  color: #f7a900;
+}
+
+.site-footer-nav a:hover {
+  transform: translateX(3px);
+}
+
+.site-footer-contact {
+  padding-top: 12px;
+}
+
+.site-footer-contact p {
+  margin: 0 0 12px;
+  color: #f7a900;
+  font-family: var(--font-bricolage-grotesque);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.site-footer-contact a {
+  display: inline-block;
+  line-height: 1.45;
+}
+
+.site-footer-bottom {
+  display: flex;
+  max-width: 1320px;
+  margin: clamp(52px, 8vw, 100px) auto 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid rgb(246 240 228 / 22%);
+  padding-top: 19px;
+  color: rgb(246 240 228 / 62%);
+  font-family: var(--font-bricolage-grotesque);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.site-footer-legal {
+  display: flex;
+  gap: 20px;
+}
+
+.site-footer-legal a {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+@media (max-width: 767px) {
+  .site-footer {
+    padding: 52px 20px 22px;
+  }
+
+  .site-footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 34px 24px;
+  }
+
+  .site-footer-brand {
+    grid-column: 1 / -1;
+    align-items: center;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .site-footer-brand img {
+    width: 88px;
+    height: 88px;
+  }
+
+  .site-footer-nav,
+  .site-footer-contact {
+    padding-top: 0;
+  }
+
+  .site-footer-nav a,
+  .site-footer-contact a {
+    font-size: 13px;
+  }
+
+  .site-footer-contact p {
+    font-size: 13px;
+  }
+
+  .site-footer-bottom {
+    align-items: flex-start;
+    flex-direction: column-reverse;
+    gap: 13px;
+    margin-top: 42px;
+    font-size: 11px;
+  }
+
+  .site-footer-legal {
+    gap: 16px;
+  }
+}
