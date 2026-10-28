@@ -2773,3 +2773,9 @@ summary:focus-visible {
     gap: 16px;
   }
 }
+
+
+/* Supplied favorite JPGs use white backgrounds; blend them into the cream canvas. */
+.favorites-image-wrap img.favorites-photo {
+  mix-blend-mode: multiply;
+}
