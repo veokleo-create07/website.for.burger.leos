@@ -155,5 +155,111 @@
     "registerNumber": "Commercial Register Number: HRB 19118",
     "dispute": "Consumer Dispute Resolution",
     "disputeText": "We are neither willing nor obligated to participate in dispute resolution proceedings before a consumer arbitration board."
+  },
+  "PrivacyPolicy": {
+    "title": "Privacy Policy",
+    "intro": "The protection of your personal data is important to us. This Privacy Policy explains how we process personal data when you visit our website or use our online reservation system.",
+    "sections": [
+      {
+        "title": "Controller",
+        "paragraphs": [
+          "The controller responsible for processing personal data within the meaning of the General Data Protection Regulation (GDPR) is:",
+          "Organic Juice Bar GmbH\nLeo’s Juice & Burger Lübeck\nSeelandstraße 9\n23569 Lübeck-Kücknitz\nGermany",
+          "Email: eva@juiceandburger.de\nTelephone: +49 451 70323040"
+        ]
+      },
+      {
+        "title": "Online Reservations",
+        "paragraphs": [
+          "When you make a table reservation through our website, we may process the following information:",
+          "Name, email address, telephone number, reservation date and time, number of guests, planned length of stay, and optional notes or special requests.",
+          "We process this information to receive, manage and confirm your reservation and, where necessary, communicate with you regarding it. The legal basis is Art. 6(1)(b) GDPR.",
+          "Please avoid entering sensitive personal information in optional notes unless necessary for your reservation. Where information voluntarily provided includes special categories of personal data under Art. 9 GDPR, it will only be processed where an appropriate Art. 9 legal basis applies."
+        ]
+      },
+      {
+        "title": "Hosting and Technical Provision",
+        "paragraphs": [
+          "Our website is hosted using services provided by:",
+          "Vercel Inc.\nUnited States",
+          "When you access our website, technical information necessary to deliver and secure the website may be processed, including your IP address, date and time of access, requested pages or files, browser and device information, and technical request information.",
+          "Processing is carried out to provide the website securely and reliably, prevent abuse and diagnose technical problems. The legal basis is Art. 6(1)(f) GDPR. Our legitimate interest is the secure and reliable operation of our website.",
+          "Depending on the processing involved, personal data may be processed outside the European Economic Area. Where required, appropriate safeguards are used, including adequacy mechanisms and/or Standard Contractual Clauses."
+        ]
+      },
+      {
+        "title": "Reservation Database – Supabase",
+        "paragraphs": [
+          "We use Supabase to provide database infrastructure for our online reservation system.",
+          "Reservation information submitted through the website is stored and processed using Supabase. This processing is necessary to operate the reservation system and is based on Art. 6(1)(b) GDPR.",
+          "Our Supabase project is hosted in the European Union (AWS eu-central-1 / Frankfurt). Where personal data is transferred outside the European Economic Area, transfers follow Chapter V GDPR requirements and appropriate safeguards."
+        ]
+      },
+      {
+        "title": "Reservation Confirmation Emails – Resend",
+        "paragraphs": [
+          "We use Resend, a service provided by Plus Five Five, Inc., United States, to send transactional emails in connection with reservations.",
+          "Information such as your email address, name, reservation information and technical delivery information may be processed. This is necessary to confirm and administer your reservation and is based on Art. 6(1)(b) GDPR.",
+          "Resend processes certain customer data in the United States. International transfers are protected through appropriate safeguards, including EU Standard Contractual Clauses and, where applicable, the EU-U.S. Data Privacy Framework. Reservation confirmation emails are transactional communications and are not used for advertising or newsletters without a separate legal basis."
+        ]
+      },
+      {
+        "title": "International Data Transfers",
+        "paragraphs": [
+          "Some service providers we use are established outside the European Economic Area or may process information outside the European Economic Area.",
+          "Where personal data is transferred to a third country, we ensure that Chapter V GDPR requirements are met. Depending on the service provider, transfers may be based on an adequacy decision, participation in the EU-U.S. Data Privacy Framework, Standard Contractual Clauses approved by the European Commission, or another legally recognized transfer mechanism.",
+          "Further information regarding applicable safeguards may be requested using the contact details in this policy."
+        ]
+      },
+      {
+        "title": "Storage Period",
+        "paragraphs": [
+          "Reservation data is generally deleted no later than 12 months after the reservation date unless required longer by legal obligations or for the establishment, exercise or defence of legal claims.",
+          "Where statutory retention requirements apply, relevant information is retained only for the legally required period and permitted purposes.",
+          "Technical data and server logs are retained only as long as necessary for the relevant technical and security purposes, subject to the retention periods of our service providers."
+        ]
+      },
+      {
+        "title": "Your Data Protection Rights",
+        "paragraphs": [
+          "Subject to applicable legal requirements, you have rights of access under Art. 15 GDPR, rectification under Art. 16, erasure under Art. 17, restriction of processing under Art. 18, data portability under Art. 20, objection under Art. 21, and withdrawal of consent under Art. 7(3) GDPR.",
+          "Where processing is based on consent, you may withdraw it at any time with effect for the future. The lawfulness of processing before withdrawal remains unaffected.",
+          "To exercise your rights, please contact us using the details above."
+        ]
+      },
+      {
+        "title": "Right to Lodge a Complaint",
+        "paragraphs": [
+          "You have the right to lodge a complaint with a data protection supervisory authority if you believe processing infringes applicable data protection law.",
+          "The supervisory authority responsible for businesses headquartered in Schleswig-Holstein is:\nUnabhängiges Landeszentrum für Datenschutz Schleswig-Holstein (ULD)\nHolstenstraße 98\n24103 Kiel\nGermany"
+        ]
+      },
+      {
+        "title": "Mandatory Information for Reservations",
+        "paragraphs": [
+          "Certain information requested during the reservation process is necessary to process your reservation. If required information is not provided, we may be unable to accept or administer the reservation. Optional fields are marked accordingly."
+        ]
+      },
+      {
+        "title": "Automated Decision-Making",
+        "paragraphs": [
+          "We do not use automated decision-making, including profiling within the meaning of Art. 22 GDPR, in connection with restaurant reservations."
+        ]
+      },
+      {
+        "title": "Contact Regarding Data Protection",
+        "paragraphs": [
+          "If you have questions regarding the processing of your personal data or wish to exercise your data protection rights, please contact:",
+          "eva@juiceandburger.de"
+        ]
+      },
+      {
+        "title": "Updates to this Privacy Policy",
+        "paragraphs": [
+          "We may update this Privacy Policy where our website, reservation system, service providers or legal requirements change.",
+          "Last updated: October 2026"
+        ]
+      }
+    ]
   }
 }
