@@ -207,7 +207,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
           <span>© 2026 {t("footer.brand")}</span>
           <div className="site-footer-legal">
             <a href={"/" + locale + "/impressum"}>{t("footer.imprint")}</a>
-            <a href="#footer">{t("footer.privacy")}</a>
+            <a href={"/" + locale + "/datenschutz"}>{t("footer.privacy")}</a>
           </div>
         </div>
       </footer>
