@@ -61,6 +61,20 @@
       "city": "23552 Lübeck",
       "hours": "Dienstag–Sonntag · 09:00–18:00",
       "closed": "Montag · Geschlossen"
+    },
+    "footer": {
+      "brand": "Leo’s Juice & Burger",
+      "location": "Lübeck-Kücknitz",
+      "navigationLabel": "Fußnavigation",
+      "home": "Startseite",
+      "reserve": "Tisch reservieren",
+      "order": "Online bestellen",
+      "voucher": "Gutschein kaufen",
+      "contact": "Kontakt",
+      "address": "Mühlenstraße 51",
+      "city": "23552 Lübeck",
+      "imprint": "Impressum",
+      "privacy": "Datenschutz"
     }
   },
   "Reservation": {
