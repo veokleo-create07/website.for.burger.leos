@@ -17,18 +17,17 @@ type Props = {
     language: string;
     mainNavigation: string;
     mobileNavigation: string;
+    voucher: string;
   };
   bookingHref?: string;
 };
 
 export function SiteHeader({ locale, labels, bookingHref }: Props) {
   const links = [
-    { label: labels.home, href: `/${locale}`, current: true },
-    { label: labels.menu, href: `/${locale}#speisekarte` },
-    { label: labels.gallery, href: `/${locale}#galerie` },
-    { label: labels.contact, href: `/${locale}#kontakt` },
+    { label: labels.home, href: `/${locale}#start`, current: true },
+    { label: labels.booking, href: bookingHref ?? `/${locale}/reservierung` },
+    { label: labels.voucher, href: `/${locale}#gutscheine` },
   ];
-
   return (
     <header className="site-header">
       <a className="brand-link" href={`/${locale}`} aria-label="Leo’s Juice & Burger">
