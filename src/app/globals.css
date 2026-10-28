@@ -2775,7 +2775,5 @@ summary:focus-visible {
 }
 
 
-/* Supplied favorite JPGs use white backgrounds; blend them into the cream canvas. */
-.favorites-image-wrap img.favorites-photo {
-  mix-blend-mode: multiply;
-}
+
+/* Favorite burgers use transparent cutout artwork. */
