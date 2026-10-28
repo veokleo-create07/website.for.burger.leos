@@ -32,7 +32,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
         />
 
         <section className="hero-stage" aria-labelledby="hero-title">
-          <h1 className="hero-background-title" id="hero-title">
+          <h1 className="hero-background-title" id="hero-title" data-locale={locale}>
             <span className="hero-title-mask">
               <span className="hero-title-word hero-title-word--first">{t("headline.first")}</span>
             </span>
