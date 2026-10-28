@@ -1926,12 +1926,12 @@ summary:focus-visible {
 
 @media (max-width: 767px) {
   .hero-background-title[data-locale="de"] {
-    font-size: clamp(72px, 20vw, 92px);
-    transform: translateX(-50%) scaleX(0.52);
+    font-size: clamp(78px, 22vw, 100px);
+    transform: translateX(-50%) scaleX(0.48);
   }
 
   .hero-background-title[data-locale="en"] {
-    font-size: clamp(56px, 15vw, 72px);
-    transform: translateX(-50%) scaleX(0.44);
+    font-size: clamp(62px, 17vw, 80px);
+    transform: translateX(-50%) scaleX(0.41);
   }
 }
