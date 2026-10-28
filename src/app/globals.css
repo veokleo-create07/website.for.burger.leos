@@ -2777,3 +2777,121 @@ summary:focus-visible {
 
 
 /* Favorite burgers use transparent cutout artwork. */
+
+
+/* Simplified navigation overlay */
+.site-header .desktop-nav,
+.site-header .header-booking {
+  display: none;
+}
+
+.site-header {
+  grid-template-columns: auto 1fr auto;
+}
+
+.site-header .mobile-menu {
+  position: relative;
+  z-index: 20;
+  display: block;
+}
+
+.site-header .mobile-menu summary {
+  position: relative;
+  z-index: 22;
+  display: flex;
+  width: 34px;
+  height: 34px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.site-header .mobile-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.site-header .mobile-menu summary span {
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-charcoal);
+  transition: transform 220ms ease, opacity 160ms ease;
+}
+
+.site-header .mobile-menu[open] summary span:first-child {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.site-header .mobile-menu[open] summary span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header .mobile-menu[open] summary span:last-child {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.site-header .mobile-menu-links {
+  position: fixed;
+  z-index: 21;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 4vw, 34px);
+  padding: 100px 28px 48px;
+  background: var(--color-burnt-orange);
+  opacity: 0;
+  transform: translateY(-16px);
+  transition: opacity 220ms ease, transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.site-header .mobile-menu[open] .mobile-menu-links {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.site-header .mobile-menu-links a {
+  padding: 4px 0;
+  color: var(--color-cream);
+  font-family: var(--font-coiny);
+  font-size: clamp(44px, 8vw, 92px);
+  font-weight: 900;
+  letter-spacing: -0.055em;
+  line-height: 0.9;
+  text-align: center;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.site-header .mobile-menu-links a:hover,
+.site-header .mobile-menu-links a:focus-visible {
+  color: #f7a900;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 767px) {
+  .site-header {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .site-header .header-tools {
+    gap: 10px;
+  }
+
+  .site-header .mobile-menu-links a {
+    font-size: clamp(42px, 12vw, 64px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header .mobile-menu summary span,
+  .site-header .mobile-menu-links,
+  .site-header .mobile-menu-links a {
+    transition: none;
+  }
+}
