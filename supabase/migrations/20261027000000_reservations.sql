@@ -261,3 +261,7 @@ $$;
 
 revoke all on function public.create_reservation_inquiry(text, text, text, text) from public, anon, authenticated;
 grant execute on function public.create_reservation_inquiry(text, text, text, text) to service_role;
+
+
+-- Refresh PostgREST's function schema cache immediately.
+notify pgrst, 'reload schema';
