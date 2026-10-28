@@ -10,6 +10,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
   if (!hasLocale(routing.locales, locale)) notFound();
 
   const t = await getTranslations({ locale, namespace: "HomePage" });
+  const giftVoucherHref = process.env.NEXT_PUBLIC_GIFT_VOUCHER_URL || "#gutscheine";
 
   return (
     <main className="site-shell" id="start">
@@ -117,6 +118,35 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
         <a className="hero-button hero-button-primary favorites-cta" href="#speisekarte">
           {t("favorites.cta")}
         </a>
+      </section>
+
+      <section className="voucher-section" id="gutscheine" aria-labelledby="voucher-title">
+        <div className="voucher-copy">
+          <p className="voucher-kicker">{t("voucher.kicker")}</p>
+          <h2 id="voucher-title">{t("voucher.title")}</h2>
+          <p>{t("voucher.description")}</p>
+          <a className="hero-button voucher-cta" href={giftVoucherHref}>
+            {t("voucher.cta")}
+          </a>
+        </div>
+
+        <div className="voucher-art" aria-label={t("voucher.alt")} role="img">
+          <div className="voucher-card">
+            <Image
+              className="voucher-logo"
+              src="/images/leo-logo.png"
+              alt=""
+              width={800}
+              height={800}
+            />
+            <span className="voucher-card-title">{t("voucher.cardTitle")}</span>
+            <span className="voucher-card-subtitle">{t("voucher.cardSubtitle")}</span>
+            <span className="voucher-card-line" />
+            <span className="voucher-card-note">{t("voucher.cardNote")}</span>
+          </div>
+          <span className="voucher-spark voucher-spark--one" aria-hidden="true">✦</span>
+          <span className="voucher-spark voucher-spark--two" aria-hidden="true">✦</span>
+        </div>
       </section>
     </main>
   );
