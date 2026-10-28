@@ -96,16 +96,15 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
 
         <div className="favorites-list">
           {[
-            { key: "triple", className: "favorites-item--triple", image: "/images/burger-triple.jpg" },
+            { key: "triple", className: "favorites-item--triple", image: "/images/burger-triple.png" },
             { key: "chili", className: "favorites-item--chili", image: "/images/burger-cutout.png" },
-            { key: "crunchy", className: "favorites-item--crunchy", image: "/images/burger-crunchy.jpg" },
+            { key: "crunchy", className: "favorites-item--crunchy", image: "/images/burger-crunchy.png" },
           ].map((item) => (
             <article className={"favorites-item " + item.className} key={item.key}>
               <div className="favorites-image-wrap">
                 <Image
                   src={item.image}
                   alt={t("favorites.items." + item.key + ".imageAlt")}
-                  className={item.image.endsWith(".jpg") ? "favorites-photo" : undefined}
                   fill
                   sizes="(max-width: 767px) 76vw, 30vw"
                 />
