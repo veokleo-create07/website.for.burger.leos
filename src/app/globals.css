@@ -2361,3 +2361,65 @@ summary:focus-visible {
     animation: none;
   }
 }
+
+
+/* Gift voucher artwork */
+.voucher-art {
+  display: block;
+  width: min(100%, 560px);
+  min-height: 390px;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.voucher-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(14px 16px 0 rgb(36 34 31 / 18%));
+  transform: rotate(3deg);
+  transition: transform 220ms ease;
+  animation: voucher-image-reveal 800ms cubic-bezier(0.22, 1, 0.36, 1) 180ms both;
+}
+
+.voucher-art:hover .voucher-image,
+.voucher-art:focus-visible .voucher-image {
+  transform: rotate(1deg) translateY(-5px) scale(1.02);
+}
+
+@keyframes voucher-image-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px) rotate(3deg) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(3deg) scale(1);
+  }
+}
+
+@media (max-width: 767px) {
+  .voucher-art {
+    width: 100%;
+    min-height: min(92vw, 390px);
+  }
+
+  .voucher-image {
+    filter: drop-shadow(9px 10px 0 rgb(36 34 31 / 18%));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .voucher-image {
+    animation: none;
+  }
+
+  .voucher-art:hover .voucher-image,
+  .voucher-art:focus-visible .voucher-image {
+    transform: rotate(3deg);
+  }
+}
