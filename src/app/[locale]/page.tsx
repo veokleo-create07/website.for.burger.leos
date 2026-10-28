@@ -105,6 +105,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
                 <Image
                   src={item.image}
                   alt={t("favorites.items." + item.key + ".imageAlt")}
+                  className={item.image.endsWith(".jpg") ? "favorites-photo" : undefined}
                   fill
                   sizes="(max-width: 767px) 76vw, 30vw"
                 />
