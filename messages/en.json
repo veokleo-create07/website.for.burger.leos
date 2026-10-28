@@ -74,7 +74,7 @@
       "contact": "Contact",
       "address": "Seelandstraße 9",
       "city": "23569 Lübeck-Kücknitz",
-      "imprint": "Imprint",
+      "imprint": "Legal Notice",
       "privacy": "Privacy",
       "phone": "Phone: +49 451 70323040"
     }
@@ -137,5 +137,23 @@
     "timePlaceholder": "Choose a time",
     "submitting": "Sending …",
     "submitError": "The reservation could not be saved. Please try again."
+  },
+  "LegalNotice": {
+    "title": "Legal Notice",
+    "intro": "Information pursuant to Section 5 DDG",
+    "company": "Organic Juice Bar GmbH",
+    "address": "Mühlenstraße 49",
+    "city": "23552 Lübeck",
+    "country": "Germany",
+    "representedBy": "Represented by:",
+    "managingDirector": "Managing Director(s): Maraj Indrit and Leonard Stebisch",
+    "contact": "Contact",
+    "telephone": "Telephone: 0451 39774590",
+    "email": "Email: eva@juiceandburger.de",
+    "register": "Commercial Register",
+    "registerCourt": "Register Court: Amtsgericht Lübeck",
+    "registerNumber": "Commercial Register Number: HRB 19118",
+    "dispute": "Consumer Dispute Resolution",
+    "disputeText": "We are neither willing nor obligated to participate in dispute resolution proceedings before a consumer arbitration board."
   }
 }
