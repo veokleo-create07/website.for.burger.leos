@@ -130,23 +130,23 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
           </a>
         </div>
 
-        <div className="voucher-art" aria-label={t("voucher.alt")} role="img">
-          <div className="voucher-card">
-            <Image
-              className="voucher-logo"
-              src="/images/leo-logo.png"
-              alt=""
-              width={800}
-              height={800}
-            />
-            <span className="voucher-card-title">{t("voucher.cardTitle")}</span>
-            <span className="voucher-card-subtitle">{t("voucher.cardSubtitle")}</span>
-            <span className="voucher-card-line" />
-            <span className="voucher-card-note">{t("voucher.cardNote")}</span>
-          </div>
+        <a
+          className="voucher-art"
+          href={giftVoucherHref}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={t("voucher.alt")}
+        >
+          <Image
+            className="voucher-image"
+            src="/images/gift-voucher.jpg"
+            alt={t("voucher.alt")}
+            fill
+            sizes="(max-width: 767px) 92vw, 48vw"
+          />
           <span className="voucher-spark voucher-spark--one" aria-hidden="true">✦</span>
           <span className="voucher-spark voucher-spark--two" aria-hidden="true">✦</span>
-        </div>
+        </a>
       </section>
     </main>
   );
