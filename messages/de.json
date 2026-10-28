@@ -25,17 +25,24 @@
     "viewMenu": "Online bestellen",
     "supportingRight": "Frisch zubereitete Burger und Säfte, die jeden Appetit stillen.",
     "favorites": {
-      "kicker": "Unsere Auswahl",
       "title": "Unsere Favoriten.",
       "cta": "Online bestellen",
       "items": {
-        "triple": { "name": "Triple Cheeseburger", "imageAlt": "Triple Cheeseburger" },
-        "chili": { "name": "Chili Bacon Burger", "imageAlt": "Chili Bacon Burger" },
-        "crunchy": { "name": "Crunchy Burger", "imageAlt": "Crunchy Burger" }
+        "triple": {
+          "name": "Triple Cheeseburger",
+          "imageAlt": "Triple Cheeseburger"
+        },
+        "chili": {
+          "name": "Chili Bacon Burger",
+          "imageAlt": "Chili Bacon Burger"
+        },
+        "crunchy": {
+          "name": "Crunchy Burger",
+          "imageAlt": "Crunchy Burger"
+        }
       }
     },
     "voucher": {
-      "kicker": "Zum Verschenken",
       "title": "Leo’s verschenken.",
       "description": "Gute Burger. Gute Zeit. Das perfekte Geschenk.",
       "cta": "Gutschein kaufen",
