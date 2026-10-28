@@ -15,7 +15,10 @@ type ReservationResult = {
 
 const errorMessage = (error: string | null) => {
   if (!error) return "Reservation could not be completed.";
-  if (error === "not_configured") return "Reservation service is not configured.";\n  if (error.includes("PGRST202") || error.includes("schema cache") || error.includes("function public.create_reservation")) {\n    return "Reservation database setup is incomplete. Please run the Supabase migration.";\n  }
+  if (error === "not_configured") return "Reservation service is not configured.";
+  if (error.includes("PGRST202") || error.includes("schema cache") || error.includes("function public.create_reservation")) {
+    return "Reservation database setup is incomplete. Please run the Supabase migration.";
+  }
   if (error.includes("capacity_exceeded") || error.includes("reservations_no_overlap")) {
     return "That time is no longer available. Please choose another time.";
   }
