@@ -60,7 +60,8 @@
       "address": "Seelandstraße 9",
       "city": "23569 Lübeck-Kücknitz",
       "hours": "Monday–Friday · 12:00–21:00",
-      "closed": "Saturday–Sunday · 17:00–21:00"
+      "closed": "Saturday–Sunday · 17:00–21:00",
+      "phone": "Phone: +49 451 70323040"
     },
     "footer": {
       "brand": "Leo’s Juice & Burger",
@@ -74,7 +75,8 @@
       "address": "Seelandstraße 9",
       "city": "23569 Lübeck-Kücknitz",
       "imprint": "Imprint",
-      "privacy": "Privacy"
+      "privacy": "Privacy",
+      "phone": "Phone: +49 451 70323040"
     }
   },
   "Reservation": {
