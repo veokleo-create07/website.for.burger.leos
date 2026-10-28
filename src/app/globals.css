@@ -2423,3 +2423,33 @@ summary:focus-visible {
     transform: rotate(3deg);
   }
 }
+
+
+/* Keep voucher typography and artwork inside narrow mobile viewports. */
+@media (max-width: 767px) {
+  .voucher-copy {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .voucher-copy h2 {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(40px, 12vw, 58px);
+    line-height: 0.9;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  .voucher-art {
+    width: 100%;
+    min-height: min(88vw, 360px);
+    overflow: visible;
+  }
+
+  .voucher-image {
+    inset: 0 auto auto 5%;
+    width: 90%;
+    height: 100%;
+  }
+}
