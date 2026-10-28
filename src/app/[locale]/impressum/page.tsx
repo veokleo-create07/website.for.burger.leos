@@ -30,7 +30,7 @@ export default async function LegalNoticePage({ params }: PageProps<"/[locale]/i
         <section><h2>{legal("register")}</h2><p>{legal("registerCourt")}<br />{legal("registerNumber")}</p></section>
         <section><h2>{legal("dispute")}</h2><p>{legal("disputeText")}</p></section>
       </article>
-      <footer className="site-footer legal-footer"><div className="site-footer-bottom"><span>© 2026 Leo’s Juice &amp; Burger</span><div className="site-footer-legal"><a href={`/${locale}`}>{t("footer.home")}</a><a href={`/${locale}/impressum`} aria-current="page">{t("footer.imprint")}</a><a href="#">{t("footer.privacy")}</a></div></div></footer>
+      <footer className="site-footer legal-footer"><div className="site-footer-bottom"><span>© 2026 Leo’s Juice &amp; Burger</span><div className="site-footer-legal"><a href={`/${locale}`}>{t("footer.home")}</a><a href={`/${locale}/impressum`} aria-current="page">{t("footer.imprint")}</a><a href={"/" + locale + "/datenschutz"}>{t("footer.privacy")}</a></div></div></footer>
     </main>
   );
 }
