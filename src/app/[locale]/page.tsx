@@ -172,6 +172,43 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
         </div>
       </section>
 
+
+      <footer className="site-footer" id="footer">
+        <div className="site-footer-main">
+          <a className="site-footer-brand" href={"/" + locale} aria-label={t("footer.brand")}>
+            <Image
+              src="/images/leo-logo.png"
+              alt=""
+              width={800}
+              height={800}
+            />
+            <span>{t("footer.location")}</span>
+          </a>
+
+          <nav className="site-footer-nav" aria-label={t("footer.navigationLabel")}>
+            <a href={"/" + locale + "#start"}>{t("footer.home")}</a>
+            <a href={"/" + locale + "/reservierung"}>{t("footer.reserve")}</a>
+            <a href="https://www.restablo.de/restaurant/leos-juice-burger-luebeck-kuecknitz.html" target="_blank" rel="noreferrer">{t("footer.order")}</a>
+            <a href={giftVoucherHref} target="_blank" rel="noreferrer">{t("footer.voucher")}</a>
+          </nav>
+
+          <div className="site-footer-contact">
+            <p>{t("footer.contact")}</p>
+            <a href="https://maps.google.com/?q=Leo%27s+Juice+%26+Burger+L%C3%BCbeck-K%C3%BCcknitz" target="_blank" rel="noreferrer">
+              {t("footer.address")}<br />{t("footer.city")}
+            </a>
+          </div>
+        </div>
+
+        <div className="site-footer-bottom">
+          <span>© 2026 {t("footer.brand")}</span>
+          <div className="site-footer-legal">
+            <a href="#footer">{t("footer.imprint")}</a>
+            <a href="#footer">{t("footer.privacy")}</a>
+          </div>
+        </div>
+      </footer>
+
     </main>
   );
 }
