@@ -1920,8 +1920,8 @@ summary:focus-visible {
 }
 
 .hero-background-title[data-locale="en"] {
-  font-size: clamp(132px, 16vw, 340px);
-  transform: translateX(-50%) scaleX(0.44);
+  font-size: clamp(132px, 20vw, 400px);
+  transform: translateX(-50%) scaleX(0.49);
 }
 
 @media (max-width: 767px) {
@@ -1931,7 +1931,7 @@ summary:focus-visible {
   }
 
   .hero-background-title[data-locale="en"] {
-    font-size: clamp(62px, 17vw, 80px);
-    transform: translateX(-50%) scaleX(0.41);
+    font-size: clamp(78px, 22vw, 100px);
+    transform: translateX(-50%) scaleX(0.48);
   }
 }
