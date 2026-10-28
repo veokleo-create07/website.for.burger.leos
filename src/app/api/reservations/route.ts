@@ -19,6 +19,9 @@ const errorMessage = (error: string | null) => {
   if (error.includes("PGRST202") || error.includes("schema cache") || error.includes("function public.create_reservation")) {
     return "Reservation database setup is incomplete. Please run the Supabase migration.";
   }
+  if (error.includes("column reference") && error.includes("ambiguous")) {
+    return "Reservation database needs a small update. Please run the latest reservation SQL migration.";
+  }
   if (error.includes("capacity_exceeded") || error.includes("reservations_no_overlap")) {
     return "That time is no longer available. Please choose another time.";
   }
