@@ -33,6 +33,16 @@
         "chili": { "name": "Chili Bacon Burger", "imageAlt": "Chili Bacon Burger" },
         "crunchy": { "name": "Crunchy Burger", "imageAlt": "Crunchy Burger" }
       }
+    },
+    "voucher": {
+      "kicker": "A little something",
+      "title": "Gift a little Leo’s.",
+      "description": "Great burgers. Good times. The perfect gift.",
+      "cta": "Buy a gift voucher",
+      "alt": "Leo’s gift voucher",
+      "cardTitle": "Gift voucher",
+      "cardSubtitle": "for good times",
+      "cardNote": "Redeem at Leo’s"
     }
   },
   "Reservation": {
