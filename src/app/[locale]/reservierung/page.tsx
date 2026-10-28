@@ -32,6 +32,7 @@ export default async function ReservationPage({ params }: Props) {
           language: home("navigation.language"),
           mainNavigation: home("navigation.mainNavigation"),
           mobileNavigation: home("navigation.mobileNavigation"),
+          voucher: home("footer.voucher"),
         }}
       />
       <ReservationFlow
