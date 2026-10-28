@@ -1860,15 +1860,15 @@ summary:focus-visible {
   .hero-background-title {
     top: 8%;
     gap: 4px;
-    font-size: clamp(84px, 24vw, 104px);
+    font-size: clamp(72px, 20vw, 92px);
     letter-spacing: -0.055em;
     -webkit-text-stroke: 3px var(--color-cream);
-    transform: translateX(-50%) scaleX(0.66);
+    transform: translateX(-50%) scaleX(0.58);
   }
 
   .hero-burger {
     top: 41%;
-    width: min(78vw, 330px);
+    width: min(72vw, 300px);
     transform: translate(-50%, -50%);
   }
 
