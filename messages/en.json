@@ -23,7 +23,17 @@
     "description": "Fresh burgers. Great juices. Simply Leo’s.",
     "reserve": "Book a table",
     "viewMenu": "View the menu",
-    "supportingRight": "Freshly prepared burgers and juices, made to satisfy every craving."
+    "supportingRight": "Freshly prepared burgers and juices, made to satisfy every craving.",
+    "favorites": {
+      "kicker": "Our selection",
+      "title": "Our Favorites.",
+      "cta": "Order online",
+      "items": {
+        "triple": { "name": "Triple Cheeseburger", "imageAlt": "Triple Cheeseburger" },
+        "chili": { "name": "Chili Bacon Burger", "imageAlt": "Chili Bacon Burger" },
+        "crunchy": { "name": "Crunchy Burger", "imageAlt": "Crunchy Burger" }
+      }
+    }
   },
   "Reservation": {
     "eyebrow": "Reservation",
