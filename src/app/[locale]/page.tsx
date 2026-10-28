@@ -142,8 +142,6 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
             fill
             sizes="(max-width: 767px) 92vw, 48vw"
           />
-          <span className="voucher-spark voucher-spark--one" aria-hidden="true">✦</span>
-          <span className="voucher-spark voucher-spark--two" aria-hidden="true">✦</span>
         </a>
       </section>
     </main>
