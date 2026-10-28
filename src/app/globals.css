@@ -1853,3 +1853,61 @@ summary:focus-visible {
     max-width: none;
   }
 }
+
+
+/* Mobile poster balance: keep the approved desktop composition, scaled for narrow screens. */
+@media (max-width: 767px) {
+  .hero-background-title {
+    top: 8%;
+    gap: 4px;
+    font-size: clamp(84px, 24vw, 104px);
+    letter-spacing: -0.055em;
+    -webkit-text-stroke: 3px var(--color-cream);
+    transform: translateX(-50%) scaleX(0.66);
+  }
+
+  .hero-burger {
+    top: 41%;
+    width: min(78vw, 330px);
+    transform: translate(-50%, -50%);
+  }
+
+  .hero-sticker--fresh {
+    top: 9%;
+    left: 3%;
+    transform: rotate(13deg);
+  }
+
+  .hero-sticker--love {
+    top: 19%;
+    right: 7%;
+    transform: rotate(-13deg);
+  }
+
+  .hero-wordmark {
+    top: 57%;
+    font-size: clamp(72px, 20vw, 98px);
+  }
+
+  .hero-bottom {
+    bottom: clamp(104px, 16vh, 148px);
+    gap: 18px;
+  }
+
+  .hero-bottom-left {
+    width: min(100%, 350px);
+  }
+
+  .hero-bottom-left > .hero-description {
+    display: none;
+  }
+
+  .hero-actions {
+    margin-top: 0;
+  }
+
+  .hero-bottom-right {
+    margin-top: 8px;
+    max-width: 330px;
+  }
+}
