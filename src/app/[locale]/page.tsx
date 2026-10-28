@@ -91,7 +91,6 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
 
       <section className="favorites-section" id="favoriten" aria-labelledby="favorites-title">
         <div className="favorites-heading">
-          <p className="favorites-kicker">{t("favorites.kicker")}</p>
           <h2 id="favorites-title">{t("favorites.title")}</h2>
         </div>
 
@@ -122,7 +121,6 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
 
       <section className="voucher-section" id="gutscheine" aria-labelledby="voucher-title">
         <div className="voucher-copy">
-          <p className="voucher-kicker">{t("voucher.kicker")}</p>
           <h2 id="voucher-title">{t("voucher.title")}</h2>
           <p>{t("voucher.description")}</p>
           <a className="hero-button voucher-cta" href={giftVoucherHref} target="_blank" rel="noreferrer">
