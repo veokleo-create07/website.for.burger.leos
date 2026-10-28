@@ -168,6 +168,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
             <p><strong>{t("visit.location")}</strong></p>
             <p>{t("visit.address")}<br />{t("visit.city")}</p>
             <p>{t("visit.hours")}<br />{t("visit.closed")}</p>
+            <p><a href="tel:+4945170323040">{t("visit.phone")}</a></p>
           </div>
         </div>
       </section>
@@ -197,6 +198,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
             <a href="https://maps.app.goo.gl/o1ea7zNGKqw8NxTN7?g_st=ic" target="_blank" rel="noreferrer">
               {t("footer.address")}<br />{t("footer.city")}
             </a>
+            <a href="tel:+4945170323040">{t("footer.phone")}</a>
           </div>
         </div>
 
