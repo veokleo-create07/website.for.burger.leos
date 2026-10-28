@@ -1885,7 +1885,7 @@ summary:focus-visible {
   }
 
   .hero-wordmark {
-    top: 57%;
+    top: 53%;
     font-size: clamp(72px, 20vw, 98px);
   }
 
