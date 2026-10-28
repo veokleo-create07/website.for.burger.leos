@@ -31,7 +31,7 @@ export default async function PrivacyPage({ params }: PageProps<"/[locale]/daten
           <section key={section.title}>
             <h2>{section.title}</h2>
             {section.paragraphs.map((paragraph, index) => (
-              <p key={index}>{paragraph.split("\\n").map((line, lineIndex) => <span key={lineIndex}>{line}{lineIndex < paragraph.split("\\n").length - 1 ? <br /> : null}</span>)}</p>
+              <p key={index} style={{ whiteSpace: "pre-line" }}>{paragraph}</p>
             ))}
           </section>
         ))}
