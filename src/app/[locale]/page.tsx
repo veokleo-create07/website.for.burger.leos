@@ -79,7 +79,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
                 <a className="hero-button hero-button-primary" href={"/" + locale + "/reservierung"}>
                   {t("reserve")}
                 </a>
-                <a className="hero-button hero-button-secondary" href="#speisekarte">
+                <a className="hero-button hero-button-secondary" href="https://www.restablo.de/restaurant/leos-juice-burger-luebeck-kuecknitz.html" target="_blank" rel="noreferrer">
                   {t("viewMenu")}
                 </a>
               </div>
