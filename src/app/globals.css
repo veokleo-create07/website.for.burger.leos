@@ -1955,24 +1955,3 @@ summary:focus-visible {
     height: 1.12em;
   }
 }
-
-
-/* Draw the German umlaut cleanly instead of relying on the display font's loose glyph. */
-.hero-umlaut {
-  position: relative;
-  display: inline-block;
-}
-
-.hero-umlaut::before {
-  position: absolute;
-  top: -0.28em;
-  left: 50%;
-  color: currentColor;
-  content: "··";
-  font-family: Arial, sans-serif;
-  font-size: 0.42em;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  line-height: 1;
-  transform: translateX(-50%);
-}
