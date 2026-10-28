@@ -1911,3 +1911,27 @@ summary:focus-visible {
     max-width: 330px;
   }
 }
+
+
+/* Locale-aware hero headline fitting for the longer campaign lines. */
+.hero-background-title[data-locale="de"] {
+  font-size: clamp(120px, 18vw, 360px);
+  transform: translateX(-50%) scaleX(0.52);
+}
+
+.hero-background-title[data-locale="en"] {
+  font-size: clamp(120px, 14vw, 300px);
+  transform: translateX(-50%) scaleX(0.5);
+}
+
+@media (max-width: 767px) {
+  .hero-background-title[data-locale="de"] {
+    font-size: clamp(66px, 17vw, 82px);
+    transform: translateX(-50%) scaleX(0.56);
+  }
+
+  .hero-background-title[data-locale="en"] {
+    font-size: clamp(50px, 13vw, 64px);
+    transform: translateX(-50%) scaleX(0.5);
+  }
+}
