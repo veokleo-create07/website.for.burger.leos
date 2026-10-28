@@ -10,7 +10,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
   if (!hasLocale(routing.locales, locale)) notFound();
 
   const t = await getTranslations({ locale, namespace: "HomePage" });
-  const giftVoucherHref = process.env.NEXT_PUBLIC_GIFT_VOUCHER_URL || "#gutscheine";
+  const giftVoucherHref = "https://www.bon-bon.de/gutschein/leos-juice-burger-luebeck/";
 
   return (
     <main className="site-shell" id="start">
@@ -115,7 +115,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
           ))}
         </div>
 
-        <a className="hero-button hero-button-primary favorites-cta" href="#speisekarte">
+        <a className="hero-button hero-button-primary favorites-cta" href="https://www.restablo.de/restaurant/leos-juice-burger-luebeck-kuecknitz.html" target="_blank" rel="noreferrer">
           {t("favorites.cta")}
         </a>
       </section>
@@ -125,7 +125,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
           <p className="voucher-kicker">{t("voucher.kicker")}</p>
           <h2 id="voucher-title">{t("voucher.title")}</h2>
           <p>{t("voucher.description")}</p>
-          <a className="hero-button voucher-cta" href={giftVoucherHref}>
+          <a className="hero-button voucher-cta" href={giftVoucherHref} target="_blank" rel="noreferrer">
             {t("voucher.cta")}
           </a>
         </div>
