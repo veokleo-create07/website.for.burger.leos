@@ -58,7 +58,7 @@ export function SiteHeader({ locale, labels, bookingHref }: Props) {
       <div className="header-tools">
         <a
           className="location-link"
-          href="https://maps.google.com/?q=Leo%27s+Juice+%26+Burger+L%C3%BCbeck-K%C3%BCcknitz"
+          href="https://maps.app.goo.gl/o1ea7zNGKqw8NxTN7?g_st=ic"
           target="_blank"
           rel="noreferrer"
         >
