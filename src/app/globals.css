@@ -2134,3 +2134,230 @@ summary:focus-visible {
     transform: none;
   }
 }
+
+
+/* Gift voucher section */
+.voucher-section {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  align-items: center;
+  gap: clamp(36px, 8vw, 140px);
+  overflow: hidden;
+  padding: clamp(88px, 10vw, 150px) clamp(24px, 7vw, 110px);
+  background: var(--color-burnt-orange);
+  color: var(--color-cream);
+}
+
+.voucher-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 510px;
+}
+
+.voucher-kicker {
+  margin: 0 0 12px;
+  color: #f7a900;
+  font-family: var(--font-bricolage-grotesque);
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.voucher-copy h2 {
+  margin: 0;
+  color: var(--color-cream);
+  font-family: var(--font-coiny);
+  font-size: clamp(58px, 7vw, 118px);
+  font-weight: 900;
+  letter-spacing: -0.065em;
+  line-height: 0.82;
+}
+
+.voucher-copy > p:not(.voucher-kicker) {
+  max-width: 390px;
+  margin: 24px 0 0;
+  color: rgb(246 240 228 / 88%);
+  font-family: var(--font-bricolage-grotesque);
+  font-size: clamp(18px, 1.65vw, 26px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+.voucher-cta {
+  margin-top: 28px;
+  border-color: var(--color-cream);
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+}
+
+.voucher-cta:hover {
+  box-shadow: 3px 3px 0 var(--color-charcoal);
+}
+
+.voucher-art {
+  position: relative;
+  display: grid;
+  min-height: 390px;
+  place-items: center;
+}
+
+.voucher-card {
+  position: relative;
+  display: grid;
+  width: min(100%, 530px);
+  aspect-ratio: 1.6 / 1;
+  align-content: center;
+  justify-items: center;
+  gap: 4px;
+  overflow: hidden;
+  border: 3px solid var(--color-charcoal);
+  border-radius: 20px;
+  padding: 30px;
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+  box-shadow: 14px 16px 0 rgb(36 34 31 / 20%);
+  transform: rotate(4deg);
+  animation: voucher-reveal 800ms cubic-bezier(0.22, 1, 0.36, 1) 250ms both;
+}
+
+.voucher-card::before,
+.voucher-card::after {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border: 2px solid var(--color-olive-green);
+  border-radius: 50%;
+  content: "";
+  opacity: 0.5;
+}
+
+.voucher-card::before {
+  top: -70px;
+  left: -45px;
+}
+
+.voucher-card::after {
+  right: -45px;
+  bottom: -70px;
+}
+
+.voucher-logo {
+  width: 86px;
+  height: 86px;
+  object-fit: contain;
+}
+
+.voucher-card-title {
+  font-family: var(--font-coiny);
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 0.9;
+}
+
+.voucher-card-subtitle,
+.voucher-card-note {
+  font-family: var(--font-bricolage-grotesque);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.voucher-card-note {
+  color: var(--color-olive-green);
+}
+
+.voucher-card-line {
+  width: 56%;
+  height: 2px;
+  margin: 10px 0 4px;
+  background: var(--color-burnt-orange);
+}
+
+.voucher-spark {
+  position: absolute;
+  color: #f7a900;
+  font-size: 40px;
+  line-height: 1;
+}
+
+.voucher-spark--one {
+  top: 15%;
+  left: 8%;
+  transform: rotate(14deg);
+}
+
+.voucher-spark--two {
+  right: 8%;
+  bottom: 12%;
+  transform: rotate(-12deg);
+}
+
+@keyframes voucher-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px) rotate(4deg) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(4deg) scale(1);
+  }
+}
+
+@media (max-width: 767px) {
+  .voucher-section {
+    grid-template-columns: 1fr;
+    gap: 46px;
+    padding: 76px 20px 92px;
+    text-align: center;
+  }
+
+  .voucher-copy {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .voucher-copy h2 {
+    font-size: clamp(56px, 16vw, 78px);
+  }
+
+  .voucher-copy > p:not(.voucher-kicker) {
+    margin-inline: auto;
+    font-size: 17px;
+  }
+
+  .voucher-cta {
+    margin-top: 22px;
+  }
+
+  .voucher-art {
+    min-height: 250px;
+  }
+
+  .voucher-card {
+    width: min(100%, 360px);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 9px 10px 0 rgb(36 34 31 / 20%);
+  }
+
+  .voucher-logo {
+    width: 62px;
+    height: 62px;
+  }
+
+  .voucher-card-title {
+    font-size: 31px;
+  }
+
+  .voucher-spark {
+    font-size: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .voucher-card {
+    animation: none;
+  }
+}
