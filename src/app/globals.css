@@ -1935,3 +1935,23 @@ summary:focus-visible {
     transform: translateX(-50%) scaleX(0.48);
   }
 }
+
+
+/* Keep German diacritics, especially Ü, inside the headline line box. */
+.hero-background-title[data-locale="de"] {
+  line-height: 0.86;
+}
+
+.hero-background-title[data-locale="de"] .hero-title-mask {
+  height: 1.1em;
+}
+
+@media (max-width: 767px) {
+  .hero-background-title[data-locale="de"] {
+    line-height: 0.88;
+  }
+
+  .hero-background-title[data-locale="de"] .hero-title-mask {
+    height: 1.12em;
+  }
+}
