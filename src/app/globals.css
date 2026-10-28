@@ -2982,3 +2982,35 @@ summary:focus-visible {
   .legal-footer .site-footer-bottom { flex-direction: column; align-items: flex-start; gap: 18px; }
   .legal-footer .site-footer-legal { flex-wrap: wrap; }
 }
+
+
+/* Refined legal-page typography */
+.legal-content,
+.legal-content p {
+  font-family: var(--font-bricolage-grotesque), sans-serif;
+}
+
+.legal-content p {
+  font-size: clamp(17px, 1.45vw, 20px);
+  font-weight: 500;
+  line-height: 1.42;
+  letter-spacing: -0.012em;
+}
+
+.legal-content h2 {
+  font-family: var(--font-bricolage-grotesque), sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.legal-content .privacy-intro {
+  max-width: 760px;
+  margin-bottom: 34px;
+  font-size: clamp(19px, 1.7vw, 23px);
+  line-height: 1.35;
+}
+
+@media (max-width: 767px) {
+  .legal-content p { font-size: 16px; line-height: 1.42; }
+  .legal-content .privacy-intro { font-size: 18px; line-height: 1.35; }
+}
