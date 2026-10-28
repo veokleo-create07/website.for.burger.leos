@@ -25,17 +25,24 @@
     "viewMenu": "Order online",
     "supportingRight": "Freshly prepared burgers and juices, made to satisfy every craving.",
     "favorites": {
-      "kicker": "Our selection",
       "title": "Our Favorites.",
       "cta": "Order online",
       "items": {
-        "triple": { "name": "Triple Cheeseburger", "imageAlt": "Triple Cheeseburger" },
-        "chili": { "name": "Chili Bacon Burger", "imageAlt": "Chili Bacon Burger" },
-        "crunchy": { "name": "Crunchy Burger", "imageAlt": "Crunchy Burger" }
+        "triple": {
+          "name": "Triple Cheeseburger",
+          "imageAlt": "Triple Cheeseburger"
+        },
+        "chili": {
+          "name": "Chili Bacon Burger",
+          "imageAlt": "Chili Bacon Burger"
+        },
+        "crunchy": {
+          "name": "Crunchy Burger",
+          "imageAlt": "Crunchy Burger"
+        }
       }
     },
     "voucher": {
-      "kicker": "A little something",
       "title": "Gift a little Leo’s.",
       "description": "Great burgers. Good times. The perfect gift.",
       "cta": "Buy a gift voucher",
