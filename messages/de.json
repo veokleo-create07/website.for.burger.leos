@@ -50,6 +50,17 @@
       "cardTitle": "Gutschein",
       "cardSubtitle": "für gute Zeiten",
       "cardNote": "Einlösbar bei Leo’s"
+    },
+    "visit": {
+      "title": "Wir sehen uns bei Leo’s!",
+      "description": "Gute Burger. Gute Laune. Dein Tisch wartet.",
+      "reserve": "Tisch reservieren",
+      "directions": "Route planen",
+      "location": "Lübeck-Kücknitz",
+      "address": "Mühlenstraße 51",
+      "city": "23552 Lübeck",
+      "hours": "Dienstag–Sonntag · 09:00–18:00",
+      "closed": "Montag · Geschlossen"
     }
   },
   "Reservation": {
