@@ -23,7 +23,17 @@
     "description": "Frische Burger. Gute Säfte. Einfach Leo’s.",
     "reserve": "Tisch reservieren",
     "viewMenu": "Speisekarte ansehen",
-    "supportingRight": "Frisch zubereitete Burger und Säfte, die jeden Appetit stillen."
+    "supportingRight": "Frisch zubereitete Burger und Säfte, die jeden Appetit stillen.",
+    "favorites": {
+      "kicker": "Unsere Auswahl",
+      "title": "Unsere Favoriten.",
+      "cta": "Online bestellen",
+      "items": {
+        "triple": { "name": "Triple Cheeseburger", "imageAlt": "Triple Cheeseburger" },
+        "chili": { "name": "Chili Bacon Burger", "imageAlt": "Chili Bacon Burger" },
+        "crunchy": { "name": "Crunchy Burger", "imageAlt": "Crunchy Burger" }
+      }
+    }
   },
   "Reservation": {
     "eyebrow": "Reservierung",
