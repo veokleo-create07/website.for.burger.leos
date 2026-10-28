@@ -50,6 +50,17 @@
       "cardTitle": "Gift voucher",
       "cardSubtitle": "for good times",
       "cardNote": "Redeem at Leo’s"
+    },
+    "visit": {
+      "title": "See you at Leo’s!",
+      "description": "Great burgers. Good times. Your table awaits.",
+      "reserve": "Book a table",
+      "directions": "Get directions",
+      "location": "Lübeck-Kücknitz",
+      "address": "Mühlenstraße 51",
+      "city": "23552 Lübeck",
+      "hours": "Tuesday–Sunday · 09:00–18:00",
+      "closed": "Monday · Closed"
     }
   },
   "Reservation": {
