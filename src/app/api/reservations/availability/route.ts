@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
   const guestsValue = request.nextUrl.searchParams.get("guests");
   const guests = guestsValue ? Number(guestsValue) : NaN;
 
-  if (!date || !/^\\d{4}-\\d{2}-\\d{2}$/.test(date) || !Number.isInteger(guests) || guests < 1 || guests > 10) {
+  if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date) || !Number.isInteger(guests) || guests < 1 || guests > 10) {
     return NextResponse.json({ error: "Please choose a valid date and guest count." }, { status: 400 });
   }
 
