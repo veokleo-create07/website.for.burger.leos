@@ -189,7 +189,6 @@ export function ReservationFlow({ labels, locale }: Props) {
               {selectionPhase === "date" ? (
                 <>
                   <div className="reservation-section-heading reservation-section-heading-stacked">
-                    <span className="reservation-label">{labels.date}</span>
                     <strong>{selectedDateLabel}</strong>
                   </div>
                   <div className="reservation-calendar">
@@ -235,7 +234,6 @@ export function ReservationFlow({ labels, locale }: Props) {
                 <>
                   <div className="reservation-section-heading">
                     <div>
-                      <span className="reservation-label">{labels.date}</span>
                       <strong>{selectedDateLabel}</strong>
                     </div>
                     <button type="button" className="reservation-inline-link reservation-change-date" onClick={backToDate}>
@@ -352,16 +350,6 @@ export function ReservationFlow({ labels, locale }: Props) {
 
           {step === 2 ? (
             <div className="reservation-step reservation-step-enter">
-              <div className="reservation-summary-line">
-                <span>{selectedDateLabel}</span>
-                <span>{guests} {labels.chooseGuests}</span>
-                <span>{durationLabel}</span>
-              </div>
-              <div className="reservation-section-heading reservation-section-heading-stacked">
-                <span className="reservation-label">{labels.selectTime}</span>
-                <strong>{labels.openingHours}</strong>
-              </div>
-              <p className="reservation-opening-note">{labels.openingHoursNote}</p>
               <label className="reservation-time-picker">
                 <span>{labels.timePlaceholder}</span>
                 <select value={selectedTime ?? ""} onChange={(event) => setSelectedTime(event.target.value)}>
@@ -369,7 +357,6 @@ export function ReservationFlow({ labels, locale }: Props) {
                   {displayedTimeSlots.map((time) => <option key={time} value={time}>{time}</option>)}
                 </select>
               </label>
-              <p className="reservation-duration-note">◷ {labels.duration}: {durationLabel}</p>
               <div className="reservation-step-actions">
                 <button type="button" className="reservation-secondary" onClick={() => setStep(1)}>
                   {labels.back}
@@ -385,7 +372,6 @@ export function ReservationFlow({ labels, locale }: Props) {
             <form className="reservation-step reservation-step-enter" onSubmit={confirmPreview}>
               <div className="reservation-summary-card">
                 <div>
-                  <span className="reservation-label">{labels.summary}</span>
                   <strong>{selectedDateLabel}</strong>
                 </div>
                 <dl>
@@ -413,7 +399,7 @@ export function ReservationFlow({ labels, locale }: Props) {
               <fieldset className="reservation-request-fieldset">
                 <legend>{labels.specialRequests} <span>({labels.optional})</span></legend>
                 <div className="reservation-request-grid">
-                  {[["birthday", labels.birthday], ["children", labels.children], ["dog", labels.dog]].map(([value, text]) => (
+                  {[["children", labels.children], ["dog", labels.dog]].map(([value, text]) => (
                     <button
                       type="button"
                       key={value}
