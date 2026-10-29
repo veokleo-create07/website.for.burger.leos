@@ -16,8 +16,19 @@ type CalendarCell = {
   inMonth: boolean;
 };
 
-const initialDate = "2026-10-28";
-const initialMonth = new Date(2026, 9, 1);
+const berlinToday = () => {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Berlin",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(new Date());
+  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return values.year + "-" + values.month + "-" + values.day;
+};
+
+const initialDate = berlinToday();
+const initialMonth = new Date(initialDate + "T12:00:00");
 
 const pad = (value: number) => String(value).padStart(2, "0");
 
@@ -76,6 +87,7 @@ export function ReservationFlow({ labels, locale }: Props) {
 
   const duration = guests <= 2 ? 60 : 90;
   const monthCells = useMemo(() => calendarCells(visibleMonth), [visibleMonth]);
+  const todayKey = berlinToday();
   const selectedDateObject = new Date(selectedDate + "T12:00:00");
   const dayOfWeek = selectedDateObject.getDay();
   const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
