@@ -56,8 +56,11 @@ export async function POST(request: NextRequest) {
   const phone = typeof body.phone === "string" ? body.phone.trim() : "";
   const specialRequests = Array.isArray(body.specialRequests) ? body.specialRequests : [];
 
-  if (!isDate(date) || !isTime(time) || !Number.isInteger(guests) || (guests as number) < 1 || (guests as number) > 10) {
-    return NextResponse.json({ error: "Please choose a valid date, time, and guest count." }, { status: 400 });
+  const todayInBerlin = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Berlin", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(new Date()).reduce<Record<string, string>>((values, part) => { values[part.type] = part.value; return values; }, {});
+  const berlinToday = todayInBerlin.year + "-" + todayInBerlin.month + "-" + todayInBerlin.day;
+
+  if (!isDate(date) || date < berlinToday || !isTime(time) || !Number.isInteger(guests) || (guests as number) < 1 || (guests as number) > 10) {
+    return NextResponse.json({ error: "Please choose a current or future date, time, and guest count." }, { status: 400 });
   }
   if (name.length < 2 || email.length < 3 || !email.includes("@") || phone.length < 5) {
     return NextResponse.json({ error: "Please check your contact details." }, { status: 400 });
