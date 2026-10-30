@@ -121,10 +121,15 @@ export function ReservationFlow({ labels, locale }: Props) {
   const displayedTimeSlots = serverTimes ?? timeSlots;
 
   const moveMonth = (offset: number) => {
-    setVisibleMonth((current) => new Date(current.getFullYear(), current.getMonth() + offset, 1));
+    setVisibleMonth((current) => {
+      const next = new Date(current.getFullYear(), current.getMonth() + offset, 1);
+      const todayMonth = new Date(todayKey.slice(0, 7) + "-01T12:00:00");
+      return next < todayMonth ? todayMonth : next;
+    });
   };
 
   const chooseDate = (value: string) => {
+    if (value < todayKey) return;
     setSelectedDate(value);
     setSelectedTime(null);
   };
@@ -214,6 +219,8 @@ export function ReservationFlow({ labels, locale }: Props) {
                             key={cell.key}
                             className={selectedDate === cell.key ? "reservation-date reservation-date-selected" : "reservation-date"}
                             onClick={() => chooseDate(cell.key)}
+                            disabled={cell.key < todayKey}
+                            aria-disabled={cell.key < todayKey}
                             aria-pressed={selectedDate === cell.key}
                           >
                             {cell.day}
@@ -442,7 +449,7 @@ export function ReservationFlow({ labels, locale }: Props) {
               <div className="reservation-confirmation-actions">
                 <a className="reservation-secondary" href="#" onClick={(event) => event.preventDefault()}>{labels.addCalendar}</a>
                 <a className="reservation-secondary" href="https://maps.google.com/?q=Leo%27s+Juice+%26+Burger+L%C3%BCbeck-K%C3%BCcknitz" target="_blank" rel="noreferrer">{labels.directions}</a>
-                <a className="reservation-primary" href="tel:+494514857170">{labels.callRestaurant}</a>
+                <a className="reservation-primary" href="tel:+4945170323040">{labels.callRestaurant}</a>
               </div>
             </div>
           ) : null}
