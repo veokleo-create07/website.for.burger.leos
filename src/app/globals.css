@@ -3128,3 +3128,19 @@ body:has(.mobile-menu[open]) {
     overflow-wrap: anywhere;
   }
 }
+
+
+/* Text containers stay measurable on legal and reservation pages. */
+.legal-content,
+.reservation-step,
+.reservation-panel {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.legal-content p,
+.legal-content h1,
+.legal-content h2 {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
