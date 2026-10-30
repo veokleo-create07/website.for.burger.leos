@@ -3065,3 +3065,66 @@ summary:focus-visible {
     padding-top: 17px;
   }
 }
+
+
+/* Responsive QA fixes: keep every surface inside the viewport at narrow widths. */
+html,
+body {
+  overflow-x: clip;
+}
+
+body:has(.mobile-menu[open]) {
+  overflow: hidden;
+}
+
+.favorites-image-wrap img {
+  /* Uploaded burger artwork has white matte pixels; multiply lets the cream section show through. */
+  mix-blend-mode: multiply;
+}
+
+.reservation-date:disabled {
+  cursor: not-allowed;
+  opacity: 0.36;
+}
+
+.reservation-date:disabled:hover {
+  border-color: transparent;
+  transform: none;
+}
+
+@media (max-width: 767px) {
+  .site-header .mobile-menu-links {
+    box-sizing: border-box;
+    width: 100vw;
+    max-width: 100vw;
+    padding-right: max(20px, env(safe-area-inset-right));
+    padding-left: max(20px, env(safe-area-inset-left));
+    overflow-x: hidden;
+  }
+
+  .site-header .mobile-menu-links a {
+    width: min(100%, calc(100vw - 40px));
+    max-width: calc(100vw - 40px);
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+    text-wrap: balance;
+  }
+
+  .reservation-shell {
+    overflow-x: clip;
+  }
+
+  .reservation-main,
+  .reservation-panel {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .reservation-summary-card dl,
+  .reservation-summary-card dd,
+  .reservation-summary-card dt {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
