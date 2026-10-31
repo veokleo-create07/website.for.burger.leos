@@ -92,7 +92,7 @@ export function ReservationFlow({ labels, locale }: Props) {
   const dayOfWeek = selectedDateObject.getDay();
   const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
   const openingStart = isWeekend ? 17 * 60 : 12 * 60;
-  const latestStart = 21 * 60 - duration;
+  const latestStart = 20 * 60 - duration;
   const timeSlots = useMemo(() => {
     const slots: string[] = [];
     for (let minutes = openingStart; minutes <= latestStart; minutes += 30) {
