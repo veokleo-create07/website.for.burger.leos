@@ -10,8 +10,6 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
   if (!hasLocale(routing.locales, locale)) notFound();
 
   const t = await getTranslations({ locale, namespace: "HomePage" });
-  const giftVoucherHref = "https://www.bon-bon.de/gutschein/leos-juice-burger-luebeck/";
-
   return (
     <main className="site-shell" id="start">
       <div className="hero-card">
@@ -80,100 +78,12 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
                 <a className="hero-button hero-button-primary" href={"/" + locale + "/reservierung"}>
                   {t("reserve")}
                 </a>
-                <a className="hero-button hero-button-secondary" href="https://www.restablo.de/restaurant/leos-juice-burger-luebeck-kuecknitz.html" target="_blank" rel="noreferrer">
-                  {t("viewMenu")}
-                </a>
               </div>
             </div>
             <p className="hero-description hero-bottom-right">{t("supportingRight")}</p>
           </div>
         </section>
       </div>
-
-      <section className="favorites-section" id="favoriten" aria-labelledby="favorites-title">
-        <div className="favorites-heading">
-          <h2 id="favorites-title">{t("favorites.title")}</h2>
-        </div>
-
-        <div className="favorites-list">
-          {[
-            { key: "triple", className: "favorites-item--triple", image: "/images/burger-triple.png" },
-            { key: "chili", className: "favorites-item--chili", image: "/images/burger-cutout.png" },
-            { key: "crunchy", className: "favorites-item--crunchy", image: "/images/burger-crunchy.png" },
-          ].map((item) => (
-            <article className={"favorites-item " + item.className} key={item.key}>
-              <div className="favorites-image-wrap">
-                <Image
-                  src={item.image}
-                  alt={t("favorites.items." + item.key + ".imageAlt")}
-                  fill
-                  sizes="(max-width: 767px) 76vw, 30vw"
-                />
-              </div>
-              <h3>{t("favorites.items." + item.key + ".name")}</h3>
-            </article>
-          ))}
-        </div>
-
-        <a className="hero-button hero-button-primary favorites-cta" href="https://www.restablo.de/restaurant/leos-juice-burger-luebeck-kuecknitz.html" target="_blank" rel="noreferrer">
-          {t("favorites.cta")}
-        </a>
-      </section>
-
-      <section className="voucher-section" id="gutscheine" aria-labelledby="voucher-title">
-        <div className="voucher-copy">
-          <h2 id="voucher-title">{t("voucher.title")}</h2>
-          <p>{t("voucher.description")}</p>
-          <a className="hero-button voucher-cta" href={giftVoucherHref} target="_blank" rel="noreferrer">
-            {t("voucher.cta")}
-          </a>
-        </div>
-
-        <a
-          className="voucher-art"
-          href={giftVoucherHref}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={t("voucher.alt")}
-        >
-          <Image
-            className="voucher-image"
-            src="/images/gift-voucher.jpg"
-            alt={t("voucher.alt")}
-            fill
-            sizes="(max-width: 767px) 92vw, 48vw"
-          />
-        </a>
-      </section>
-
-      <section className="visit-section" id="kontakt" aria-labelledby="visit-title">
-        <span className="visit-accent visit-accent--left" aria-hidden="true">///</span>
-        <span className="visit-accent visit-accent--right" aria-hidden="true">///</span>
-        <div className="visit-content">
-          <h2 id="visit-title">{t("visit.title")}</h2>
-          <p className="visit-description">{t("visit.description")}</p>
-          <div className="visit-actions">
-            <a className="hero-button hero-button-primary" href={"/" + locale + "/reservierung"}>
-              {t("visit.reserve")}
-            </a>
-            <a
-              className="hero-button hero-button-secondary"
-              href="https://maps.app.goo.gl/o1ea7zNGKqw8NxTN7?g_st=ic"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {t("visit.directions")}
-            </a>
-          </div>
-          <div className="visit-details">
-            <p><strong>{t("visit.location")}</strong></p>
-            <p>{t("visit.address")}<br />{t("visit.city")}</p>
-            <p>{t("visit.hours")}<br />{t("visit.closed")}</p>
-            <p><a href="tel:+4945170323040">{t("visit.phone")}</a></p>
-          </div>
-        </div>
-      </section>
-
 
       <footer className="site-footer" id="footer">
         <div className="site-footer-main">
@@ -190,8 +100,6 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
           <nav className="site-footer-nav" aria-label={t("footer.navigationLabel")}>
             <a href={"/" + locale + "#start"}>{t("footer.home")}</a>
             <a href={"/" + locale + "/reservierung"}>{t("footer.reserve")}</a>
-            <a href="https://www.restablo.de/restaurant/leos-juice-burger-luebeck-kuecknitz.html" target="_blank" rel="noreferrer">{t("footer.order")}</a>
-            <a href={giftVoucherHref} target="_blank" rel="noreferrer">{t("footer.voucher")}</a>
           </nav>
 
           <div className="site-footer-contact">
@@ -200,6 +108,7 @@ export default async function LocalePage({ params }: PageProps<"/[locale]">) {
               {t("footer.address")}<br />{t("footer.city")}
             </a>
             <a href="tel:+4945170323040">{t("footer.phone")}</a>
+            <p className="site-footer-hours"><strong>{t("visit.hours")}</strong><br />{t("visit.closed")}</p>
           </div>
         </div>
 
