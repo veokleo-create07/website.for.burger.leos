@@ -3166,3 +3166,40 @@ body:has(.mobile-menu[open]) {
     scroll-snap-align: none;
   }
 }
+
+
+/* Minimal reservation-first homepage hero */
+.hero-simple {
+  min-height: clamp(28rem, 62vh, 48rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: clamp(4rem, 10vw, 8rem) 1.5rem;
+  text-align: center;
+}
+
+.hero-simple-title {
+  margin: 0;
+  max-width: 100%;
+  color: var(--color-burnt-orange);
+  font-family: var(--font-heading);
+  font-size: clamp(3.25rem, 9vw, 9rem);
+  font-weight: 800;
+  line-height: .95;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+@media (max-width: 767px) {
+  .hero-simple {
+    min-height: 32rem;
+    gap: 1.5rem;
+    padding: 3.5rem 1.25rem 4.5rem;
+  }
+
+  .hero-simple-title {
+    font-size: clamp(2.8rem, 13vw, 5rem);
+  }
+}
