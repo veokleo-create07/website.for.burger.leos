@@ -44,7 +44,7 @@ const timeLabel = (minutes: number) => pad(Math.floor(minutes / 60)) + ":" + pad
 
 const isHolidayClosed = (value: string) => {
   const [, month, day] = value.split("-");
-  return (month === "12" && ["24", "25", "26", "31"].includes(day)) || (month === "01" && day === "01");
+  return (month === "12" && ["30", "31"].includes(day)) || (month === "01" && ["01", "02"].includes(day));
 };
 
 const calendarCells = (month: Date): CalendarCell[] => {
