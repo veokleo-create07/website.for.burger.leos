@@ -3939,3 +3939,25 @@ body {
     max-width: none;
   }
 }
+
+
+/* Keep the desktop reservation card balanced instead of stretching controls */
+@media (min-width: 1101px) {
+  .reservation-layout {
+    grid-template-columns: minmax(280px, 360px) minmax(0, 720px) minmax(0, 1fr);
+    gap: 52px;
+  }
+
+  .reservation-panel {
+    max-width: 720px;
+    justify-self: start;
+  }
+
+  .reservation-guest-grid {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+
+  .reservation-guest {
+    width: 100%;
+  }
+}
