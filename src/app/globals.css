@@ -3574,3 +3574,68 @@ h1, h2, h3, h4, h5, h6,
     font-size: 1.6rem;
   }
 }
+
+
+/* Responsive overflow guard for expanded reservation content */
+.reservation-panel,
+.reservation-step,
+.reservation-inquiry,
+.reservation-inquiry-form,
+.reservation-inquiry-fields,
+.reservation-fields,
+.reservation-request-fieldset {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.reservation-inquiry {
+  width: 100%;
+  overflow: hidden;
+}
+
+.reservation-inquiry-fields {
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.reservation-inquiry-fields label,
+.reservation-inquiry-fields label input,
+.reservation-inquiry-fields label textarea,
+.reservation-fields label,
+.reservation-fields input,
+.reservation-fields textarea,
+.reservation-time-picker,
+.reservation-time-picker select {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.reservation-inquiry-fields label input,
+.reservation-inquiry-fields label textarea,
+.reservation-fields input,
+.reservation-fields textarea {
+  width: 100%;
+}
+
+@media (max-width: 560px) {
+  .reservation-inquiry-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .reservation-inquiry-message {
+    grid-column: auto;
+  }
+
+  .reservation-panel {
+    overflow: hidden;
+  }
+
+  .reservation-step-actions {
+    flex-direction: column-reverse;
+  }
+
+  .reservation-step-actions > * {
+    width: 100%;
+  }
+}
