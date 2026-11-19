@@ -41,6 +41,19 @@ export function SiteHeader({ locale, labels, bookingHref }: Props) {
         />
       </a>
 
+      <nav className="desktop-nav" aria-label={labels.mainNavigation}>
+        {links.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            className={link.current ? "site-link site-link-active" : "site-link"}
+            aria-current={link.current ? "page" : undefined}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
       <div className="header-tools">
         <a
           className="location-link"
@@ -59,6 +72,20 @@ export function SiteHeader({ locale, labels, bookingHref }: Props) {
         <a className="header-booking" href={bookingHref ?? "#reservierung"}>
           {labels.booking}
         </a>
+        <details className="mobile-menu">
+          <summary aria-label={labels.menuButton}>
+            <span />
+            <span />
+            <span />
+          </summary>
+          <nav className="mobile-menu-links" aria-label={labels.mobileNavigation}>
+            {links.map((link) => (
+              <a key={link.label} href={link.href} aria-current={link.current ? "page" : undefined}>
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </details>
       </div>
     </header>
   );
