@@ -55,6 +55,7 @@ export default async function ReservationPage({ params }: Props) {
           openingHours: reservation("openingHours"),
           openingHoursNote: reservation("openingHoursNote"),
           holidayClosed: reservation("holidayClosed"),
+          fullyBooked: reservation("fullyBooked"),
           detailsTitle: reservation("detailsTitle"),
           fullName: reservation("fullName"),
           email: reservation("email"),
