@@ -3398,3 +3398,179 @@ h1, h2, h3, h4, h5, h6,
     border-radius: 22px;
   }
 }
+
+
+/* Reservation page: editorial calendar layout */
+.reservation-shell {
+  min-height: 100svh;
+  background: var(--leo-cream);
+}
+
+.reservation-shell .site-header {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  grid-template-columns: 1fr auto 1fr;
+}
+
+.reservation-shell .brand-link {
+  grid-column: 2;
+}
+
+.reservation-shell .header-tools {
+  grid-column: 3;
+}
+
+.reservation-shell .header-booking {
+  display: none;
+}
+
+.reservation-main {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 34px 32px 88px;
+}
+
+.reservation-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, .72fr) minmax(440px, 1.18fr) minmax(180px, .6fr);
+  align-items: start;
+  gap: clamp(32px, 5vw, 76px);
+  border-top: 1px solid var(--leo-sand);
+  border-bottom: 1px solid var(--leo-sand);
+  padding: 26px 0 64px;
+}
+
+.reservation-intro {
+  grid-column: 1;
+  padding-top: 2px;
+  text-align: left;
+}
+
+.reservation-title {
+  margin: 0;
+  color: var(--leo-olive);
+  font-family: var(--font-lobster), cursive;
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.reservation-panel {
+  grid-column: 2;
+  margin: 0;
+  border: 1px solid var(--leo-sand);
+  border-radius: 28px;
+  padding: clamp(24px, 3vw, 34px);
+  background: var(--leo-card);
+  box-shadow: 0 18px 44px rgb(43 24 13 / 10%);
+}
+
+.reservation-section-heading strong,
+.reservation-guest-fieldset legend,
+.reservation-request-fieldset legend {
+  color: var(--leo-olive);
+  font-family: var(--font-lobster), cursive;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.reservation-calendar {
+  border-top-color: var(--leo-sand);
+}
+
+.reservation-calendar-header strong,
+.reservation-weekdays,
+.reservation-fields label,
+.reservation-time-picker > span {
+  color: var(--leo-espresso);
+  font-family: var(--font-archivo), Arial, sans-serif;
+}
+
+.reservation-icon-button,
+.reservation-date,
+.reservation-guest,
+.reservation-request {
+  border-color: var(--leo-sand);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.reservation-date-selected,
+.reservation-guest-selected,
+.reservation-request-selected {
+  border-color: var(--leo-orange);
+  background: var(--leo-orange);
+  color: var(--leo-espresso);
+}
+
+.reservation-step-actions {
+  margin-top: 26px;
+}
+
+.reservation-holiday-message {
+  color: var(--leo-espresso);
+  font-family: var(--font-archivo), Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+  .reservation-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .reservation-intro,
+  .reservation-panel {
+    grid-column: 1;
+  }
+
+  .reservation-intro {
+    text-align: center;
+  }
+
+  .reservation-panel {
+    width: min(680px, 100%);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .reservation-shell .site-header {
+    display: flex;
+    width: 100%;
+  }
+
+  .reservation-shell .brand-link {
+    order: 0;
+  }
+
+  .reservation-shell .header-tools {
+    order: 1;
+  }
+
+  .reservation-main {
+    padding: 24px 17px 60px;
+  }
+
+  .reservation-layout {
+    gap: 22px;
+    padding: 20px 0 42px;
+  }
+
+  .reservation-title {
+    font-size: clamp(3.2rem, 15vw, 4.5rem);
+  }
+
+  .reservation-panel {
+    border-radius: 24px;
+    padding: 20px 16px 22px;
+  }
+
+  .reservation-section-heading strong,
+  .reservation-guest-fieldset legend,
+  .reservation-request-fieldset legend {
+    font-size: 1.6rem;
+  }
+}
