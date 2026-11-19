@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, Lobster } from "next/font/google";
+import { Bricolage_Grotesque, Coiny, Inter } from "next/font/google";
 import { hasLocale } from "next-intl";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -8,17 +8,22 @@ import type { ReactNode } from "react";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
-const archivo = Archivo({
-  weight: ["400", "500", "600", "700", "800"],
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-archivo",
+  variable: "--font-bricolage-grotesque",
   display: "swap",
 });
 
-const lobster = Lobster({
-  weight: "400",
+const inter = Inter({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-lobster",
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const coiny = Coiny({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-coiny",
   display: "swap",
 });
 
@@ -63,7 +68,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} className={`${archivo.variable} ${lobster.variable}`}>
+    <html lang={locale} className={`${bricolage.variable} ${inter.variable} ${coiny.variable}`}>
       <body>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
