@@ -3639,3 +3639,74 @@ h1, h2, h3, h4, h5, h6,
     width: 100%;
   }
 }
+
+
+/* Final reservation text and grid containment */
+html,
+body {
+  overflow-x: hidden;
+}
+
+.reservation-section-heading-stacked strong,
+.reservation-summary-card strong,
+.reservation-summary-card dd,
+.reservation-inquiry-form > p,
+.reservation-fields label,
+.reservation-inquiry-fields label {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.reservation-section-heading-stacked strong {
+  display: block;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  line-height: 1.15;
+}
+
+.reservation-summary-card {
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) minmax(0, auto);
+}
+
+.reservation-summary-card dl {
+  min-width: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.reservation-summary-card dd {
+  white-space: nowrap;
+}
+
+.reservation-inquiry-fields {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 767px) {
+  .reservation-panel {
+    width: 100%;
+  }
+
+  .reservation-summary-card {
+    grid-template-columns: 1fr;
+  }
+
+  .reservation-summary-card dl {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .reservation-title {
+    font-size: clamp(2.75rem, 14vw, 4rem);
+  }
+
+  .reservation-summary-card dl {
+    gap: 10px;
+  }
+
+  .reservation-summary-card dd {
+    white-space: normal;
+  }
+}
