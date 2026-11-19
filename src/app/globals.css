@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-cream: #f6f0e4;
-  --color-charcoal: #24221f;
-  --color-burnt-orange: #b7482d;
-  --color-olive-green: #64704a;
-  --font-heading: var(--font-bricolage-grotesque);
-  --font-body: var(--font-inter);
+  --color-cream: #fbf6e6;
+  --color-charcoal: #2b180d;
+  --color-burnt-orange: #e8693f;
+  --color-olive-green: #646c22;
+  --font-heading: var(--font-archivo);
+  --font-body: var(--font-archivo);
 }
 
 body {
@@ -104,7 +104,7 @@ summary:focus-visible {
 .site-link {
   padding: 12px 0;
   color: var(--color-charcoal);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   white-space: nowrap;
   font-size: 15px;
   font-weight: 600;
@@ -149,7 +149,7 @@ summary:focus-visible {
 
 .language-switcher {
   gap: 10px;
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 13px;
   font-weight: 600;
 }
@@ -194,7 +194,7 @@ summary:focus-visible {
   border: 2px solid var(--color-charcoal);
   border-radius: 6px;
   padding: 0 20px;
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 14px;
   font-weight: 650;
   transition:
@@ -351,7 +351,7 @@ summary:focus-visible {
   margin: 0;
   overflow: visible;
   color: var(--color-burnt-orange);
-  font-family: var(--font-coiny);
+  font-family: var(--font-lobster);
   font-size: clamp(150px, 20.5vw, 420px);
   font-weight: 900;
   letter-spacing: -0.06em;
@@ -430,7 +430,7 @@ summary:focus-visible {
   z-index: 4;
   opacity: 0;
   color: #f7a900;
-  font-family: var(--font-coiny);
+  font-family: var(--font-lobster);
   font-size: clamp(22px, 2.2vw, 46px);
   font-weight: 900;
   letter-spacing: -0.06em;
@@ -464,7 +464,7 @@ summary:focus-visible {
   top: 67.5%;
   left: 50%;
   color: #f2a31a;
-  font-family: var(--font-coiny);
+  font-family: var(--font-lobster);
   font-size: clamp(140px, 12.5vw, 260px);
   font-weight: 900;
   letter-spacing: -0.09em;
@@ -499,7 +499,7 @@ summary:focus-visible {
   max-width: 450px;
   margin: 0;
   color: var(--color-charcoal);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: clamp(20px, 1.32vw, 28px);
   font-weight: 700;
   letter-spacing: -0.035em;
@@ -704,7 +704,7 @@ summary:focus-visible {
     border-radius: 8px;
     padding: 10px 12px;
     color: var(--color-charcoal);
-    font-family: var(--font-bricolage-grotesque);
+    font-family: var(--font-archivo);
     font-size: 14px;
     font-weight: 600;
     transition: color 160ms ease, background-color 160ms ease;
@@ -913,7 +913,7 @@ summary:focus-visible {
 .reservation-label {
   display: block;
   color: var(--color-olive-green);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 12px;
   font-weight: 650;
   letter-spacing: 0.08em;
@@ -923,7 +923,7 @@ summary:focus-visible {
   max-width: 420px;
   margin: 14px 0 20px;
   color: var(--color-charcoal);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: clamp(42px, 5vw, 74px);
   font-weight: 700;
   letter-spacing: -0.065em;
@@ -957,7 +957,7 @@ summary:focus-visible {
 
 .reservation-progress-number {
   color: var(--color-charcoal);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 13px;
   font-weight: 600;
 }
@@ -1021,7 +1021,7 @@ summary:focus-visible {
 
 .reservation-section-heading strong {
   color: var(--color-charcoal);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: clamp(18px, 2.1vw, 26px);
   font-weight: 650;
   letter-spacing: -0.03em;
@@ -1051,7 +1051,7 @@ summary:focus-visible {
 }
 
 .reservation-calendar-header strong {
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 17px;
   font-weight: 650;
   text-transform: capitalize;
@@ -1087,7 +1087,7 @@ summary:focus-visible {
 .reservation-weekdays {
   margin-bottom: 7px;
   color: rgb(36 34 31 / 52%);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 11px;
   font-weight: 650;
   text-align: center;
@@ -1104,7 +1104,7 @@ summary:focus-visible {
   background: transparent;
   color: var(--color-charcoal);
   cursor: pointer;
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 14px;
   font-weight: 600;
   transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
@@ -1135,7 +1135,7 @@ summary:focus-visible {
 .reservation-request-fieldset legend {
   margin-bottom: 12px;
   color: var(--color-charcoal);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 15px;
   font-weight: 650;
 }
@@ -1162,7 +1162,7 @@ summary:focus-visible {
   background: rgb(246 240 228 / 72%);
   color: var(--color-charcoal);
   cursor: pointer;
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 13px;
   font-weight: 600;
   transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease, transform 160ms ease;
@@ -1202,7 +1202,7 @@ summary:focus-visible {
   gap: 8px 18px;
   margin-bottom: 32px;
   color: var(--color-olive-green);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 13px;
   font-weight: 600;
 }
@@ -1271,7 +1271,7 @@ summary:focus-visible {
   border-radius: 6px;
   padding: 0 20px;
   cursor: pointer;
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 13px;
   font-weight: 650;
   text-align: center;
@@ -1322,7 +1322,7 @@ summary:focus-visible {
 }
 
 .reservation-summary-card strong {
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 18px;
   font-weight: 650;
 }
@@ -1354,7 +1354,7 @@ summary:focus-visible {
 .reservation-confirmation-summary dd {
   margin: 0;
   color: var(--color-charcoal);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 13px;
   font-weight: 600;
 }
@@ -1370,7 +1370,7 @@ summary:focus-visible {
   display: grid;
   gap: 8px;
   color: var(--color-charcoal);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 13px;
   font-weight: 600;
 }
@@ -1428,7 +1428,7 @@ summary:focus-visible {
   border-radius: 50%;
   background: var(--color-burnt-orange);
   color: #fff;
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 32px;
   font-weight: 650;
 }
@@ -1612,7 +1612,7 @@ summary:focus-visible {
 .reservation-inline-link {
   flex: 0 0 auto;
   color: var(--color-burnt-orange);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 12px;
   font-weight: 650;
   text-decoration: underline;
@@ -1645,7 +1645,7 @@ summary:focus-visible {
   background: transparent;
   color: var(--color-burnt-orange);
   cursor: pointer;
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 13px;
   font-weight: 650;
   text-align: left;
@@ -1690,7 +1690,7 @@ summary:focus-visible {
   display: grid;
   gap: 6px;
   color: var(--color-charcoal);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 12px;
   font-weight: 600;
 }
@@ -1806,7 +1806,7 @@ summary:focus-visible {
 
 .reservation-time-picker > span {
   color: var(--color-charcoal);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 13px;
   font-weight: 650;
 }
@@ -1825,7 +1825,7 @@ summary:focus-visible {
     rgb(246 240 228 / 80%);
   color: var(--color-charcoal);
   cursor: pointer;
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 14px;
   font-weight: 600;
 }
@@ -1985,7 +1985,7 @@ summary:focus-visible {
 .favorites-kicker {
   margin: 0 0 10px;
   color: var(--color-olive-green);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 13px;
   font-weight: 650;
   letter-spacing: 0.08em;
@@ -1995,7 +1995,7 @@ summary:focus-visible {
 .favorites-heading h2 {
   margin: 0;
   color: var(--color-charcoal);
-  font-family: var(--font-coiny);
+  font-family: var(--font-lobster);
   font-size: clamp(54px, 8vw, 130px);
   font-weight: 900;
   letter-spacing: -0.065em;
@@ -2065,7 +2065,7 @@ summary:focus-visible {
   z-index: 1;
   margin: 14px 0 0;
   color: var(--color-charcoal);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: clamp(16px, 1.5vw, 23px);
   font-weight: 650;
   letter-spacing: -0.035em;
@@ -2158,7 +2158,7 @@ summary:focus-visible {
 .voucher-kicker {
   margin: 0 0 12px;
   color: #f7a900;
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 13px;
   font-weight: 650;
   letter-spacing: 0.08em;
@@ -2168,7 +2168,7 @@ summary:focus-visible {
 .voucher-copy h2 {
   margin: 0;
   color: var(--color-cream);
-  font-family: var(--font-coiny);
+  font-family: var(--font-lobster);
   font-size: clamp(58px, 7vw, 118px);
   font-weight: 900;
   letter-spacing: -0.065em;
@@ -2179,7 +2179,7 @@ summary:focus-visible {
   max-width: 390px;
   margin: 24px 0 0;
   color: rgb(246 240 228 / 88%);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: clamp(18px, 1.65vw, 26px);
   font-weight: 600;
   letter-spacing: -0.03em;
@@ -2251,14 +2251,14 @@ summary:focus-visible {
 }
 
 .voucher-card-title {
-  font-family: var(--font-coiny);
+  font-family: var(--font-lobster);
   font-size: clamp(28px, 3vw, 44px);
   line-height: 0.9;
 }
 
 .voucher-card-subtitle,
 .voucher-card-note {
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 13px;
   font-weight: 600;
 }
@@ -2479,7 +2479,7 @@ summary:focus-visible {
   max-width: 900px;
   margin: 0 auto;
   color: var(--color-burnt-orange);
-  font-family: var(--font-coiny);
+  font-family: var(--font-lobster);
   font-size: clamp(58px, 8vw, 132px);
   font-weight: 900;
   letter-spacing: -0.065em;
@@ -2491,7 +2491,7 @@ summary:focus-visible {
   max-width: 560px;
   margin: 28px auto 0;
   color: var(--color-charcoal);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: clamp(18px, 2vw, 28px);
   font-weight: 600;
   letter-spacing: -0.035em;
@@ -2512,7 +2512,7 @@ summary:focus-visible {
   gap: 10px 34px;
   margin: 38px auto 0;
   color: rgb(36 34 31 / 78%);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 15px;
   font-weight: 550;
   line-height: 1.35;
@@ -2530,7 +2530,7 @@ summary:focus-visible {
 .visit-accent {
   position: absolute;
   color: #f7a900;
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: clamp(24px, 3vw, 42px);
   font-weight: 900;
   letter-spacing: 0.08em;
@@ -2645,7 +2645,7 @@ summary:focus-visible {
   align-items: flex-start;
   gap: 13px;
   color: var(--color-cream);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 15px;
   font-weight: 600;
 }
@@ -2666,7 +2666,7 @@ summary:focus-visible {
 .site-footer-contact a,
 .site-footer-legal a {
   color: rgb(246 240 228 / 86%);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 15px;
   font-weight: 550;
   transition: color 160ms ease, transform 160ms ease;
@@ -2689,7 +2689,7 @@ summary:focus-visible {
 .site-footer-contact p {
   margin: 0 0 12px;
   color: #f7a900;
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 14px;
   font-weight: 700;
 }
@@ -2709,7 +2709,7 @@ summary:focus-visible {
   border-top: 1px solid rgb(246 240 228 / 22%);
   padding-top: 19px;
   color: rgb(246 240 228 / 62%);
-  font-family: var(--font-bricolage-grotesque);
+  font-family: var(--font-archivo);
   font-size: 12px;
   font-weight: 500;
 }
@@ -2859,7 +2859,7 @@ summary:focus-visible {
 .site-header .mobile-menu-links a {
   padding: 4px 0;
   color: var(--color-cream);
-  font-family: var(--font-coiny);
+  font-family: var(--font-lobster);
   font-size: clamp(44px, 8vw, 92px);
   font-weight: 900;
   letter-spacing: -0.055em;
@@ -2934,7 +2934,7 @@ summary:focus-visible {
 .legal-kicker {
   margin: 0 0 14px;
   color: var(--color-burnt-orange);
-  font-family: var(--font-bricolage-grotesque), sans-serif;
+  font-family: var(--font-archivo), sans-serif;
   font-size: clamp(14px, 1.5vw, 18px);
   font-weight: 700;
 }
@@ -2942,7 +2942,7 @@ summary:focus-visible {
 .legal-content h1 {
   margin: 0 0 clamp(42px, 6vw, 72px);
   color: var(--color-burnt-orange);
-  font-family: var(--font-coiny), sans-serif;
+  font-family: var(--font-lobster), sans-serif;
   font-size: clamp(58px, 9vw, 132px);
   line-height: .9;
   letter-spacing: -.045em;
@@ -2957,14 +2957,14 @@ summary:focus-visible {
 
 .legal-content h2 {
   margin: 0 0 10px;
-  font-family: var(--font-bricolage-grotesque), sans-serif;
+  font-family: var(--font-archivo), sans-serif;
   font-size: clamp(22px, 3vw, 34px);
   line-height: 1;
 }
 
 .legal-content p {
   margin: 0;
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-archivo), sans-serif;
   font-size: clamp(16px, 1.7vw, 20px);
   line-height: 1.5;
 }
@@ -2987,7 +2987,7 @@ summary:focus-visible {
 /* Refined legal-page typography */
 .legal-content,
 .legal-content p {
-  font-family: var(--font-bricolage-grotesque), sans-serif;
+  font-family: var(--font-archivo), sans-serif;
 }
 
 .legal-content p {
@@ -2998,7 +2998,7 @@ summary:focus-visible {
 }
 
 .legal-content h2 {
-  font-family: var(--font-bricolage-grotesque), sans-serif;
+  font-family: var(--font-archivo), sans-serif;
   font-weight: 700;
   letter-spacing: -0.025em;
 }
@@ -3201,5 +3201,200 @@ body:has(.mobile-menu[open]) {
 
   .hero-simple-title {
     font-size: clamp(2.8rem, 13vw, 5rem);
+  }
+}
+
+
+/* Leo’s refreshed visual system */
+:root {
+  --leo-cream: #fbf6e6;
+  --leo-espresso: #2b180d;
+  --leo-olive: #646c22;
+  --leo-orange: #e8693f;
+  --leo-card: rgb(255 253 247);
+  --leo-sand: #e6d6b4;
+}
+
+body {
+  background: var(--leo-cream);
+  color: var(--leo-espresso);
+  font-family: var(--font-archivo), Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.hero-simple-title {
+  color: var(--leo-olive);
+  font-family: var(--font-lobster), cursive;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.site-shell,
+.hero-card,
+.hero-simple,
+.site-footer,
+.legal-page {
+  background: var(--leo-cream);
+}
+
+.site-header {
+  padding-inline: clamp(24px, 2.5vw, 32px);
+}
+
+.site-link,
+.language-switcher,
+.location-link,
+.header-booking,
+.hero-button,
+.reservation-primary,
+.reservation-secondary,
+.reservation-inline-link,
+.site-footer,
+.site-footer-nav,
+.site-footer-contact,
+.legal-content,
+.reservation-main {
+  font-family: var(--font-archivo), Arial, sans-serif;
+}
+
+.header-booking,
+.hero-button,
+.reservation-primary,
+.reservation-secondary {
+  min-height: 52px;
+  border-radius: 999px;
+  border: 1.5px solid var(--leo-espresso);
+  padding-inline: 26px;
+  font-family: var(--font-archivo), Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  box-shadow: inset 0 0 0 2px rgb(251 246 230 / 28%), 0 6px 0 rgb(232 105 63 / 18%);
+}
+
+.header-booking,
+.hero-button-primary,
+.reservation-primary {
+  background: var(--leo-orange);
+  color: var(--leo-espresso);
+}
+
+.header-booking:hover,
+.hero-button:hover,
+.reservation-primary:hover,
+.reservation-secondary:hover {
+  box-shadow: inset 0 0 0 2px rgb(251 246 230 / 32%), 0 8px 0 rgb(232 105 63 / 28%);
+  transform: translateY(-2px);
+}
+
+.hero-button-secondary,
+.reservation-secondary {
+  background: transparent;
+  color: var(--leo-olive);
+  border-color: var(--leo-olive);
+  box-shadow: inset 0 0 0 2px rgb(100 108 34 / 16%);
+}
+
+.hero-simple {
+  min-height: clamp(30rem, 65vh, 48rem);
+}
+
+.hero-simple-title {
+  color: var(--leo-olive);
+  font-size: clamp(4rem, 6.4vw, 5.125rem);
+  line-height: 1;
+}
+
+.reservation-panel,
+.reservation-summary-card,
+.reservation-inquiry,
+.legal-content {
+  background: var(--leo-card);
+  border: 1px solid var(--leo-sand);
+  border-radius: 28px;
+  box-shadow: 0 18px 44px rgb(43 24 13 / 10%);
+}
+
+.reservation-panel {
+  padding: clamp(22px, 3vw, 40px);
+}
+
+.reservation-fields input,
+.reservation-fields textarea,
+.reservation-inquiry-fields input,
+.reservation-inquiry-fields textarea,
+.reservation-time-picker select {
+  background: #fff;
+  border: 1.5px solid var(--leo-sand);
+  border-radius: 6px;
+  padding: 12px 14px;
+  color: var(--leo-espresso);
+  font-family: var(--font-archivo), Arial, sans-serif;
+}
+
+.reservation-date-selected,
+.reservation-guest-selected,
+.reservation-request-selected {
+  background: var(--leo-olive);
+  border-color: var(--leo-olive);
+  color: #fffdf7;
+}
+
+.reservation-date,
+.reservation-guest,
+.reservation-request {
+  border-color: var(--leo-sand);
+  color: var(--leo-espresso);
+}
+
+.legal-content {
+  max-width: 920px;
+  margin: clamp(28px, 6vw, 72px) auto;
+  padding: clamp(26px, 5vw, 64px);
+}
+
+.legal-content h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+}
+
+.legal-content h2 {
+  color: var(--leo-olive);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.legal-content p,
+.legal-content li {
+  color: var(--leo-espresso);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.site-footer {
+  color: var(--leo-cream);
+  background: var(--leo-espresso);
+}
+
+.site-footer a {
+  color: var(--leo-cream);
+}
+
+@media (max-width: 767px) {
+  .hero-simple-title {
+    font-size: clamp(3.2rem, 15vw, 4.5rem);
+  }
+
+  .hero-button,
+  .header-booking,
+  .reservation-primary,
+  .reservation-secondary {
+    min-height: 50px;
+    padding-inline: 20px;
+  }
+
+  .legal-content {
+    margin: 24px 16px;
+    padding: 24px 18px;
+    border-radius: 22px;
   }
 }
