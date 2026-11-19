@@ -3710,3 +3710,210 @@ body {
     white-space: normal;
   }
 }
+
+
+/* Measured desktop layout refinements */
+.site-header {
+  width: calc(100% - 64px);
+  max-width: 1216px;
+  margin-inline: auto;
+  padding-inline: 0;
+}
+
+.reservation-main {
+  width: calc(100% - 64px);
+  max-width: 1216px;
+  margin-inline: auto;
+  padding-inline: 0;
+}
+
+.reservation-layout {
+  grid-template-columns: minmax(220px, 0.72fr) minmax(560px, 1.28fr);
+  gap: 52px;
+}
+
+.reservation-panel {
+  border-radius: 6px;
+  padding: 32px;
+}
+
+.reservation-calendar-header {
+  grid-template-columns: 48px 1fr 48px;
+}
+
+.reservation-icon-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  border-color: var(--leo-sand);
+}
+
+.reservation-calendar-grid {
+  grid-template-columns: repeat(7, 52px);
+  gap: 8px;
+}
+
+.reservation-weekdays {
+  grid-template-columns: repeat(7, 52px);
+  gap: 8px;
+}
+
+.reservation-date {
+  width: 52px;
+  height: 52px;
+  aspect-ratio: auto;
+  border-radius: 6px;
+}
+
+.reservation-guest-grid {
+  grid-template-columns: repeat(10, 56px);
+  gap: 8px;
+}
+
+.reservation-guest {
+  width: 56px;
+  min-height: 56px;
+  border-radius: 6px;
+}
+
+.reservation-time-grid {
+  grid-template-columns: repeat(4, 115px);
+  gap: 10px;
+}
+
+.reservation-time {
+  width: 115px;
+  min-height: 49px;
+  border-radius: 6px;
+}
+
+.reservation-fields {
+  grid-template-columns: repeat(2, minmax(0, 409px));
+  gap: 16px;
+}
+
+.reservation-fields input,
+.reservation-fields textarea,
+.reservation-inquiry-fields label input,
+.reservation-inquiry-fields label textarea,
+.reservation-time-picker select {
+  min-height: 49px;
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 16px;
+}
+
+.reservation-fields label,
+.reservation-inquiry-fields label {
+  font-size: 12px;
+}
+
+.reservation-step-actions {
+  width: 314px;
+  margin-left: auto;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reservation-step-actions > .reservation-primary,
+.reservation-step-actions > .reservation-secondary {
+  width: 314px;
+  min-height: 52px;
+  border-radius: 999px;
+}
+
+.reservation-primary,
+.reservation-secondary {
+  border-radius: 999px;
+}
+
+.reservation-request-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 1100px) {
+  .reservation-layout {
+    grid-template-columns: minmax(200px, 0.55fr) minmax(0, 1.45fr);
+    gap: 32px;
+  }
+
+  .reservation-panel {
+    padding: 24px;
+  }
+
+  .reservation-calendar-grid,
+  .reservation-weekdays {
+    grid-template-columns: repeat(7, minmax(40px, 1fr));
+  }
+
+  .reservation-date {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .reservation-guest-grid {
+    grid-template-columns: repeat(5, minmax(42px, 1fr));
+  }
+
+  .reservation-guest {
+    width: 100%;
+  }
+
+  .reservation-time-grid {
+    grid-template-columns: repeat(3, minmax(96px, 1fr));
+  }
+
+  .reservation-time {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-header,
+  .reservation-main {
+    width: calc(100% - 34px);
+  }
+
+  .reservation-panel {
+    padding: 20px 16px;
+  }
+
+  .reservation-calendar-grid,
+  .reservation-weekdays {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .reservation-date {
+    width: 100%;
+  }
+
+  .reservation-guest-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .reservation-guest {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .reservation-time-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reservation-step-actions {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .reservation-step-actions > .reservation-primary,
+  .reservation-step-actions > .reservation-secondary {
+    width: 100%;
+  }
+
+  .reservation-fields {
+    grid-template-columns: 1fr;
+  }
+}
