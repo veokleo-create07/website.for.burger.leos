@@ -47,6 +47,11 @@ const isHolidayClosed = (value: string) => {
   return (month === "12" && ["30", "31"].includes(day)) || (month === "01" && ["01", "02"].includes(day));
 };
 
+const isFullyBooked = (value: string) => {
+  const [, month, day] = value.split("-");
+  return month === "01" && day === "22";
+};
+
 const calendarCells = (month: Date): CalendarCell[] => {
   const firstDay = new Date(month.getFullYear(), month.getMonth(), 1);
   const daysInMonth = new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate();
@@ -108,6 +113,7 @@ export function ReservationFlow({ labels, locale }: Props) {
 
   const selectedDateLabel = formatDateForLocale(selectedDate, locale);
   const holidayClosed = isHolidayClosed(selectedDate);
+  const fullyBooked = isFullyBooked(selectedDate);
 
   useEffect(() => {
     if (step !== 2) return;
@@ -135,7 +141,7 @@ export function ReservationFlow({ labels, locale }: Props) {
   };
 
   const chooseDate = (value: string) => {
-    if (value < todayKey || isHolidayClosed(value)) return;
+    if (value < todayKey || isHolidayClosed(value) || isFullyBooked(value)) return;
     setSelectedDate(value);
     setSelectedTime(null);
   };
@@ -225,8 +231,8 @@ export function ReservationFlow({ labels, locale }: Props) {
                             key={cell.key}
                             className={selectedDate === cell.key ? "reservation-date reservation-date-selected" : "reservation-date"}
                             onClick={() => chooseDate(cell.key)}
-                            disabled={cell.key < todayKey || isHolidayClosed(cell.key)}
-                            aria-disabled={cell.key < todayKey || isHolidayClosed(cell.key)}
+                            disabled={cell.key < todayKey || isHolidayClosed(cell.key) || isFullyBooked(cell.key)}
+                            aria-disabled={cell.key < todayKey || isHolidayClosed(cell.key) || isFullyBooked(cell.key)}
                             aria-pressed={selectedDate === cell.key}
                           >
                             {cell.day}
@@ -237,9 +243,9 @@ export function ReservationFlow({ labels, locale }: Props) {
                       )}
                     </div>
                   </div>
-                  {holidayClosed ? <p className="reservation-holiday-message" role="status">{labels.holidayClosed}</p> : null}
+                  {fullyBooked ? <p className="reservation-holiday-message" role="status">{labels.fullyBooked}</p> : holidayClosed ? <p className="reservation-holiday-message" role="status">{labels.holidayClosed}</p> : null}
                   <div className="reservation-step-actions reservation-step-actions-end">
-                    <button type="button" className="reservation-primary" onClick={continueToGuests} disabled={holidayClosed}>
+                    <button type="button" className="reservation-primary" onClick={continueToGuests} disabled={holidayClosed || fullyBooked}>
                       {labels.continue}
                     </button>
                   </div>
